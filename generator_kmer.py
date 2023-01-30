@@ -10,24 +10,25 @@ import torch.nn.init as init
 
 class Generator(nn.Module):
 
-    def __init__(self, embedding_dim, hidden_dim, vocab_size, max_seq_len, gpu=False, oracle_init=False):
+    def __init__(self, embedding_dim, hidden_dim, vocab_size,matrix_embeddings, max_seq_len, gpu=False):
         super(Generator, self).__init__()
         self.hidden_dim = hidden_dim
         self.embedding_dim = embedding_dim
         self.max_seq_len = max_seq_len
-        self.vocab_size = vocab_size
+        self.vocab_size  = vocab_size#???????? vocab_size how to set this value
         self.gpu = gpu
-        self.embeddings = nn.Embedding(vocab_size, embedding_dim)
-        self.gru = nn.GRU(embedding_dim, hidden_dim)
-        self.gru2out = nn.Linear(hidden_dim, vocab_size)
         #embedding
         self.embeddings = nn.Embedding.from_pretrained(matrix_embeddings)
-        self.embeddings.requires_grad = False
-            # initialise oracle network with N(0,1)
+        self.embeddings.weight.requires_grad = False    #Set the requires_grad attribute to False, which instructs PyTorch that it does not need gradients for these weights.
+        # self.embeddings = nn.Embedding(vocab_size, embedding_dim)
+        self.gru = nn.GRU(embedding_dim, hidden_dim)
+        self.gru2out = nn.Linear(hidden_dim, vocab_size)
+
+        # initialise oracle network with N(0,1)
         # otherwise variance of initialisation is very small => high NLL for data sampled from the same model
-        if oracle_init:
-            for p in self.parameters():
-                init.normal(p, 0, 1)
+        # if oracle_init:
+        #     for p in self.parameters():
+        #         init.normal(p, 0, 1)
 
     def init_hidden(self, batch_size=1):
         h = autograd.Variable(torch.zeros(1, batch_size, self.hidden_dim))
