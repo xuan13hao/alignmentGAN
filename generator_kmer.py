@@ -7,15 +7,25 @@ import pdb
 import math
 import torch.nn.init as init
 
-
+'''
+https://stackoverflow.com/questions/49710537/pytorch-gensim-how-do-i-load-pre-trained-word-embeddings/49802495#49802495
+def from_pretrained(embeddings, freeze=True):
+    assert embeddings.dim() == 2, \
+         'Embeddings parameter is expected to be 2-dimensional'
+    rows, cols = embeddings.shape
+    embedding = torch.nn.Embedding(num_embeddings=rows, embedding_dim=cols)
+    embedding.weight = torch.nn.Parameter(embeddings)
+    embedding.weight.requires_grad = not freeze
+    return embedding
+'''
 class Generator(nn.Module):
 
     def __init__(self, embedding_dim, hidden_dim, vocab_size,matrix_embeddings, max_seq_len, gpu=False):
         super(Generator, self).__init__()
         self.hidden_dim = hidden_dim
-        self.embedding_dim = embedding_dim
+        self.embedding_dim = matrix_embeddings.shape[1]
         self.max_seq_len = max_seq_len
-        self.vocab_size  = vocab_size#???????? vocab_size how to set this value
+        # self.vocab_size  = vocab_size#???????? vocab_size how to set this value
         self.gpu = gpu
         #embedding
         self.embeddings = nn.Embedding.from_pretrained(matrix_embeddings)

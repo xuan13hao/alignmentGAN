@@ -20,10 +20,8 @@ class Generator(nn.Module):
         self.embeddings = nn.Embedding(vocab_size, embedding_dim)
         self.gru = nn.GRU(embedding_dim, hidden_dim)
         self.gru2out = nn.Linear(hidden_dim, vocab_size)
-        #embedding
-        self.embeddings = nn.Embedding.from_pretrained(matrix_embeddings)
-        self.embeddings.requires_grad = False
-            # initialise oracle network with N(0,1)
+
+        # initialise oracle network with N(0,1)
         # otherwise variance of initialisation is very small => high NLL for data sampled from the same model
         if oracle_init:
             for p in self.parameters():
