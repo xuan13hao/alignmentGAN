@@ -160,23 +160,25 @@ def kmer_tensor(input_file,k,fea_num_,min_fea_):
 	for record in fasta.parse(input_file):
 		seq_reads.append(str(record.seq))
 	#### generate Unsupervised ##### 
-	Unfile = '%dUn'%(kmer)
+	Unfile = 'input_file'%(kmer)
 	g = open(Unfile,'w')
 	words1 = getDNA_split(seq_reads,kmer)
 	for i in range(len(words1)):
 		line = ' '.join(words1[i])
 		g.write(line+'\n')
 	g.close()
-	model = 'model_%d'%(kmer)
-	# fea_num = fea_num_# 100
-	# min_fea = min_fea_# 3
-	# wm = getWord_model(kmer,fea_num,min_fea,model,Unfile)
+	model = 'pre-trained_model_+',input_file,'+_kmer'%(kmer)
+	fea_num = fea_num_# 100
+	min_fea = min_fea_# 3
+	getWord_model(kmer,fea_num,min_fea,model,Unfile)
 	word_model = Word2Vec.load(model)
 	weights = torch.FloatTensor(word_model.wv.vectors)
-	# print(weights)
-	embedding = nn.Embedding.from_pretrained(weights)
+	# # print(word_model)
+	# # print(word_model.wv.vectors)
+	# # print(weights.shape[1])
+	# embedding = nn.Embedding.from_pretrained(weights)
 	# print(embedding)
-	return embedding
+	return weights
 
 def plot_simlarity(k,fea_num,min_fea):
 	kmer = k

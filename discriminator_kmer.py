@@ -15,7 +15,7 @@ def from_pretrained(embeddings, freeze=True):
 '''
 class Discriminator(nn.Module):
 
-    def __init__(self, embedding_dim, hidden_dim, matrix_embeddings, max_seq_len, gpu=False, dropout=0.2):
+    def __init__(self, matrix_embeddings,hidden_dim, max_seq_len, gpu=False, dropout=0.2):
         super(Discriminator, self).__init__()
         self.hidden_dim = hidden_dim
         self.embedding_dim = matrix_embeddings.shape[1]
@@ -24,7 +24,7 @@ class Discriminator(nn.Module):
         self.embeddings = nn.Embedding.from_pretrained(matrix_embeddings) 
         self.embeddings.weight.requires_grad = False    #Set the requires_grad attribute to False, which instructs PyTorch that it does not need gradients for these weights.
         # self.embeddings = nn.Embedding(vocab_size, embedding_dim)
-        self.gru = nn.GRU(embedding_dim, hidden_dim, num_layers=2, bidirectional=True, dropout=dropout)
+        self.gru = nn.GRU(self.embedding_dim, hidden_dim, num_layers=2, bidirectional=True, dropout=dropout)
         self.gru2hidden = nn.Linear(2*2*hidden_dim, hidden_dim)
         self.dropout_linear = nn.Dropout(p=dropout)
         self.hidden2out = nn.Linear(hidden_dim, 1)
