@@ -1,0 +1,3 @@
+Your code doesn't show a need for a dict, but there is a slightly-different word-to-index-position dict in model.key_to_index. However, you can just use model[key] like before to get individual vectors.
+
+(Separately: I can't imagine your %EMBEDDING_DIM is doing anything useful. Why would you want to perform an elementwise % modulus operation, using the integer count of dimensions, against individual dimensions that are often small floating-point numbers? It'll often be harmless, as the EMBEDDING_DIM will usually be far larger than the individual values, but it doesn't serve any good purpose.)

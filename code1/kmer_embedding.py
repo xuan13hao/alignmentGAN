@@ -160,14 +160,14 @@ def kmer_tensor(input_file,k,fea_num_,min_fea_):
 	for record in fasta.parse(input_file):
 		seq_reads.append(str(record.seq))
 	#### generate Unsupervised ##### 
-	Unfile = 'input_file'%(kmer)
+	Unfile = '%dUn'%(kmer)
 	g = open(Unfile,'w')
 	words1 = getDNA_split(seq_reads,kmer)
 	for i in range(len(words1)):
 		line = ' '.join(words1[i])
 		g.write(line+'\n')
 	g.close()
-	model = 'pre-trained_model_+',input_file,'+_kmer'%(kmer)
+	model = 'model_%d'%(kmer)
 	fea_num = fea_num_# 100
 	min_fea = min_fea_# 3
 	getWord_model(kmer,fea_num,min_fea,model,Unfile)
