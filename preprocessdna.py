@@ -4,7 +4,7 @@ import torch
 import os
 import load_data
 class Preprocess():
-    def __init__(self, sentences, sen_len, w2v_path="model_3"): #首先定义类的一些属性
+    def __init__(self, sentences, sen_len, w2v_path="w2v_all.model"): #首先定义类的一些属性
         self.w2v_path = w2v_path
         self.sentences = sentences
         self.sen_len = sen_len
@@ -13,7 +13,12 @@ class Preprocess():
         self.embedding_matrix = []
     def get_w2v_model(self):
         # 把之前训练好的word to vec 模型读进来
-        self.embedding = Word2Vec.load(self.w2v_path)
+        model = Word2Vec.load(self.w2v_path)
+        # weights = torch.LongTensor(model.wv.vectors,requires_grad=True)
+        # embedding = nn.Embedding.from_pretrained(weights)
+        self.embedding = model
+        # self.embedding = Word2Vec.load(self.w2v_path)
+        # print(Word2Vec.load(self.w2v_path))
         self.embedding_dim = self.embedding.vector_size #embedding的维度就是训练好的Word2vec中向量的长度
     def add_embedding(self, word):
         # 把word（"<PAD>"或"<UNK>"）加进embedding，并赋予他一个随机生成的representation vector
@@ -43,14 +48,17 @@ class Preprocess():
             self.word2idx[word] = len(self.word2idx)
             self.idx2word.append(word)
             self.embedding_matrix.append(self.embedding.wv[word])
-        print('')
+        # print('embedding')
+        # print(self.embedding_matrix)
         self.embedding_matrix = torch.tensor(self.embedding_matrix)
+        # print(self.embedding_matrix)
         # 將"<PAD>"和"<UNK>"加进embedding里面
         self.add_embedding("<PAD>")
         self.add_embedding("<UNK>")
         print("Total words: {}".format(len(self.embedding_matrix)))
         # print(self.embedding_matrix)
         return self.embedding_matrix
+
     def pad_sequence(self, sentence):
         # 将每个句子变成一样的长度
         if len(sentence) > self.sen_len: #多的直接截断
@@ -75,6 +83,7 @@ class Preprocess():
             # 将每个句子变成一样的长度
             sentence_idx = self.pad_sequence(sentence_idx)
             sentence_list.append(sentence_idx)
+            print(sentence_list)
         return torch.LongTensor(sentence_list)
     def labels_to_tensor(self, y):
         # 把labels转成tensor
@@ -89,16 +98,16 @@ if __name__ == "__main__":
     train_seq = load_data.get_seqs("train.fa")
     test_seq = load_data.get_seqs("test.fa")
     # print(seq_list)
-    train_kmer_list = load_data.getKmerList(train_seq)
-    test_kmer_list = load_data.getKmerList(test_seq)
+    train_kmer_list = load_data.getKmerList(train_seq,3)
+    test_kmer_list = load_data.getKmerList(test_seq,3)
     # 对input和labels做预处理
-    seq_len = 1
-    train_preprocess = Preprocess(train_kmer_list, seq_len, w2v_path=w2v_path)
-    embedding = train_preprocess.make_embedding(load=True)
-    train_x = train_preprocess.sentence_word2idx()
-    # print(embedding)
+    seq_len = 148
+    # train_preprocess = Preprocess(train_kmer_list, seq_len, w2v_path=w2v_path)
+    # embedding = train_preprocess.make_embedding(load=True)
+    # train_x = train_preprocess.sentence_word2idx()
+    # print(train_x)
     test_preprocess = Preprocess(test_kmer_list, seq_len, w2v_path=w2v_path)
     embedding = test_preprocess.make_embedding(load=True)
-    test_x = train_preprocess.sentence_word2idx()
+    # test_x = test_preprocess.make_embedding_dict()
     # print(test_x)
     # y = preprocess.labels_to_tensor(y)

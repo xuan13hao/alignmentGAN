@@ -13,7 +13,7 @@ class Discriminator(nn.Module):
     def __init__(self, pre_weight, num_classes, embedding_dim, filter_sizes, num_filters, dropout_prob):
         super(Discriminator, self).__init__()
         self.embed = nn.Embedding.from_pretrained(pre_weight)
-        self.embed.weight.requires_grad = True
+        self.embed.weight.requires_grad = False
         
         # self.embed = nn.Embedding(vocab_size, embedding_dim)
         

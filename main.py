@@ -166,6 +166,7 @@ def train_discriminator(dis, gen, criterion, optimizer, epochs,
             if args.cuda:
                 data, target = data.cuda(), target.cuda()
             target = target.contiguous().view(-1)
+            print("data = ",data)
             output = dis(data)
             pred = output.data.max(1)[1]
             correct += pred.eq(target.data).cpu().sum()

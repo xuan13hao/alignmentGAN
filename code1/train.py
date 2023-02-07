@@ -164,10 +164,34 @@ if __name__ == "__main__":
 
     gen_optimizer = optim.Adam(gen.parameters(), lr=1e-2)
     
-    train_generator_MLE(gen, gen_optimizer, gen_gener, real_embedding, MLE_TRAIN_EPOCHS)
+    # train_generator_MLE(gen, gen_optimizer, gen_gener, real_embedding, MLE_TRAIN_EPOCHS)
     dis_optimizer = optim.Adagrad(dis.parameters())
-    #real_embedding
-    train_discriminator(dis, dis_optimizer, real_embedding, gen, gen_gener, 2, 2)
+    nll_loss = nn.NLLLoss()
+    for epoch in range(5):
+        for i, real_word in enumerate(real_embedding):
+            # print(i,real_word.dtype)
+            # z = Tensor(np.random.normal(0, 1, (real_embedding.shape[0], real_embedding.shape[1])))
+            z = torch.randn(real_embedding.shape[0],real_embedding.shape[1])
+            # print(z)
+            gen_word = gen(z,GEN_HIDDEN_DIM)
+            print(gen_word)
+            # # discriminator(gen_word)
+            # gen_optimizer.zero_grad()
+            # g_loss = nll_loss(discriminator(gen_word),torch.ones(real_embedding.size(0),1))
+
+            # g_loss.backward()
+            # gen_optimizer.step()
+            # dis_optimizer.zero_grad()
+
+            # real_loss = nll_loss(discriminator(real_word), torch.ones(real_embedding.size(0),1))
+            # fake_loss = nll_loss(discriminator(gen_word.detach()), gen_word)
+            # d_loss = (real_loss + fake_loss) / 2
+
+            # d_loss.backward()
+            # dis_optimizer.step()
+
+    # #real_embedding
+    # train_discriminator(dis, dis_optimizer, real_embedding, gen, gen_gener, 2, 2)
     
 
 

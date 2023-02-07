@@ -12,7 +12,7 @@ class Generator(nn.Module):
         self.use_cuda = use_cuda
         # self.embed = nn.Embedding(vocab_size, embedding_dim)
         self.embed = nn.Embedding.from_pretrained(pre_weight)
-        self.embed.weight.requires_grad = True
+        self.embed.weight.requires_grad = False
         self.lstm = nn.LSTM(embedding_dim, hidden_dim, batch_first=True)
         self.fc = nn.Linear(hidden_dim, pre_weight.size(0))
         self.log_softmax = nn.LogSoftmax(dim=1)

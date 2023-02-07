@@ -113,6 +113,7 @@ def train_word2vec(x):
     # W = len(x[0][0])
     # print(len(x[0][0]))
     model = word2vec.Word2Vec(x, vector_size =64, window=5, min_count=5, workers=12, sg=1)
+    # print(model)
     return model
 
 if __name__ == "__main__":
