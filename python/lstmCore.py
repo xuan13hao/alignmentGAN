@@ -56,19 +56,27 @@ class LSTMCore(nn.Module):
             sentence_lengths = torch.cat([sentence_lengths, torch.LongTensor([sentence.shape[1]]
                                     * (len(sentence)-len(sentence_lengths)))])     
         embeds = self.embedding(sentence.long())
+        print("embedds = ",embeds.size())
         embeds = torch.nn.utils.rnn.pack_padded_sequence(embeds, sentence_lengths.to(torch.device('cpu')), batch_first=True)
+        # print("embedds = ",embeds)
         hidden0 = [x.permute(1,0,2).contiguous() for x in hidden]
+
         lstm_out, hidden0 = self.lstm(embeds, hidden0)
+
         lstm_out, _ = torch.nn.utils.rnn.pad_packed_sequence(lstm_out, batch_first=True, total_length=sentence.shape[1])
-        tag_space = self.hidden2tag(lstm_out)        
+        tag_space = self.hidden2tag(lstm_out)
+      
         tag_scores = self.logSoftmax(tag_space)
+
         return tag_scores, tag_space
 
-def pretrain_LSTMCore(train_x=None, sentence_lengths=None, batch_size=1, end_token=None, vocab_size=10):
+def pretrain_LSTMCore(train_x=None, sentence_lengths=None, batch_size=1, end_token=None, vocab_size=65):
+    # print("vocab_size = ",vocab_size)
     if train_x is None:
         x = gen_record(vocab_size=vocab_size)
     else:
         x = train_x
+    # print(x.size())
     if len(x.shape) == 1:
         x = x.view(1,x.shape[0])
     if sentence_lengths is None:
@@ -77,8 +85,11 @@ def pretrain_LSTMCore(train_x=None, sentence_lengths=None, batch_size=1, end_tok
         sentence_lengths.extend([x.shape[1]] * (len(x)-len(sentence_lengths)))
     if end_token is None:
         end_token = vocab_size - 1
+    # print("sentence_lengths = ",sentence_lengths)
     model = LSTMCore(vocab_size)
+    # print(model)
     model = nn.DataParallel(model)#, device_ids=[0])
+    # print(model)
     model.to(DEVICE)
     params = list(filter(lambda p: p.requires_grad, model.parameters()))       
     criterion = nn.NLLLoss()
@@ -94,7 +105,9 @@ def pretrain_LSTMCore(train_x=None, sentence_lengths=None, batch_size=1, end_tok
         while pointer + batch_size <= len(x):
             # print("x0_length = ")
             x_batch = x[pointer:pointer+batch_size]
+            # print("x_batch = ",x_batch.size())
             x0_length = torch.tensor(sentence_lengths[pointer:pointer+batch_size]).to(device=DEVICE)
+            # print("x0_length = ",x0_length.size())
             y = torch.cat((x_batch[:,1:],
                            torch.tensor([end_token]*x_batch.shape[0],device=DEVICE)
                            .int().view(x_batch.shape[0],1)),dim=1)
@@ -107,6 +120,7 @@ def pretrain_LSTMCore(train_x=None, sentence_lengths=None, batch_size=1, end_tok
             hidden = model.module.init_hidden(batch_size)
             # print("hidden = ",hidden)         
             y_pred, tag_space = model(x_batch, hidden, x0_length)
+            # print("y = ",y_pred)
             loss = criterion(y_pred.view(-1,y_pred.shape[-1]), y.long().view(-1))
             optimizer.zero_grad()
             loss.backward(retain_graph=True)
@@ -170,5 +184,8 @@ def sanityCheck_LSTMCore(batch_size=1):
 #%%
 if __name__ == '__main__':
     gen_tokens_max, gen_tokens_sample = sanityCheck_LSTMCore(4)
+    print("l = ",len(gen_tokens_sample))
+    for gen in gen_tokens_sample:
+        print(gen)
     
 

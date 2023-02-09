@@ -86,12 +86,12 @@ def readRandomText(inputFilename='london.txt',outputFilename='real_data_london.p
     # print(sentences)
     sentences.columns = coln
     sentences.to_pickle(PATH+outputFilename)
-    # print(sentences)
+    print(sentences)
     return sentences
 
 #%%
 if __name__ == '__main__':
 
-    sentences = readRandomText(inputFilename='london.txt',outputFilename='real_data_london.pkl')
+    # sentences = readRandomText(inputFilename='london.txt',outputFilename='real_data_london.pkl')
     kmer_list = load_seqs('../data/test.fa',3)
     print(kmer_list)

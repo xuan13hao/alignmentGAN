@@ -96,9 +96,9 @@ def read_sampleFile(file='kmer.pkl', pad_token='PAD', num=None):
     generated_data = [int(vocabulary[x]) for y in lineList_all for i,x in enumerate(y) if i<SEQ_LENGTH]
     # generated_data = [int(vocabulary[x]) for y in lineList_all for i,x in enumerate(y) if i<SEQ_LENGTH]
     # print(generated_data)
-    # print(generated_data)
+    print(generated_data)
     x = torch.tensor(generated_data,device=DEVICE).view(-1,SEQ_LENGTH)
-    # print(x.shape[0])
+    print(x)
     return x.int(), vocabulary, reverse_vocab, x_lengths
 
 def decode(token_tbl, reverse_vocab, log=None):
@@ -111,8 +111,8 @@ def decode(token_tbl, reverse_vocab, log=None):
     return words_all
 
 # x, vocabulary, reverse_vocab, sentence_lengths = read_sampleFile()
-# x1, vocabulary1, reverse_vocab1, sentence_lengths1 = read_sampleFile("kmer.pkl")
-# print(sentence_lengths1)
+x1, vocabulary1, reverse_vocab1, sentence_lengths1 = read_sampleFile("kmer.pkl")
+print(vocabulary1)
 # print(x1.size())
 
 # print(sentence_lengths)

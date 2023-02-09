@@ -26,12 +26,14 @@ def pretrain_generator(x,start_token,end_token,ignored_tokens=None,
                             sentence_lengths=sentence_lengths, 
                             batch_size=batch_size, end_token=end_token,
                             vocab_size=vocab_size)
+    # print("pre = ",pretrain_result)
     generator = Generator(pretrain_model=pretrain_result[0],
                 start_token=start_token, ignored_tokens=ignored_tokens)
     # generator is not DataParallel. the lstmCore inside is. 
     # if generator is also DataParallel, when it calls lstmCore it invokes the
     #   error message "RuntimeError: all tensors must be on devices[0]"
     #   because the generator instance may not be on devices[0].
+    # print()
     generator.to(DEVICE)
     return generator
 
@@ -48,21 +50,23 @@ def main(batch_size, num=None):
     if batch_size is None:
         batch_size = 1
     x, vocabulary, reverse_vocab, sentence_lengths = read_sampleFile(num=num)
-    # print("x = ",x)
-    # print(x)
+    print("x = ",x.size())
+    # print("sentence_lengths = ",sentence_lengths)
+    # print("reverse_vocab = ",reverse_vocab)
     if batch_size > len(x):
         batch_size = len(x)
+    # print("batch_size", batch_size)
     start_token = vocabulary['START']
     end_token = vocabulary['END']
     pad_token = vocabulary['PAD']
     # print("batch_size = ", batch_size)
     ignored_tokens = [start_token, end_token, pad_token]
+    # print("ignored_tokens = ",ignored_tokens)
     vocab_size = len(vocabulary)
     # print("vocabulary size = ",vocab_size)
     log = openLog()
     log.write("###### start to pretrain generator: {}\n".format(datetime.now()))
     log.close()
-    # print(sentence_lengths)
     generator = pretrain_generator(x, start_token=start_token,
                     end_token=end_token,ignored_tokens=ignored_tokens,
                     sentence_lengths=torch.tensor(sentence_lengths,device=DEVICE).long(),
@@ -71,9 +75,9 @@ def main(batch_size, num=None):
     x_gen = generator.generate(start_token=start_token, ignored_tokens=ignored_tokens,
                                batch_size=len(x))
     # print("gen = ",x_gen)
-    # log = openLog()
-    # log.write("###### start to pretrain discriminator: {}\n".format(datetime.now()))
-    # log.close()
+    log = openLog()
+    log.write("###### start to pretrain discriminator: {}\n".format(datetime.now()))
+    log.close()
     discriminator = train_discriminator_wrapper(x, x_gen, batch_size, vocab_size)
     # print(discriminator)
     rollout = Rollout(generator, r_update_rate=0.8)
