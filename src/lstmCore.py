@@ -31,7 +31,7 @@ class LSTMCore(nn.Module):
         self.embedding = nn.Embedding(vocab_size, EMB_SIZE)
         self.lstm = nn.LSTM(EMB_SIZE, GEN_HIDDEN_DIM, batch_first=True)
         self.hidden2tag = nn.Linear(GEN_HIDDEN_DIM, vocab_size)
-        self.logSoftmax = nn.LogSoftmax(dim=2)
+        self.logSoftmax = nn.LogSoftmax(dim=2)# prob distroibution
 
     def init_hidden(self, batch_size=1):
         # batch_first for slicing between multiple GPUS;
@@ -56,7 +56,7 @@ class LSTMCore(nn.Module):
             sentence_lengths = torch.cat([sentence_lengths, torch.LongTensor([sentence.shape[1]]
                                     * (len(sentence)-len(sentence_lengths)))])     
         embeds = self.embedding(sentence.long())
-        print("embedds = ",embeds.size())
+        # print("embedds = ",embeds.size())
         embeds = torch.nn.utils.rnn.pack_padded_sequence(embeds, sentence_lengths.to(torch.device('cpu')), batch_first=True)
         # print("embedds = ",embeds)
         hidden0 = [x.permute(1,0,2).contiguous() for x in hidden]
@@ -120,7 +120,7 @@ def pretrain_LSTMCore(train_x=None, sentence_lengths=None, batch_size=1, end_tok
             hidden = model.module.init_hidden(batch_size)
             # print("hidden = ",hidden)         
             y_pred, tag_space = model(x_batch, hidden, x0_length)
-            # print("y = ",y_pred)
+            # print("y_pred = ",y_pred,", tag_space = ",tag_space)
             loss = criterion(y_pred.view(-1,y_pred.shape[-1]), y.long().view(-1))
             optimizer.zero_grad()
             loss.backward(retain_graph=True)
@@ -183,7 +183,7 @@ def sanityCheck_LSTMCore(batch_size=1):
 
 #%%
 if __name__ == '__main__':
-    gen_tokens_max, gen_tokens_sample = sanityCheck_LSTMCore(4)
+    gen_tokens_max, gen_tokens_sample = sanityCheck_LSTMCore(1)
     print("l = ",len(gen_tokens_sample))
     for gen in gen_tokens_sample:
         print(gen)

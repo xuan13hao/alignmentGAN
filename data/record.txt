@@ -110,3 +110,14 @@
       epoch: 0 loss: 4.220563268661499
       epoch: 1 loss: 4.2195573329925535
       epoch: 2 loss: 4.218203544616699
+###### start to pretrain generator: 2023-02-09 14:02:50.227310
+    training lstmCore: 2023-02-09 14:02:50.229168
+      epoch: 0 loss: 4.123552481333415
+      epoch: 1 loss: 4.123166720072429
+      epoch: 2 loss: 4.121606667836507
+###### start to pretrain discriminator: 2023-02-09 14:02:50.876971
+    training lstmCore: 2023-02-09 15:54:44.982705
+    training lstmCore: 2023-02-09 15:55:14.161480
+      epoch: 0 loss: 4.128889560699463
+      epoch: 1 loss: 4.129337628682454
+      epoch: 2 loss: 4.128307501475017

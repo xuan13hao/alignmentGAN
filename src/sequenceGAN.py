@@ -50,7 +50,7 @@ def main(batch_size, num=None):
     if batch_size is None:
         batch_size = 1
     x, vocabulary, reverse_vocab, sentence_lengths = read_sampleFile(num=num)
-    print("x = ",x.size())
+    # print("x = ",x.size())
     # print("sentence_lengths = ",sentence_lengths)
     # print("reverse_vocab = ",reverse_vocab)
     if batch_size > len(x):
