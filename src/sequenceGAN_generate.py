@@ -24,5 +24,5 @@ if __name__ == '__main__':
         batch_size = 1
     
     result = main(batch_size)
-    print(result)
+    print(result[0])
     

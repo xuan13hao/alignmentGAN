@@ -45,5 +45,5 @@ def load_seqs(inputFilename,kmer,outputFilename='kmer.pkl'):
 #%%
 if __name__ == '__main__':
 
-    kmer_list = load_seqs('../data/test.fa',3)
+    kmer_list = load_seqs('../data/test.fa',1)
     print(kmer_list)

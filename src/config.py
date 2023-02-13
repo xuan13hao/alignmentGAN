@@ -16,13 +16,13 @@ from datetime import datetime
 
 PATH = '../data/'
 MAXINT = 10000
-SEQ_LENGTH = 149# x: 'START' + tokens; y: tokens + 'END' 200 - 3 + 1 + 3
+SEQ_LENGTH = 151# x: 'START' + tokens; y: tokens + 'END' 200 - 3 + 1 + 3
 EMB_SIZE = 32
-GENERATE_NUM = 4
+GENERATE_NUM = 1
 FILTER_SIZE = list(range(1,SEQ_LENGTH))
 # print(FILTER_SIZE)
-NUM_FILTER =  ([100] + [200] * 9 + [160] * SEQ_LENGTH)[0:SEQ_LENGTH-1]
-# NUM_FILTER =  ([1] + [1] * 9 + [1] * SEQ_LENGTH)[0:SEQ_LENGTH-1]
+# NUM_FILTER =  ([100] + [200] * 9 + [160] * SEQ_LENGTH)[0:SEQ_LENGTH-1]
+NUM_FILTER =  ([1] + [1] * 9 + [1] * SEQ_LENGTH)[0:SEQ_LENGTH-1]
 # print(NUM_FILTER)
 DIS_NUM_EPOCH = 1
 DIS_NUM_EPOCH_PRETRAIN = 3

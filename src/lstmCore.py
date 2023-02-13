@@ -157,6 +157,7 @@ def test_genMaxSample(model, start_token=0, batch_size=1):
         for i in range(SEQ_LENGTH-1):
             x = torch.tensor(y,device=DEVICE).view([-1,1])
             y_pred, tag_space = model(x,hidden,sentence_lengths=torch.tensor([1],device=DEVICE).long())
+            print(y_pred, ":",tag_space)
             # random choice based on probability distribution.
             y_prob = F.softmax(tag_space, dim=2)
             shape = (y_prob.shape[0],y_prob.shape[1])
@@ -184,8 +185,8 @@ def sanityCheck_LSTMCore(batch_size=1):
 #%%
 if __name__ == '__main__':
     gen_tokens_max, gen_tokens_sample = sanityCheck_LSTMCore(1)
-    print("l = ",len(gen_tokens_sample))
-    for gen in gen_tokens_sample:
-        print(gen)
+    # print("l = ",len(gen_tokens_sample))
+    # for gen in gen_tokens_sample:
+    #     print(gen)
     
 
