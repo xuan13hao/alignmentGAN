@@ -1,2 +1,0 @@
-On gensim 4.0.0 you will need to use the key_to_index method from the KeyedVector of your model, that will return you a dict_keys object with all the words -keys- on the model so you can still iterate through all your vocabulary :).
-The changes caused by the migration from Gensim 3.x to 4 are all present in the github link.
