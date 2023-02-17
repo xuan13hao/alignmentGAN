@@ -26,7 +26,7 @@ def DNAToWord(dna, K,pad_token='PAD'):
 def load_seqs(inputFilename,kmer,outputFilename='kmer.pkl'):
     data = []
     for record in fasta.parse(inputFilename):
-	    data.append(str(record.seq))
+        data.append(str(record.seq))
     data = pd.DataFrame(data)
     data.columns = ['data']
     # print(DNAToWord(data['data'],kmer))

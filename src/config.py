@@ -16,20 +16,19 @@ from datetime import datetime
 
 PATH = '../data/'
 MAXINT = 10000
-SEQ_LENGTH = 151# x: 'START' + tokens; y: tokens + 'END' 200 - 3 + 1 + 3
+SEQ_LENGTH = 151# x: 'START' + tokens; y: tokens + 'END' 
 EMB_SIZE = 32
 GENERATE_NUM = 1
 FILTER_SIZE = list(range(1,SEQ_LENGTH))
 # print(FILTER_SIZE)
 # NUM_FILTER =  ([100] + [200] * 9 + [160] * SEQ_LENGTH)[0:SEQ_LENGTH-1]
 NUM_FILTER =  ([1] + [1] * 9 + [1] * SEQ_LENGTH)[0:SEQ_LENGTH-1]
-print(NUM_FILTER)
-DIS_NUM_EPOCH = 1
+DIS_NUM_EPOCH = 3
 DIS_NUM_EPOCH_PRETRAIN = 3
 GEN_NUM_EPOCH = 3
 GEN_NUM_EPOCH_PRETRAIN = 3
 GEN_HIDDEN_DIM = 48
-ROLLOUT_ITER = 3
+ROLLOUT_ITER = 16
 TOTAL_BATCH = 3
 
 DEVICE = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')

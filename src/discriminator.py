@@ -105,7 +105,6 @@ def train_discriminator(train_x=None, train_y=None, batch_size=1, vocab_size=10)
        y = gen_label()
     else:
         y = train_y
-    # print('===============')
 
     model = Discriminator(filter_size=FILTER_SIZE, num_filter=NUM_FILTER, vocab_size=vocab_size)
     # print("model = ",model)
