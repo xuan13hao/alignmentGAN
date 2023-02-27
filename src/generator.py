@@ -25,7 +25,7 @@ class Generator(nn.Module):
         self.start_token = start_token
         self.ignored_tokens = ignored_tokens
         if pretrain_model is None:
-            x, _, reverse_vocab, _ = read_sampleFile()
+            x, _, reverse_vocab, _ = read_sampleFile(file = "reference.pkl")
             self.pretrain_model, _ = pretrain_LSTMCore(train_x=x, vocab_size=len(reverse_vocab))
         else:
             self.pretrain_model = pretrain_model       

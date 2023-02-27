@@ -35,6 +35,11 @@ def pretrain_generator(x,start_token,end_token,ignored_tokens=None,
     #   because the generator instance may not be on devices[0].
     # print()
     generator.to(DEVICE)
+    try:
+        torch.save(generator, PATH+'pre-train_generator_reference.pkl')
+        print('successfully saved generator reference model.')
+    except:
+        print('error: model saving failed!!!!!!')
     return generator
 
 def train_discriminator_wrapper(x, x_gen, batch_size=1, vocab_size=65):
@@ -44,12 +49,18 @@ def train_discriminator_wrapper(x, x_gen, batch_size=1, vocab_size=65):
     y_train = torch.cat([y,y_gen], dim=0)
     # print(y)
     discriminator = train_discriminator(x_train, y_train, batch_size, vocab_size)
+    try:
+        torch.save(discriminator, PATH+'pre-train_discriminator.pkl')
+        print('successfully saved pre-train discriminator model.')
+    except:
+        print('error: model saving failed!!!!!!')
     return discriminator
 
 def main(batch_size, num=None):
     if batch_size is None:
         batch_size = 1
-    x, vocabulary, reverse_vocab, sentence_lengths = read_sampleFile(num=num)
+    x, vocabulary, reverse_vocab, sentence_lengths = read_sampleFile(num=num,file = "kmer.pkl")
+    x_ref, vocabulary_ref, reverse_vocab_ref, sentence_lengths_ref = read_sampleFile(num=num,file = "reference.pkl")
     # print("x = ",x.size())
     # print("sentence_lengths = ",sentence_lengths)
     # print("reverse_vocab = ",reverse_vocab)
@@ -63,17 +74,18 @@ def main(batch_size, num=None):
     ignored_tokens = [start_token, end_token, pad_token]
     # print("ignored_tokens = ",ignored_tokens)
     vocab_size = len(vocabulary)
+    vocab_size_ref = len(vocabulary_ref)
     # print("vocabulary size = ",vocab_size)
     log = openLog()
     log.write("###### start to pretrain generator: {}\n".format(datetime.now()))
     log.close()
-    generator = pretrain_generator(x, start_token=start_token,
+    generator = pretrain_generator(x_ref, start_token=start_token,
                     end_token=end_token,ignored_tokens=ignored_tokens,
-                    sentence_lengths=torch.tensor(sentence_lengths,device=DEVICE).long(),
-                    batch_size=batch_size,vocab_size=vocab_size)
+                    sentence_lengths=torch.tensor(sentence_lengths_ref,device=DEVICE).long(),
+                    batch_size=batch_size,vocab_size=vocab_size_ref)
     # print(generator)
     x_gen = generator.generate(start_token=start_token, ignored_tokens=ignored_tokens,
-                               batch_size=len(x))
+                               batch_size=len(x_ref))
     # print("gen = ",x_gen)
     log = openLog()
     log.write("###### start to pretrain discriminator: {}\n".format(datetime.now()))
