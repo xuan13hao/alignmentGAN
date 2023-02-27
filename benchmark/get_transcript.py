@@ -17,7 +17,8 @@ with open('human_transcriptome.fa', 'w') as outfile:
 
     for i, row in df_transcripts.iterrows():
         # Extract the transcript sequence from the reference genome
-        if row.end - (row.start-1) >= 100:
+        if row.end - (row.start-1) >= 100 :
+            print(row.seqname)
             transcript_seq = genome[row.seqname][row.start-1:row.end].seq
             # Write the transcript sequence to the output FASTA file
             header = f">{row.attribute.split(';')[0].split()[1][1:-1]}|{row.seqname}:{row.start}-{row.end}"
