@@ -146,7 +146,7 @@ if __name__ == '__main__':
     try:
         batch_size = int(sys.argv[1])
     except IndexError:
-        batch_size = 1
+        batch_size = 64
     try:
         num = int(sys.argv[2])
     except IndexError:
