@@ -3,7 +3,6 @@
 Kmer
 """
 from itertools import chain
-import jieba
 import pandas as pd
 from config import PATH, SEQ_LENGTH
 import fasta
@@ -45,5 +44,6 @@ def load_seqs(inputFilename,kmer,outputFilename='kmer.pkl'):
 #%%
 if __name__ == '__main__':
 
-    kmer_list = load_seqs('../data/test.fa',1)
+    kmer_list = load_seqs('../data/test.fa',1,outputFilename = "kmer.pkl")
+    ref_list = load_seqs('../data/reference.fa',1,outputFilename = "reference.pkl")
     print(kmer_list)
