@@ -1,0 +1,7 @@
+datetime:2023-02-28 13:50:25.661310, device name:NVIDIA GeForce GTX 1050 Ti
+Memory Usage:
+Allocated:0.0GB
+Cached:   0.0GBdatetime:2023-02-28 13:51:55.556584, device name:NVIDIA GeForce GTX 1050 Ti
+Memory Usage:
+Allocated:0.0GB
+Cached:   0.0GB
