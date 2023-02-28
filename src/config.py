@@ -16,7 +16,7 @@ from datetime import datetime
 
 PATH = '../data/'
 MAXINT = 10000
-SEQ_LENGTH = 151# x: 'START' + tokens; y: tokens + 'END' 
+SEQ_LENGTH = 102# x: 'START' + tokens; y: tokens + 'END' 
 EMB_SIZE = 32
 GENERATE_NUM = 1
 FILTER_SIZE = list(range(1,SEQ_LENGTH))
@@ -43,6 +43,7 @@ def openLog(filename='record.txt'):
     return log
 
 if DEVICE.type == 'cuda':
+    print("Available: ",torch.cuda.is_available())
     NrGPU = torch.cuda.device_count()
     print('number of GPUs available:{}'.format(NrGPU))
     log = openLog('gpu.txt')
@@ -52,3 +53,4 @@ if DEVICE.type == 'cuda':
     log.write('\nAllocated:'+str(round(torch.cuda.memory_allocated(0)/1024**3,1))+'GB')
     log.write('\nCached:   '+str(round(torch.cuda.memory_cached(0)/1024**3,1))+'GB')
     log.close()
+# print("Available: ",torch.cuda.is_available())

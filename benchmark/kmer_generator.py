@@ -2,7 +2,7 @@
 import fasta
 # Input parameters
 input_file = "human_transcriptome.fasta"
-kmer = [100]
+kmer = [101]
 output_file = "kmers.fasta"
 
 # Parse reference sequences from input FASTA file
