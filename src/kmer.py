@@ -6,15 +6,17 @@ from itertools import chain
 import pandas as pd
 from config import PATH, SEQ_LENGTH
 import fasta
-
+# ,mask_token = 'MASK'
 # L - K + 1    200 - 3 + 1
-def DNAToWord(dna, K,pad_token='PAD'):
-    sentence = ""
+def DNAToWord(dna, K,pad_token='PAD',mask_token = 'MASK'):
     kmers = []
     length = len(dna)
     for i in range(length - K + 1):
         # sentence += dna[i: i + K] + " "
-        kmers.append(dna[i: i + K].upper()) 
+        seq = dna[i: i + K].upper()
+        # if 'N' in seq:
+        #     seq = mask_token
+        kmers.append(seq) 
     if len(kmers) <= SEQ_LENGTH-1:
         kmers = kmers + [pad_token] * (SEQ_LENGTH - 1 - len(kmers))
     # sentence = sentence[0 : len(sentence) - 1]
@@ -44,6 +46,7 @@ def load_seqs(inputFilename,kmer,outputFilename='kmer.pkl'):
 #%%
 if __name__ == '__main__':
 
-    kmer_list = load_seqs('../data/test.fa',1,outputFilename = "kmer.pkl")
-    ref_list = load_seqs('../data/reference.fa',1,outputFilename = "reference.pkl")
-    print(kmer_list)
+    kmer_list = load_seqs('../data/real_dataset_cleaned.fa',1,outputFilename = "kmer.pkl")
+    ref_list = load_seqs('../data/real_illuminia_ref.fa',1,outputFilename = "reference.pkl")
+    # test = load_seqs('../data/test.fa',1,outputFilename = "test.pkl")
+    # print(test)

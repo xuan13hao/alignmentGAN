@@ -27,8 +27,9 @@ for read in sam_file.fetch():
     end = read.reference_end
 
     # Extract the aligned segment from the genome FASTA file: eg.. chr1
-    if chrom == "chr1":
-        segment = genome_file[chrom][start:end]
+    # if chrom == "chr1":
+    if end - start <= 101:
+        segment = genome_file[chrom][start:end].upper()
 
     # Write the segment to the output FASTA file
         output_file.write(">{}:{}-{}\n{}\n".format(chrom, start+1, end, segment.seq))

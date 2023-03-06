@@ -35,11 +35,11 @@ def pretrain_generator(x,start_token,end_token,ignored_tokens=None,
     #   because the generator instance may not be on devices[0].
     # print()
     generator.to(DEVICE)
-    try:
-        torch.save(generator, PATH+'pre-train_generator_reference.pkl')
-        print('successfully saved generator reference model.')
-    except:
-        print('error: model saving failed!!!!!!')
+    # try:
+    #     torch.save(generator, PATH+'pre-train_generator_reference.pkl')
+    #     print('successfully saved generator reference model.')
+    # except:
+    #     print('error: model saving failed!!!!!!')
     return generator
 
 def train_discriminator_wrapper(x, x_gen, batch_size=1, vocab_size=65):
@@ -49,11 +49,11 @@ def train_discriminator_wrapper(x, x_gen, batch_size=1, vocab_size=65):
     y_train = torch.cat([y,y_gen], dim=0)
     # print(y)
     discriminator = train_discriminator(x_train, y_train, batch_size, vocab_size)
-    try:
-        torch.save(discriminator, PATH+'pre-train_discriminator.pkl')
-        print('successfully saved pre-train discriminator model.')
-    except:
-        print('error: model saving failed!!!!!!')
+    # try:
+    #     torch.save(discriminator, PATH+'pre-train_discriminator.pkl')
+    #     print('successfully saved pre-train discriminator model.')
+    # except:
+    #     print('error: model saving failed!!!!!!')
     return discriminator
 
 def main(batch_size, num=None):
@@ -70,6 +70,8 @@ def main(batch_size, num=None):
     start_token = vocabulary['START']
     end_token = vocabulary['END']
     pad_token = vocabulary['PAD']
+    # mask_token = vocabulary['N']
+    # print("mask = ",mask_token)
     # print("batch_size = ", batch_size)
     ignored_tokens = [start_token, end_token, pad_token]
     # print("ignored_tokens = ",ignored_tokens)
@@ -128,7 +130,8 @@ def main(batch_size, num=None):
     log.write('###### training done: {}\n'.format(datetime.now()))
     log.close()
     
-    torch.save(reverse_vocab, PATH+'reverse_vocab.pkl')
+    torch.save(reverse_vocab, PATH+'kmer_reverse_vocab.pkl')
+    torch.save(reverse_vocab_ref, PATH+'ref_reverse_vocab.pkl')
     try:
         torch.save(generator, PATH+'generator.pkl')
         print('successfully saved generator model.')
@@ -146,7 +149,7 @@ if __name__ == '__main__':
     try:
         batch_size = int(sys.argv[1])
     except IndexError:
-        batch_size = 64
+        batch_size = 16
     try:
         num = int(sys.argv[2])
     except IndexError:

@@ -82,9 +82,19 @@ def read_sampleFile(file='kmer.pkl', pad_token='PAD', num=None):
     # add start and end tag:
     vocabulary['START'] = 0
     reverse_vocab[0] = 'START'
-    if pad_token not in vocabulary.keys():
-        vocabulary[pad_token] = len(vocabulary)
-        reverse_vocab[len(vocabulary)-1] = pad_token
+    vocabulary['A'] = 1
+    reverse_vocab[1] = 'A'
+    vocabulary['C'] = 2
+    reverse_vocab[2] = 'C'
+    vocabulary['G'] = 3
+    reverse_vocab[3] = 'G'
+    vocabulary['T'] = 4
+    reverse_vocab[4] = 'T'
+    vocabulary[pad_token] = len(vocabulary)
+    reverse_vocab[len(vocabulary)-1] = pad_token
+    # if pad_token not in vocabulary.keys():
+    #     vocabulary[pad_token] = len(vocabulary)
+    #     reverse_vocab[len(vocabulary)-1] = pad_token
     vocabulary['END'] = len(vocabulary)
     reverse_vocab[len(vocabulary)-1] = 'END'
     # print(vocabulary)
@@ -113,7 +123,9 @@ def decode(token_tbl, reverse_vocab, log=None):
 
 # x, vocabulary, reverse_vocab, sentence_lengths = read_sampleFile()
 x1, vocabulary1, reverse_vocab1, sentence_lengths1 = read_sampleFile("kmer.pkl")
-print(vocabulary1)
+print(reverse_vocab1)
+x1, vocabulary1_ref, reverse_vocab1_ref, sentence_lengths1 = read_sampleFile("reference.pkl")
+print(reverse_vocab1_ref)
 # print(x1.size())
 
 # print(sentence_lengths)

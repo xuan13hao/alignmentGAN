@@ -1,0 +1,2289 @@
+###### start to pretrain generator: 2023-03-05 22:22:23.457109
+    training lstmCore: 2023-03-05 22:22:24.418336
+      epoch: 0 loss: 1.9819214344024658
+      epoch: 1 loss: 1.9807183742523193
+      epoch: 2 loss: 1.9792439937591553
+      epoch: 3 loss: 1.9782086610794067
+      epoch: 4 loss: 1.9776407480239868
+      epoch: 5 loss: 1.9746413230895996
+      epoch: 6 loss: 1.973243236541748
+      epoch: 7 loss: 1.973376989364624
+      epoch: 8 loss: 1.971935510635376
+      epoch: 9 loss: 1.9705466032028198
+      epoch: 10 loss: 1.9683877229690552
+      epoch: 11 loss: 1.9669431447982788
+      epoch: 12 loss: 1.9665383100509644
+      epoch: 13 loss: 1.964766502380371
+      epoch: 14 loss: 1.9634596109390259
+      epoch: 15 loss: 1.9613220691680908
+      epoch: 16 loss: 1.9606707096099854
+      epoch: 17 loss: 1.9596623182296753
+      epoch: 18 loss: 1.9587541818618774
+      epoch: 19 loss: 1.956749677658081
+      epoch: 20 loss: 1.9553221464157104
+      epoch: 21 loss: 1.9547687768936157
+      epoch: 22 loss: 1.9536449909210205
+      epoch: 23 loss: 1.9516605138778687
+      epoch: 24 loss: 1.950312852859497
+      epoch: 25 loss: 1.9493496417999268
+      epoch: 26 loss: 1.9487570524215698
+      epoch: 27 loss: 1.9463859796524048
+      epoch: 28 loss: 1.9452886581420898
+      epoch: 29 loss: 1.943758487701416
+      epoch: 30 loss: 1.9422903060913086
+      epoch: 31 loss: 1.9408376216888428
+      epoch: 32 loss: 1.9401243925094604
+      epoch: 33 loss: 1.9385249614715576
+      epoch: 34 loss: 1.9370670318603516
+      epoch: 35 loss: 1.9367538690567017
+      epoch: 36 loss: 1.9339361190795898
+      epoch: 37 loss: 1.934003233909607
+      epoch: 38 loss: 1.932874083518982
+      epoch: 39 loss: 1.9307793378829956
+      epoch: 40 loss: 1.930496335029602
+      epoch: 41 loss: 1.9285427331924438
+      epoch: 42 loss: 1.9270901679992676
+      epoch: 43 loss: 1.9259554147720337
+      epoch: 44 loss: 1.9247065782546997
+      epoch: 45 loss: 1.922520399093628
+      epoch: 46 loss: 1.9223674535751343
+      epoch: 47 loss: 1.9208258390426636
+      epoch: 48 loss: 1.919784426689148
+      epoch: 49 loss: 1.9182599782943726
+      epoch: 50 loss: 1.9169918298721313
+      epoch: 51 loss: 1.9155035018920898
+      epoch: 52 loss: 1.91512930393219
+      epoch: 53 loss: 1.914123773574829
+      epoch: 54 loss: 1.9122306108474731
+      epoch: 55 loss: 1.9108973741531372
+      epoch: 56 loss: 1.9100854396820068
+      epoch: 57 loss: 1.9087108373641968
+      epoch: 58 loss: 1.9064393043518066
+      epoch: 59 loss: 1.9050092697143555
+      epoch: 60 loss: 1.904710292816162
+      epoch: 61 loss: 1.9038599729537964
+      epoch: 62 loss: 1.9008848667144775
+      epoch: 63 loss: 1.9008433818817139
+      epoch: 64 loss: 1.899662971496582
+      epoch: 65 loss: 1.8984220027923584
+      epoch: 66 loss: 1.8966389894485474
+      epoch: 67 loss: 1.895983099937439
+      epoch: 68 loss: 1.8946499824523926
+      epoch: 69 loss: 1.8938069343566895
+      epoch: 70 loss: 1.8924542665481567
+      epoch: 71 loss: 1.8911981582641602
+      epoch: 72 loss: 1.8894197940826416
+      epoch: 73 loss: 1.8883216381072998
+      epoch: 74 loss: 1.888012409210205
+      epoch: 75 loss: 1.8870177268981934
+      epoch: 76 loss: 1.8861974477767944
+      epoch: 77 loss: 1.883554220199585
+      epoch: 78 loss: 1.8825528621673584
+      epoch: 79 loss: 1.881047010421753
+      epoch: 80 loss: 1.8812150955200195
+      epoch: 81 loss: 1.8792543411254883
+      epoch: 82 loss: 1.8786453008651733
+      epoch: 83 loss: 1.8774572610855103
+      epoch: 84 loss: 1.8759822845458984
+      epoch: 85 loss: 1.874854564666748
+      epoch: 86 loss: 1.8728419542312622
+      epoch: 87 loss: 1.8721500635147095
+      epoch: 88 loss: 1.8702195882797241
+      epoch: 89 loss: 1.8694100379943848
+      epoch: 90 loss: 1.8680630922317505
+      epoch: 91 loss: 1.8663321733474731
+      epoch: 92 loss: 1.8664442300796509
+      epoch: 93 loss: 1.8653044700622559
+      epoch: 94 loss: 1.8634288311004639
+      epoch: 95 loss: 1.8620339632034302
+      epoch: 96 loss: 1.8616259098052979
+      epoch: 97 loss: 1.8597350120544434
+      epoch: 98 loss: 1.8591691255569458
+      epoch: 99 loss: 1.8581417798995972
+      epoch: 100 loss: 1.8563706874847412
+      epoch: 101 loss: 1.8558149337768555
+      epoch: 102 loss: 1.854361891746521
+      epoch: 103 loss: 1.8543566465377808
+      epoch: 104 loss: 1.8520967960357666
+      epoch: 105 loss: 1.8503702878952026
+      epoch: 106 loss: 1.8495805263519287
+      epoch: 107 loss: 1.8481929302215576
+      epoch: 108 loss: 1.8465148210525513
+      epoch: 109 loss: 1.8458033800125122
+      epoch: 110 loss: 1.8456028699874878
+      epoch: 111 loss: 1.8435719013214111
+      epoch: 112 loss: 1.8425110578536987
+      epoch: 113 loss: 1.8412153720855713
+      epoch: 114 loss: 1.840665578842163
+      epoch: 115 loss: 1.8386296033859253
+      epoch: 116 loss: 1.8380616903305054
+      epoch: 117 loss: 1.8374090194702148
+      epoch: 118 loss: 1.8362163305282593
+      epoch: 119 loss: 1.8344972133636475
+###### start to pretrain discriminator: 2023-03-05 22:22:26.078551
+    training discriminator: 2023-03-05 22:22:26.170525
+      epoch: 0 loss: 0.9681468307971954
+      epoch: 1 loss: 0.8046303987503052
+      epoch: 2 loss: 0.8054364025592804
+###### start to train adversarial net: 2023-03-05 22:22:27.812700
+batch: 0 : 2023-03-05 22:22:27.812793
+    training generator: 2023-03-05 22:25:35.037269
+      epoch: 0 loss: -1461.703857421875
+  iter_n_dis: 0 : 2023-03-05 22:25:35.049320
+    training discriminator: 2023-03-05 22:25:35.349639
+      epoch: 0 loss: 0.8855695724487305
+      epoch: 1 loss: 0.8098264187574387
+      epoch: 2 loss: 0.8089889883995056
+  iter_n_dis: 1 : 2023-03-05 22:25:35.957470
+    training discriminator: 2023-03-05 22:25:36.221658
+      epoch: 0 loss: 0.9098570942878723
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-05 22:25:36.811896
+    training discriminator: 2023-03-05 22:25:37.068005
+      epoch: 0 loss: 0.9866381585597992
+      epoch: 1 loss: 0.7963279783725739
+      epoch: 2 loss: 0.799490749835968
+batch: 1 : 2023-03-05 22:25:37.692030
+    training generator: 2023-03-05 22:28:26.088605
+      epoch: 0 loss: -1458.836669921875
+  iter_n_dis: 0 : 2023-03-05 22:28:26.099814
+    training discriminator: 2023-03-05 22:28:26.376448
+      epoch: 0 loss: 0.6997001767158508
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 1 : 2023-03-05 22:28:26.981406
+    training discriminator: 2023-03-05 22:28:27.242310
+      epoch: 0 loss: 0.7608655095100403
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-05 22:28:27.843749
+    training discriminator: 2023-03-05 22:28:28.087796
+      epoch: 0 loss: 0.8385582864284515
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 2 : 2023-03-05 22:28:28.677760
+    training generator: 2023-03-05 22:30:30.473655
+      epoch: 0 loss: -908.30615234375
+  iter_n_dis: 0 : 2023-03-05 22:30:30.486166
+    training discriminator: 2023-03-05 22:30:30.753565
+      epoch: 0 loss: 0.7152407765388489
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 1 : 2023-03-05 22:30:31.324592
+    training discriminator: 2023-03-05 22:30:31.546030
+      epoch: 0 loss: 0.7250804901123047
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-05 22:30:32.119123
+    training discriminator: 2023-03-05 22:30:32.399504
+      epoch: 0 loss: 0.9336625039577484
+      epoch: 1 loss: 0.8124933689832687
+      epoch: 2 loss: 0.8105527758598328
+batch: 3 : 2023-03-05 22:30:32.968688
+    training generator: 2023-03-05 22:32:34.330341
+      epoch: 0 loss: -1492.109619140625
+  iter_n_dis: 0 : 2023-03-05 22:32:34.342973
+    training discriminator: 2023-03-05 22:32:34.607008
+      epoch: 0 loss: 0.9157337546348572
+      epoch: 1 loss: 0.793724775314331
+      epoch: 2 loss: 0.7971942871809006
+  iter_n_dis: 1 : 2023-03-05 22:32:35.199281
+    training discriminator: 2023-03-05 22:32:35.440995
+      epoch: 0 loss: 0.8257297873497009
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-05 22:32:36.019988
+    training discriminator: 2023-03-05 22:32:36.268534
+      epoch: 0 loss: 0.913811981678009
+      epoch: 1 loss: 0.8044222742319107
+      epoch: 2 loss: 0.8070580363273621
+batch: 4 : 2023-03-05 22:32:36.872890
+    training generator: 2023-03-05 22:34:40.031358
+      epoch: 0 loss: -1464.8291015625
+  iter_n_dis: 0 : 2023-03-05 22:34:40.040662
+    training discriminator: 2023-03-05 22:34:40.265751
+      epoch: 0 loss: 0.8215518891811371
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 1 : 2023-03-05 22:34:40.826178
+    training discriminator: 2023-03-05 22:34:41.097967
+      epoch: 0 loss: 0.724431723356247
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-05 22:34:41.648565
+    training discriminator: 2023-03-05 22:34:41.924645
+      epoch: 0 loss: 0.6931471824645996
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 5 : 2023-03-05 22:34:42.480951
+    training generator: 2023-03-05 22:36:33.129737
+      epoch: 0 loss: -909.989990234375
+  iter_n_dis: 0 : 2023-03-05 22:36:33.140850
+    training discriminator: 2023-03-05 22:36:33.365336
+      epoch: 0 loss: 0.9785379469394684
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 1 : 2023-03-05 22:36:33.964322
+    training discriminator: 2023-03-05 22:36:34.191110
+      epoch: 0 loss: 0.9296269416809082
+      epoch: 1 loss: 0.803149625658989
+      epoch: 2 loss: 0.8054173737764359
+  iter_n_dis: 2 : 2023-03-05 22:36:34.754905
+    training discriminator: 2023-03-05 22:36:35.001693
+      epoch: 0 loss: 0.9414170980453491
+      epoch: 1 loss: 0.7960996925830841
+      epoch: 2 loss: 0.7990377992391586
+batch: 6 : 2023-03-05 22:36:35.572422
+    training generator: 2023-03-05 22:38:24.729879
+      epoch: 0 loss: -1500.1378173828125
+  iter_n_dis: 0 : 2023-03-05 22:38:24.740815
+    training discriminator: 2023-03-05 22:38:24.983824
+      epoch: 0 loss: 1.0061420500278473
+      epoch: 1 loss: 0.7995979189872742
+      epoch: 2 loss: 0.7983786761760712
+  iter_n_dis: 1 : 2023-03-05 22:38:25.605091
+    training discriminator: 2023-03-05 22:38:25.881189
+      epoch: 0 loss: 0.7114189565181732
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-05 22:38:26.473530
+    training discriminator: 2023-03-05 22:38:26.751461
+      epoch: 0 loss: 0.8577002584934235
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 7 : 2023-03-05 22:38:27.359530
+    training generator: 2023-03-05 22:40:17.043292
+      epoch: 0 loss: -911.0181884765625
+  iter_n_dis: 0 : 2023-03-05 22:40:17.072483
+    training discriminator: 2023-03-05 22:40:17.281058
+      epoch: 0 loss: 0.6931471824645996
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 1 : 2023-03-05 22:40:17.837887
+    training discriminator: 2023-03-05 22:40:18.043856
+      epoch: 0 loss: 0.9364844262599945
+      epoch: 1 loss: 0.8090874254703522
+      epoch: 2 loss: 0.808781087398529
+  iter_n_dis: 2 : 2023-03-05 22:40:18.630574
+    training discriminator: 2023-03-05 22:40:18.835622
+      epoch: 0 loss: 0.9136792719364166
+      epoch: 1 loss: 0.8189183175563812
+      epoch: 2 loss: 0.8121801316738129
+batch: 8 : 2023-03-05 22:40:19.405120
+    training generator: 2023-03-05 22:42:07.927244
+      epoch: 0 loss: -1453.33984375
+  iter_n_dis: 0 : 2023-03-05 22:42:07.936478
+    training discriminator: 2023-03-05 22:42:08.141808
+      epoch: 0 loss: 0.9534669816493988
+      epoch: 1 loss: 0.7971715033054352
+      epoch: 2 loss: 0.800173431634903
+  iter_n_dis: 1 : 2023-03-05 22:42:08.699895
+    training discriminator: 2023-03-05 22:42:08.985488
+      epoch: 0 loss: 0.7045412361621857
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-05 22:42:09.539683
+    training discriminator: 2023-03-05 22:42:09.757480
+      epoch: 0 loss: 0.7567965388298035
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 9 : 2023-03-05 22:42:10.322622
+    training generator: 2023-03-05 22:43:59.258978
+      epoch: 0 loss: -915.4927368164062
+  iter_n_dis: 0 : 2023-03-05 22:43:59.281920
+    training discriminator: 2023-03-05 22:43:59.513110
+      epoch: 0 loss: 0.8869589865207672
+      epoch: 1 loss: 0.8278517425060272
+      epoch: 2 loss: 0.8141437917947769
+  iter_n_dis: 1 : 2023-03-05 22:44:00.080763
+    training discriminator: 2023-03-05 22:44:00.299283
+      epoch: 0 loss: 0.6939414739608765
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-05 22:44:00.885580
+    training discriminator: 2023-03-05 22:44:01.122905
+      epoch: 0 loss: 0.7384070158004761
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 10 : 2023-03-05 22:44:01.686213
+    training generator: 2023-03-05 22:45:48.913591
+      epoch: 0 loss: -914.6329345703125
+  iter_n_dis: 0 : 2023-03-05 22:45:48.922568
+    training discriminator: 2023-03-05 22:45:49.173860
+      epoch: 0 loss: 0.94062539935112
+      epoch: 1 loss: 0.9019923210144043
+      epoch: 2 loss: 0.8019519299268723
+  iter_n_dis: 1 : 2023-03-05 22:45:49.737955
+    training discriminator: 2023-03-05 22:45:50.004228
+      epoch: 0 loss: 0.8722588121891022
+      epoch: 1 loss: 0.8156456649303436
+      epoch: 2 loss: 0.8110878318548203
+  iter_n_dis: 2 : 2023-03-05 22:45:50.566669
+    training discriminator: 2023-03-05 22:45:50.809396
+      epoch: 0 loss: 0.9146803915500641
+      epoch: 1 loss: 0.8401793986558914
+      epoch: 2 loss: 0.808682769536972
+batch: 11 : 2023-03-05 22:45:51.360371
+    training generator: 2023-03-05 22:47:39.652590
+      epoch: 0 loss: -1436.84912109375
+  iter_n_dis: 0 : 2023-03-05 22:47:39.681590
+    training discriminator: 2023-03-05 22:47:39.899631
+      epoch: 0 loss: 0.9978131651878357
+      epoch: 1 loss: 0.8030413836240768
+      epoch: 2 loss: 0.8047451078891754
+  iter_n_dis: 1 : 2023-03-05 22:47:40.472765
+    training discriminator: 2023-03-05 22:47:40.713284
+      epoch: 0 loss: 0.6931471824645996
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-05 22:47:41.301568
+    training discriminator: 2023-03-05 22:47:41.504182
+      epoch: 0 loss: 0.9391722679138184
+      epoch: 1 loss: 0.8180511295795441
+      epoch: 2 loss: 0.8124138563871384
+batch: 12 : 2023-03-05 22:47:42.056787
+    training generator: 2023-03-05 22:49:28.616440
+      epoch: 0 loss: -1467.7939453125
+  iter_n_dis: 0 : 2023-03-05 22:49:28.627306
+    training discriminator: 2023-03-05 22:49:28.836407
+      epoch: 0 loss: 0.9402756690979004
+      epoch: 1 loss: 0.8113484680652618
+      epoch: 2 loss: 0.8093886822462082
+  iter_n_dis: 1 : 2023-03-05 22:49:29.398447
+    training discriminator: 2023-03-05 22:49:29.610685
+      epoch: 0 loss: 0.9524133801460266
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-05 22:49:30.197300
+    training discriminator: 2023-03-05 22:49:30.398743
+      epoch: 0 loss: 0.9031526148319244
+      epoch: 1 loss: 0.8123207837343216
+      epoch: 2 loss: 0.8103087395429611
+batch: 13 : 2023-03-05 22:49:30.954935
+    training generator: 2023-03-05 22:51:20.594534
+      epoch: 0 loss: -1482.76171875
+  iter_n_dis: 0 : 2023-03-05 22:51:20.605593
+    training discriminator: 2023-03-05 22:51:20.832616
+      epoch: 0 loss: 0.6931471824645996
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 1 : 2023-03-05 22:51:21.420360
+    training discriminator: 2023-03-05 22:51:21.632113
+      epoch: 0 loss: 0.6931471824645996
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-05 22:51:22.195541
+    training discriminator: 2023-03-05 22:51:22.406214
+      epoch: 0 loss: 0.9876029193401337
+      epoch: 1 loss: 0.7986426651477814
+      epoch: 2 loss: 0.7999531030654907
+batch: 14 : 2023-03-05 22:51:23.024840
+    training generator: 2023-03-05 22:53:19.269721
+      epoch: 0 loss: -1567.6875
+  iter_n_dis: 0 : 2023-03-05 22:53:19.278664
+    training discriminator: 2023-03-05 22:53:19.557414
+      epoch: 0 loss: 0.6931471824645996
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 1 : 2023-03-05 22:53:20.171605
+    training discriminator: 2023-03-05 22:53:20.432157
+      epoch: 0 loss: 0.9051082134246826
+      epoch: 1 loss: 0.8125969916582108
+      epoch: 2 loss: 0.8085885643959045
+  iter_n_dis: 2 : 2023-03-05 22:53:21.017123
+    training discriminator: 2023-03-05 22:53:21.244383
+      epoch: 0 loss: 0.841062068939209
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 15 : 2023-03-05 22:53:21.874840
+    training generator: 2023-03-05 22:55:15.566474
+      epoch: 0 loss: -917.608154296875
+  iter_n_dis: 0 : 2023-03-05 22:55:15.579345
+    training discriminator: 2023-03-05 22:55:15.800027
+      epoch: 0 loss: 0.6931471824645996
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 1 : 2023-03-05 22:55:16.399632
+    training discriminator: 2023-03-05 22:55:16.683008
+      epoch: 0 loss: 0.7099096477031708
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-05 22:55:17.282369
+    training discriminator: 2023-03-05 22:55:17.538328
+      epoch: 0 loss: 0.7103640139102936
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 16 : 2023-03-05 22:55:18.134214
+    training generator: 2023-03-05 22:57:12.273846
+      epoch: 0 loss: -916.1143188476562
+  iter_n_dis: 0 : 2023-03-05 22:57:12.284859
+    training discriminator: 2023-03-05 22:57:12.487372
+      epoch: 0 loss: 0.6931471824645996
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 1 : 2023-03-05 22:57:13.075377
+    training discriminator: 2023-03-05 22:57:13.280600
+      epoch: 0 loss: 0.9594830274581909
+      epoch: 1 loss: 0.7952656745910645
+      epoch: 2 loss: 0.7972191572189331
+  iter_n_dis: 2 : 2023-03-05 22:57:13.870675
+    training discriminator: 2023-03-05 22:57:14.076695
+      epoch: 0 loss: 0.8190826177597046
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 17 : 2023-03-05 22:57:14.718224
+    training generator: 2023-03-05 22:59:08.712481
+      epoch: 0 loss: -918.3883666992188
+  iter_n_dis: 0 : 2023-03-05 22:59:08.725137
+    training discriminator: 2023-03-05 22:59:08.983270
+      epoch: 0 loss: 0.7110718786716461
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 1 : 2023-03-05 22:59:09.544580
+    training discriminator: 2023-03-05 22:59:09.760401
+      epoch: 0 loss: 0.6931471824645996
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-05 22:59:10.348944
+    training discriminator: 2023-03-05 22:59:10.609023
+      epoch: 0 loss: 0.9658413529396057
+      epoch: 1 loss: 0.7950088977813721
+      epoch: 2 loss: 0.7984514981508255
+batch: 18 : 2023-03-05 22:59:11.181487
+    training generator: 2023-03-05 23:01:00.560413
+      epoch: 0 loss: -1495.5821533203125
+  iter_n_dis: 0 : 2023-03-05 23:01:00.588541
+    training discriminator: 2023-03-05 23:01:00.795131
+      epoch: 0 loss: 0.9089223444461823
+      epoch: 1 loss: 0.7972568869590759
+      epoch: 2 loss: 0.8013687878847122
+  iter_n_dis: 1 : 2023-03-05 23:01:01.362435
+    training discriminator: 2023-03-05 23:01:01.565476
+      epoch: 0 loss: 0.7908697128295898
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-05 23:01:02.126486
+    training discriminator: 2023-03-05 23:01:02.332157
+      epoch: 0 loss: 0.9367027580738068
+      epoch: 1 loss: 0.7962564378976822
+      epoch: 2 loss: 0.7979114800691605
+batch: 19 : 2023-03-05 23:01:02.896363
+    training generator: 2023-03-05 23:02:51.392902
+      epoch: 0 loss: -1567.050048828125
+  iter_n_dis: 0 : 2023-03-05 23:02:51.405931
+    training discriminator: 2023-03-05 23:02:51.609229
+      epoch: 0 loss: 0.7503014206886292
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 1 : 2023-03-05 23:02:52.180744
+    training discriminator: 2023-03-05 23:02:52.385353
+      epoch: 0 loss: 0.8929695785045624
+      epoch: 1 loss: 0.9004330635070801
+      epoch: 2 loss: 0.8808988332748413
+  iter_n_dis: 2 : 2023-03-05 23:02:52.952761
+    training discriminator: 2023-03-05 23:02:53.203360
+      epoch: 0 loss: 0.7075826525688171
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 20 : 2023-03-05 23:02:53.770400
+    training generator: 2023-03-05 23:04:44.649270
+      epoch: 0 loss: -921.1578979492188
+  iter_n_dis: 0 : 2023-03-05 23:04:44.662312
+    training discriminator: 2023-03-05 23:04:44.894826
+      epoch: 0 loss: 0.8626567721366882
+      epoch: 1 loss: 0.8274610042572021
+      epoch: 2 loss: 0.8149933964014053
+  iter_n_dis: 1 : 2023-03-05 23:04:45.483252
+    training discriminator: 2023-03-05 23:04:45.759440
+      epoch: 0 loss: 0.7411707043647766
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-05 23:04:46.318295
+    training discriminator: 2023-03-05 23:04:46.520875
+      epoch: 0 loss: 0.7248767018318176
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 21 : 2023-03-05 23:04:47.094238
+    training generator: 2023-03-05 23:06:35.487766
+      epoch: 0 loss: -919.3848876953125
+  iter_n_dis: 0 : 2023-03-05 23:06:35.500676
+    training discriminator: 2023-03-05 23:06:35.703872
+      epoch: 0 loss: 0.9049103856086731
+      epoch: 1 loss: 0.8058203756809235
+      epoch: 2 loss: 0.8076888769865036
+  iter_n_dis: 1 : 2023-03-05 23:06:36.259138
+    training discriminator: 2023-03-05 23:06:36.465354
+      epoch: 0 loss: 0.749321311712265
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-05 23:06:37.037512
+    training discriminator: 2023-03-05 23:06:37.293662
+      epoch: 0 loss: 0.9569330215454102
+      epoch: 1 loss: 0.8159200102090836
+      epoch: 2 loss: 0.8096426278352737
+batch: 22 : 2023-03-05 23:06:37.859362
+    training generator: 2023-03-05 23:08:28.460180
+      epoch: 0 loss: -1462.3701171875
+  iter_n_dis: 0 : 2023-03-05 23:08:28.489582
+    training discriminator: 2023-03-05 23:08:28.793764
+      epoch: 0 loss: 0.9444469809532166
+      epoch: 1 loss: 0.7984844297170639
+      epoch: 2 loss: 0.7996873557567596
+  iter_n_dis: 1 : 2023-03-05 23:08:29.346412
+    training discriminator: 2023-03-05 23:08:29.550094
+      epoch: 0 loss: 0.6931471824645996
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-05 23:08:30.102438
+    training discriminator: 2023-03-05 23:08:30.315872
+      epoch: 0 loss: 0.6938149034976959
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 23 : 2023-03-05 23:08:30.872519
+    training generator: 2023-03-05 23:10:20.401537
+      epoch: 0 loss: -922.7627563476562
+  iter_n_dis: 0 : 2023-03-05 23:10:20.412565
+    training discriminator: 2023-03-05 23:10:20.654483
+      epoch: 0 loss: 0.9162057638168335
+      epoch: 1 loss: 0.8196558654308319
+      epoch: 2 loss: 0.8103990852832794
+  iter_n_dis: 1 : 2023-03-05 23:10:21.226970
+    training discriminator: 2023-03-05 23:10:21.480671
+      epoch: 0 loss: 0.7126529514789581
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-05 23:10:22.035418
+    training discriminator: 2023-03-05 23:10:22.274805
+      epoch: 0 loss: 0.7469754219055176
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 24 : 2023-03-05 23:10:22.838520
+    training generator: 2023-03-05 23:12:12.427932
+      epoch: 0 loss: -926.57373046875
+  iter_n_dis: 0 : 2023-03-05 23:12:12.438851
+    training discriminator: 2023-03-05 23:12:12.642897
+      epoch: 0 loss: 0.6934204697608948
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 1 : 2023-03-05 23:12:13.194707
+    training discriminator: 2023-03-05 23:12:13.398727
+      epoch: 0 loss: 0.6931471824645996
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-05 23:12:13.958688
+    training discriminator: 2023-03-05 23:12:14.179978
+      epoch: 0 loss: 0.7739199995994568
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 25 : 2023-03-05 23:12:14.766699
+    training generator: 2023-03-05 23:14:04.976381
+      epoch: 0 loss: -922.0439453125
+  iter_n_dis: 0 : 2023-03-05 23:14:04.999928
+    training discriminator: 2023-03-05 23:14:05.229173
+      epoch: 0 loss: 0.9085527062416077
+      epoch: 1 loss: 0.8865249156951904
+      epoch: 2 loss: 0.8096865862607956
+  iter_n_dis: 1 : 2023-03-05 23:14:05.805560
+    training discriminator: 2023-03-05 23:14:06.011546
+      epoch: 0 loss: 0.6938546299934387
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-05 23:14:06.578615
+    training discriminator: 2023-03-05 23:14:06.799522
+      epoch: 0 loss: 0.6947227120399475
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 26 : 2023-03-05 23:14:07.403004
+    training generator: 2023-03-05 23:15:59.373932
+      epoch: 0 loss: -924.3720092773438
+  iter_n_dis: 0 : 2023-03-05 23:15:59.384956
+    training discriminator: 2023-03-05 23:15:59.610885
+      epoch: 0 loss: 0.713905543088913
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 1 : 2023-03-05 23:16:00.207112
+    training discriminator: 2023-03-05 23:16:00.442496
+      epoch: 0 loss: 0.6934008598327637
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-05 23:16:01.005307
+    training discriminator: 2023-03-05 23:16:01.208534
+      epoch: 0 loss: 0.8087705373764038
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 27 : 2023-03-05 23:16:01.793825
+    training generator: 2023-03-05 23:17:50.957677
+      epoch: 0 loss: -927.7550048828125
+  iter_n_dis: 0 : 2023-03-05 23:17:50.980465
+    training discriminator: 2023-03-05 23:17:51.183859
+      epoch: 0 loss: 0.7854847013950348
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 1 : 2023-03-05 23:17:51.735872
+    training discriminator: 2023-03-05 23:17:51.952085
+      epoch: 0 loss: 0.7583838999271393
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-05 23:17:52.503363
+    training discriminator: 2023-03-05 23:17:52.724893
+      epoch: 0 loss: 0.6988858580589294
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 28 : 2023-03-05 23:17:53.280523
+    training generator: 2023-03-05 23:19:43.066284
+      epoch: 0 loss: -924.1478271484375
+  iter_n_dis: 0 : 2023-03-05 23:19:43.076993
+    training discriminator: 2023-03-05 23:19:43.288510
+      epoch: 0 loss: 0.7166783511638641
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 1 : 2023-03-05 23:19:43.845133
+    training discriminator: 2023-03-05 23:19:44.145083
+      epoch: 0 loss: 0.739507794380188
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-05 23:19:44.730405
+    training discriminator: 2023-03-05 23:19:44.968632
+      epoch: 0 loss: 0.6946916282176971
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 29 : 2023-03-05 23:19:45.522707
+    training generator: 2023-03-05 23:21:36.110646
+      epoch: 0 loss: -923.12646484375
+  iter_n_dis: 0 : 2023-03-05 23:21:36.123493
+    training discriminator: 2023-03-05 23:21:36.325550
+      epoch: 0 loss: 1.0021233260631561
+      epoch: 1 loss: 0.8000329583883286
+      epoch: 2 loss: 0.8017542064189911
+  iter_n_dis: 1 : 2023-03-05 23:21:36.889126
+    training discriminator: 2023-03-05 23:21:37.092297
+      epoch: 0 loss: 0.7330066561698914
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-05 23:21:37.685102
+    training discriminator: 2023-03-05 23:21:37.960954
+      epoch: 0 loss: 0.889875203371048
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 30 : 2023-03-05 23:21:38.541067
+    training generator: 2023-03-05 23:23:28.074351
+      epoch: 0 loss: -925.3983764648438
+  iter_n_dis: 0 : 2023-03-05 23:23:28.085219
+    training discriminator: 2023-03-05 23:23:28.287795
+      epoch: 0 loss: 0.917827308177948
+      epoch: 1 loss: 0.8142090141773224
+      epoch: 2 loss: 0.8092590272426605
+  iter_n_dis: 1 : 2023-03-05 23:23:28.839919
+    training discriminator: 2023-03-05 23:23:29.043691
+      epoch: 0 loss: 0.9089579582214355
+      epoch: 1 loss: 0.8065852969884872
+      epoch: 2 loss: 0.8077698051929474
+  iter_n_dis: 2 : 2023-03-05 23:23:29.599142
+    training discriminator: 2023-03-05 23:23:29.805350
+      epoch: 0 loss: 0.9319449365139008
+      epoch: 1 loss: 0.8034066259860992
+      epoch: 2 loss: 0.8053961545228958
+batch: 31 : 2023-03-05 23:23:30.357462
+    training generator: 2023-03-05 23:25:18.457437
+      epoch: 0 loss: -1500.39306640625
+  iter_n_dis: 0 : 2023-03-05 23:25:18.470151
+    training discriminator: 2023-03-05 23:25:18.672042
+      epoch: 0 loss: 0.6931471824645996
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 1 : 2023-03-05 23:25:19.269861
+    training discriminator: 2023-03-05 23:25:19.605543
+      epoch: 0 loss: 0.7759320139884949
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-05 23:25:20.167038
+    training discriminator: 2023-03-05 23:25:20.443605
+      epoch: 0 loss: 0.7623762488365173
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 32 : 2023-03-05 23:25:21.039073
+    training generator: 2023-03-05 23:27:14.935182
+      epoch: 0 loss: -927.714599609375
+  iter_n_dis: 0 : 2023-03-05 23:27:14.959159
+    training discriminator: 2023-03-05 23:27:15.165110
+      epoch: 0 loss: 0.9152659177780151
+      epoch: 1 loss: 0.8203109800815582
+      epoch: 2 loss: 0.8108560740947723
+  iter_n_dis: 1 : 2023-03-05 23:27:15.762576
+    training discriminator: 2023-03-05 23:27:16.029605
+      epoch: 0 loss: 0.6931471824645996
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-05 23:27:16.625992
+    training discriminator: 2023-03-05 23:27:16.894762
+      epoch: 0 loss: 0.8054870069026947
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 33 : 2023-03-05 23:27:17.500628
+    training generator: 2023-03-05 23:29:12.151235
+      epoch: 0 loss: -926.2386474609375
+  iter_n_dis: 0 : 2023-03-05 23:29:12.162296
+    training discriminator: 2023-03-05 23:29:12.407231
+      epoch: 0 loss: 0.9048106074333191
+      epoch: 1 loss: 0.7994472682476044
+      epoch: 2 loss: 0.7982155978679657
+  iter_n_dis: 1 : 2023-03-05 23:29:13.020444
+    training discriminator: 2023-03-05 23:29:13.267266
+      epoch: 0 loss: 0.8785097599029541
+      epoch: 1 loss: 0.8005132377147675
+      epoch: 2 loss: 0.8030760586261749
+  iter_n_dis: 2 : 2023-03-05 23:29:13.885298
+    training discriminator: 2023-03-05 23:29:14.173011
+      epoch: 0 loss: 0.9866054654121399
+      epoch: 1 loss: 0.8007597625255585
+      epoch: 2 loss: 0.7989411056041718
+batch: 34 : 2023-03-05 23:29:14.755908
+    training generator: 2023-03-05 23:31:08.643105
+      epoch: 0 loss: -1717.383544921875
+  iter_n_dis: 0 : 2023-03-05 23:31:08.654615
+    training discriminator: 2023-03-05 23:31:08.912431
+      epoch: 0 loss: 0.7222581207752228
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 1 : 2023-03-05 23:31:09.480667
+    training discriminator: 2023-03-05 23:31:09.710958
+      epoch: 0 loss: 0.6931471824645996
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-05 23:31:10.277149
+    training discriminator: 2023-03-05 23:31:10.496764
+      epoch: 0 loss: 0.878868043422699
+      epoch: 1 loss: 0.8245497047901154
+      epoch: 2 loss: 0.8138094693422318
+batch: 35 : 2023-03-05 23:31:11.114668
+    training generator: 2023-03-05 23:33:06.832981
+      epoch: 0 loss: -1435.8980712890625
+  iter_n_dis: 0 : 2023-03-05 23:33:06.862913
+    training discriminator: 2023-03-05 23:33:07.099708
+      epoch: 0 loss: 0.8753498196601868
+      epoch: 1 loss: 0.8186652511358261
+      epoch: 2 loss: 0.8106811344623566
+  iter_n_dis: 1 : 2023-03-05 23:33:07.681489
+    training discriminator: 2023-03-05 23:33:07.939263
+      epoch: 0 loss: 0.9216659963130951
+      epoch: 1 loss: 0.8110378831624985
+      epoch: 2 loss: 0.8089357912540436
+  iter_n_dis: 2 : 2023-03-05 23:33:08.541985
+    training discriminator: 2023-03-05 23:33:08.785224
+      epoch: 0 loss: 0.8828669190406799
+      epoch: 1 loss: 0.8775788843631744
+      epoch: 2 loss: 0.6931471824645996
+batch: 36 : 2023-03-05 23:33:09.420981
+    training generator: 2023-03-06 00:48:15.420675
+      epoch: 0 loss: -931.720947265625
+  iter_n_dis: 0 : 2023-03-06 00:48:15.433438
+    training discriminator: 2023-03-06 00:48:15.709258
+      epoch: 0 loss: 0.8333364427089691
+      epoch: 1 loss: 0.8066705018281937
+      epoch: 2 loss: 0.807251900434494
+  iter_n_dis: 1 : 2023-03-06 00:48:16.295813
+    training discriminator: 2023-03-06 00:48:16.596665
+      epoch: 0 loss: 0.864470362663269
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-06 00:48:17.238002
+    training discriminator: 2023-03-06 00:48:17.498241
+      epoch: 0 loss: 0.7365593314170837
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 37 : 2023-03-06 00:48:18.120961
+    training generator: 2023-03-06 00:50:20.515305
+      epoch: 0 loss: -931.0267333984375
+  iter_n_dis: 0 : 2023-03-06 00:50:20.526358
+    training discriminator: 2023-03-06 00:50:20.754698
+      epoch: 0 loss: 1.1106083989143372
+      epoch: 1 loss: 0.8041255474090576
+      epoch: 2 loss: 0.8066526055335999
+  iter_n_dis: 1 : 2023-03-06 00:50:21.334350
+    training discriminator: 2023-03-06 00:50:21.557616
+      epoch: 0 loss: 0.8950777947902679
+      epoch: 1 loss: 0.8240258246660233
+      epoch: 2 loss: 0.81131711602211
+  iter_n_dis: 2 : 2023-03-06 00:50:22.180305
+    training discriminator: 2023-03-06 00:50:22.464823
+      epoch: 0 loss: 0.80391925573349
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 38 : 2023-03-06 00:50:23.069579
+    training generator: 2023-03-06 00:52:23.868401
+      epoch: 0 loss: -931.29248046875
+  iter_n_dis: 0 : 2023-03-06 00:52:23.879411
+    training discriminator: 2023-03-06 00:52:24.198216
+      epoch: 0 loss: 0.8790608048439026
+      epoch: 1 loss: 0.8015730381011963
+      epoch: 2 loss: 0.8041040599346161
+  iter_n_dis: 1 : 2023-03-06 00:52:24.846304
+    training discriminator: 2023-03-06 00:52:25.075856
+      epoch: 0 loss: 0.9944753646850586
+      epoch: 1 loss: 0.7971218377351761
+      epoch: 2 loss: 0.7972985059022903
+  iter_n_dis: 2 : 2023-03-06 00:52:25.641196
+    training discriminator: 2023-03-06 00:52:25.879725
+      epoch: 0 loss: 1.0006105601787567
+      epoch: 1 loss: 0.810510665178299
+      epoch: 2 loss: 0.808744803071022
+batch: 39 : 2023-03-06 00:52:26.490956
+    training generator: 2023-03-06 00:54:15.495816
+      epoch: 0 loss: -1460.60791015625
+  iter_n_dis: 0 : 2023-03-06 00:54:15.506957
+    training discriminator: 2023-03-06 00:54:15.723427
+      epoch: 0 loss: 0.9448311030864716
+      epoch: 1 loss: 0.8024370521306992
+      epoch: 2 loss: 0.8053269237279892
+  iter_n_dis: 1 : 2023-03-06 00:54:16.310181
+    training discriminator: 2023-03-06 00:54:16.547182
+      epoch: 0 loss: 0.9327874779701233
+      epoch: 1 loss: 0.8026841580867767
+      epoch: 2 loss: 0.8055804669857025
+  iter_n_dis: 2 : 2023-03-06 00:54:17.115281
+    training discriminator: 2023-03-06 00:54:17.349730
+      epoch: 0 loss: 0.8259619474411011
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 40 : 2023-03-06 00:54:17.922198
+    training generator: 2023-03-06 00:56:08.162195
+      epoch: 0 loss: -935.0670166015625
+  iter_n_dis: 0 : 2023-03-06 00:56:08.174962
+    training discriminator: 2023-03-06 00:56:08.388765
+      epoch: 0 loss: 0.7065382599830627
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 1 : 2023-03-06 00:56:08.958469
+    training discriminator: 2023-03-06 00:56:09.227882
+      epoch: 0 loss: 0.8373761177062988
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-06 00:56:09.791955
+    training discriminator: 2023-03-06 00:56:10.068618
+      epoch: 0 loss: 0.6931471824645996
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 41 : 2023-03-06 00:56:10.651001
+    training generator: 2023-03-06 00:58:00.818133
+      epoch: 0 loss: -932.1026611328125
+  iter_n_dis: 0 : 2023-03-06 00:58:00.831069
+    training discriminator: 2023-03-06 00:58:01.046658
+      epoch: 0 loss: 0.9456213116645813
+      epoch: 1 loss: 0.797545924782753
+      epoch: 2 loss: 0.8009456545114517
+  iter_n_dis: 1 : 2023-03-06 00:58:01.618146
+    training discriminator: 2023-03-06 00:58:01.847912
+      epoch: 0 loss: 0.9502160847187042
+      epoch: 1 loss: 0.8228643983602524
+      epoch: 2 loss: 0.8116503059864044
+  iter_n_dis: 2 : 2023-03-06 00:58:02.447727
+    training discriminator: 2023-03-06 00:58:02.683117
+      epoch: 0 loss: 0.7349262535572052
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 42 : 2023-03-06 00:58:03.262446
+    training generator: 2023-03-06 00:59:53.298044
+      epoch: 0 loss: -934.9290161132812
+  iter_n_dis: 0 : 2023-03-06 00:59:53.309689
+    training discriminator: 2023-03-06 00:59:53.540873
+      epoch: 0 loss: 0.8741151094436646
+      epoch: 1 loss: 0.8267683982849121
+      epoch: 2 loss: 0.8144101798534393
+  iter_n_dis: 1 : 2023-03-06 00:59:54.174625
+    training discriminator: 2023-03-06 00:59:54.406991
+      epoch: 0 loss: 0.913472980260849
+      epoch: 1 loss: 0.8044589012861252
+      epoch: 2 loss: 0.8061688542366028
+  iter_n_dis: 2 : 2023-03-06 00:59:54.960784
+    training discriminator: 2023-03-06 00:59:55.236468
+      epoch: 0 loss: 0.9539830684661865
+      epoch: 1 loss: 0.8015958517789841
+      epoch: 2 loss: 0.8004521131515503
+batch: 43 : 2023-03-06 00:59:55.834628
+    training generator: 2023-03-06 01:01:47.207971
+      epoch: 0 loss: -1719.774658203125
+  iter_n_dis: 0 : 2023-03-06 01:01:47.219106
+    training discriminator: 2023-03-06 01:01:47.454672
+      epoch: 0 loss: 0.8985859155654907
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 1 : 2023-03-06 01:01:48.037665
+    training discriminator: 2023-03-06 01:01:48.274991
+      epoch: 0 loss: 0.7357567250728607
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-06 01:01:48.889554
+    training discriminator: 2023-03-06 01:01:49.117886
+      epoch: 0 loss: 0.7937896549701691
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 44 : 2023-03-06 01:01:49.690208
+    training generator: 2023-03-06 01:03:39.332161
+      epoch: 0 loss: -938.5283203125
+  iter_n_dis: 0 : 2023-03-06 01:03:39.343304
+    training discriminator: 2023-03-06 01:03:39.579038
+      epoch: 0 loss: 0.6931471824645996
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 1 : 2023-03-06 01:03:40.133431
+    training discriminator: 2023-03-06 01:03:40.355118
+      epoch: 0 loss: 0.9743026494979858
+      epoch: 1 loss: 0.8011042177677155
+      epoch: 2 loss: 0.8027877360582352
+  iter_n_dis: 2 : 2023-03-06 01:03:40.922078
+    training discriminator: 2023-03-06 01:03:41.169265
+      epoch: 0 loss: 0.9809610843658447
+      epoch: 1 loss: 0.7986455112695694
+      epoch: 2 loss: 0.800319105386734
+batch: 45 : 2023-03-06 01:03:41.751213
+    training generator: 2023-03-06 01:05:31.540464
+      epoch: 0 loss: -1583.7413330078125
+  iter_n_dis: 0 : 2023-03-06 01:05:31.553309
+    training discriminator: 2023-03-06 01:05:31.763363
+      epoch: 0 loss: 0.6931471824645996
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 1 : 2023-03-06 01:05:32.320848
+    training discriminator: 2023-03-06 01:05:32.550548
+      epoch: 0 loss: 0.8805941045284271
+      epoch: 1 loss: 0.9003196358680725
+      epoch: 2 loss: 0.833271712064743
+  iter_n_dis: 2 : 2023-03-06 01:05:33.100113
+    training discriminator: 2023-03-06 01:05:33.312626
+      epoch: 0 loss: 0.8989760875701904
+      epoch: 1 loss: 0.8875743746757507
+      epoch: 2 loss: 0.823962390422821
+batch: 46 : 2023-03-06 01:05:33.868555
+    training generator: 2023-03-06 01:07:25.158381
+      epoch: 0 loss: -1412.50732421875
+  iter_n_dis: 0 : 2023-03-06 01:07:25.169537
+    training discriminator: 2023-03-06 01:07:25.381193
+      epoch: 0 loss: 0.7122916579246521
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 1 : 2023-03-06 01:07:25.967146
+    training discriminator: 2023-03-06 01:07:26.235223
+      epoch: 0 loss: 0.9020467102527618
+      epoch: 1 loss: 0.7998353540897369
+      epoch: 2 loss: 0.8028399646282196
+  iter_n_dis: 2 : 2023-03-06 01:07:26.813346
+    training discriminator: 2023-03-06 01:07:27.039362
+      epoch: 0 loss: 0.73349928855896
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 47 : 2023-03-06 01:07:27.596761
+    training generator: 2023-03-06 01:09:17.033268
+      epoch: 0 loss: -936.8325805664062
+  iter_n_dis: 0 : 2023-03-06 01:09:17.044906
+    training discriminator: 2023-03-06 01:09:17.288778
+      epoch: 0 loss: 0.6931471824645996
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 1 : 2023-03-06 01:09:17.854723
+    training discriminator: 2023-03-06 01:09:18.105765
+      epoch: 0 loss: 0.9206120669841766
+      epoch: 1 loss: 0.8022410422563553
+      epoch: 2 loss: 0.8041438609361649
+  iter_n_dis: 2 : 2023-03-06 01:09:18.677497
+    training discriminator: 2023-03-06 01:09:18.935592
+      epoch: 0 loss: 0.9032921195030212
+      epoch: 1 loss: 0.8010993450880051
+      epoch: 2 loss: 0.8049210608005524
+batch: 48 : 2023-03-06 01:09:19.486588
+    training generator: 2023-03-06 01:11:10.680617
+      epoch: 0 loss: -1552.044921875
+  iter_n_dis: 0 : 2023-03-06 01:11:10.690548
+    training discriminator: 2023-03-06 01:11:10.975533
+      epoch: 0 loss: 0.893330991268158
+      epoch: 1 loss: 0.8034718930721283
+      epoch: 2 loss: 0.8055925518274307
+  iter_n_dis: 1 : 2023-03-06 01:11:11.529107
+    training discriminator: 2023-03-06 01:11:11.768066
+      epoch: 0 loss: 0.7274053692817688
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-06 01:11:12.326431
+    training discriminator: 2023-03-06 01:11:12.560213
+      epoch: 0 loss: 0.6931471824645996
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 49 : 2023-03-06 01:11:13.148012
+    training generator: 2023-03-06 01:13:03.972161
+      epoch: 0 loss: -941.81103515625
+  iter_n_dis: 0 : 2023-03-06 01:13:03.983198
+    training discriminator: 2023-03-06 01:13:04.199829
+      epoch: 0 loss: 0.7497994899749756
+      epoch: 1 loss: 0.7005025446414948
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 1 : 2023-03-06 01:13:04.782156
+    training discriminator: 2023-03-06 01:13:05.067196
+      epoch: 0 loss: 0.724237859249115
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-06 01:13:05.667793
+    training discriminator: 2023-03-06 01:13:05.897329
+      epoch: 0 loss: 0.6931471824645996
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 50 : 2023-03-06 01:13:06.460549
+    training generator: 2023-03-06 01:14:57.498816
+      epoch: 0 loss: -940.1340942382812
+  iter_n_dis: 0 : 2023-03-06 01:14:57.509797
+    training discriminator: 2023-03-06 01:14:57.759013
+      epoch: 0 loss: 0.9381109476089478
+      epoch: 1 loss: 0.8021449893712997
+      epoch: 2 loss: 0.8054982572793961
+  iter_n_dis: 1 : 2023-03-06 01:14:58.349052
+    training discriminator: 2023-03-06 01:14:58.584616
+      epoch: 0 loss: 0.9592115879058838
+      epoch: 1 loss: 0.8084246218204498
+      epoch: 2 loss: 0.8075477182865143
+  iter_n_dis: 2 : 2023-03-06 01:14:59.202772
+    training discriminator: 2023-03-06 01:14:59.427483
+      epoch: 0 loss: 1.0080934464931488
+      epoch: 1 loss: 0.7987580001354218
+      epoch: 2 loss: 0.8011025786399841
+batch: 51 : 2023-03-06 01:14:59.980683
+    training generator: 2023-03-06 01:16:50.183460
+      epoch: 0 loss: -1558.28125
+  iter_n_dis: 0 : 2023-03-06 01:16:50.196213
+    training discriminator: 2023-03-06 01:16:50.423300
+      epoch: 0 loss: 0.7900143563747406
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 1 : 2023-03-06 01:16:51.049628
+    training discriminator: 2023-03-06 01:16:51.260359
+      epoch: 0 loss: 0.9047241508960724
+      epoch: 1 loss: 0.8108297437429428
+      epoch: 2 loss: 0.8103013336658478
+  iter_n_dis: 2 : 2023-03-06 01:16:51.847227
+    training discriminator: 2023-03-06 01:16:52.065287
+      epoch: 0 loss: 0.9295710921287537
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 52 : 2023-03-06 01:16:52.650297
+    training generator: 2023-03-06 01:18:42.162723
+      epoch: 0 loss: -943.1351928710938
+  iter_n_dis: 0 : 2023-03-06 01:18:42.183889
+    training discriminator: 2023-03-06 01:18:42.393602
+      epoch: 0 loss: 0.9036450684070587
+      epoch: 1 loss: 0.8247034847736359
+      epoch: 2 loss: 0.8120555132627487
+  iter_n_dis: 1 : 2023-03-06 01:18:42.951753
+    training discriminator: 2023-03-06 01:18:43.218410
+      epoch: 0 loss: 0.9931644201278687
+      epoch: 1 loss: 0.7956173568964005
+      epoch: 2 loss: 0.7984263300895691
+  iter_n_dis: 2 : 2023-03-06 01:18:43.782810
+    training discriminator: 2023-03-06 01:18:44.071895
+      epoch: 0 loss: 0.7095794677734375
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 53 : 2023-03-06 01:18:44.623526
+    training generator: 2023-03-06 01:20:34.679660
+      epoch: 0 loss: -942.8043212890625
+  iter_n_dis: 0 : 2023-03-06 01:20:34.688763
+    training discriminator: 2023-03-06 01:20:34.919245
+      epoch: 0 loss: 0.8927005529403687
+      epoch: 1 loss: 0.8063587695360184
+      epoch: 2 loss: 0.8063974976539612
+  iter_n_dis: 1 : 2023-03-06 01:20:35.475297
+    training discriminator: 2023-03-06 01:20:35.745985
+      epoch: 0 loss: 0.90004962682724
+      epoch: 1 loss: 0.8773608505725861
+      epoch: 2 loss: 0.6953365802764893
+  iter_n_dis: 2 : 2023-03-06 01:20:36.298434
+    training discriminator: 2023-03-06 01:20:36.525084
+      epoch: 0 loss: 0.6930897831916809
+      epoch: 1 loss: 0.7098143994808197
+      epoch: 2 loss: 0.6931471824645996
+batch: 54 : 2023-03-06 01:20:37.085783
+    training generator: 2023-03-06 01:22:27.796406
+      epoch: 0 loss: -943.9049682617188
+  iter_n_dis: 0 : 2023-03-06 01:22:27.807488
+    training discriminator: 2023-03-06 01:22:28.031738
+      epoch: 0 loss: 0.925649106502533
+      epoch: 1 loss: 0.8112981617450714
+      epoch: 2 loss: 0.8093226701021194
+  iter_n_dis: 1 : 2023-03-06 01:22:28.615455
+    training discriminator: 2023-03-06 01:22:28.832814
+      epoch: 0 loss: 0.7291611433029175
+      epoch: 1 loss: 0.70777827501297
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-06 01:22:29.411105
+    training discriminator: 2023-03-06 01:22:29.620542
+      epoch: 0 loss: 0.7024986743927002
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 55 : 2023-03-06 01:22:30.213642
+    training generator: 2023-03-06 01:24:20.944118
+      epoch: 0 loss: -943.21630859375
+  iter_n_dis: 0 : 2023-03-06 01:24:20.956762
+    training discriminator: 2023-03-06 01:24:21.197137
+      epoch: 0 loss: 0.7410618364810944
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 1 : 2023-03-06 01:24:21.776014
+    training discriminator: 2023-03-06 01:24:22.005603
+      epoch: 0 loss: 0.9504947066307068
+      epoch: 1 loss: 0.8075208365917206
+      epoch: 2 loss: 0.8083198517560959
+  iter_n_dis: 2 : 2023-03-06 01:24:22.559671
+    training discriminator: 2023-03-06 01:24:22.830228
+      epoch: 0 loss: 0.9806929230690002
+      epoch: 1 loss: 0.7956276386976242
+      epoch: 2 loss: 0.7943131923675537
+batch: 56 : 2023-03-06 01:24:23.400315
+    training generator: 2023-03-06 01:26:13.404268
+      epoch: 0 loss: -1657.9803466796875
+  iter_n_dis: 0 : 2023-03-06 01:26:13.415399
+    training discriminator: 2023-03-06 01:26:13.680399
+      epoch: 0 loss: 0.9252709448337555
+      epoch: 1 loss: 0.8166742771863937
+      epoch: 2 loss: 0.8102066516876221
+  iter_n_dis: 1 : 2023-03-06 01:26:14.279903
+    training discriminator: 2023-03-06 01:26:14.511989
+      epoch: 0 loss: 0.7307332456111908
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-06 01:26:15.102892
+    training discriminator: 2023-03-06 01:26:15.343140
+      epoch: 0 loss: 0.9376091957092285
+      epoch: 1 loss: 0.8222461640834808
+      epoch: 2 loss: 0.8115134537220001
+batch: 57 : 2023-03-06 01:26:15.930831
+    training generator: 2023-03-06 01:28:05.587622
+      epoch: 0 loss: -1546.4132080078125
+  iter_n_dis: 0 : 2023-03-06 01:28:05.617103
+    training discriminator: 2023-03-06 01:28:05.858063
+      epoch: 0 loss: 0.9808843731880188
+      epoch: 1 loss: 0.8062105625867844
+      epoch: 2 loss: 0.8066529333591461
+  iter_n_dis: 1 : 2023-03-06 01:28:06.412183
+    training discriminator: 2023-03-06 01:28:06.680513
+      epoch: 0 loss: 0.6933997571468353
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-06 01:28:07.261961
+    training discriminator: 2023-03-06 01:28:07.494811
+      epoch: 0 loss: 0.7218889594078064
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 58 : 2023-03-06 01:28:08.063573
+    training generator: 2023-03-06 01:29:57.185189
+      epoch: 0 loss: -945.9954833984375
+  iter_n_dis: 0 : 2023-03-06 01:29:57.196190
+    training discriminator: 2023-03-06 01:29:57.426515
+      epoch: 0 loss: 0.6931471824645996
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 1 : 2023-03-06 01:29:57.980284
+    training discriminator: 2023-03-06 01:29:58.205209
+      epoch: 0 loss: 0.9666447341442108
+      epoch: 1 loss: 0.7953442633152008
+      epoch: 2 loss: 0.7963793277740479
+  iter_n_dis: 2 : 2023-03-06 01:29:58.806132
+    training discriminator: 2023-03-06 01:29:59.018048
+      epoch: 0 loss: 0.7055906057357788
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 59 : 2023-03-06 01:29:59.582542
+    training generator: 2023-03-06 01:31:50.269774
+      epoch: 0 loss: -943.5679931640625
+  iter_n_dis: 0 : 2023-03-06 01:31:50.290820
+    training discriminator: 2023-03-06 01:31:50.500761
+      epoch: 0 loss: 0.6943751275539398
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 1 : 2023-03-06 01:31:51.079028
+    training discriminator: 2023-03-06 01:31:51.289467
+      epoch: 0 loss: 0.9307557344436646
+      epoch: 1 loss: 0.7979446351528168
+      epoch: 2 loss: 0.7978631258010864
+  iter_n_dis: 2 : 2023-03-06 01:31:51.863956
+    training discriminator: 2023-03-06 01:31:52.095040
+      epoch: 0 loss: 0.6931471824645996
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 60 : 2023-03-06 01:31:52.658542
+    training generator: 2023-03-06 01:33:42.905836
+      epoch: 0 loss: -949.626953125
+  iter_n_dis: 0 : 2023-03-06 01:33:42.916840
+    training discriminator: 2023-03-06 01:33:43.142055
+      epoch: 0 loss: 0.9113683700561523
+      epoch: 1 loss: 0.8052577972412109
+      epoch: 2 loss: 0.8061513602733612
+  iter_n_dis: 1 : 2023-03-06 01:33:43.715205
+    training discriminator: 2023-03-06 01:33:43.930377
+      epoch: 0 loss: 0.8598197996616364
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-06 01:33:44.503341
+    training discriminator: 2023-03-06 01:33:44.754388
+      epoch: 0 loss: 0.7377790808677673
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 61 : 2023-03-06 01:33:45.357521
+    training generator: 2023-03-06 01:35:37.656519
+      epoch: 0 loss: -948.4451904296875
+  iter_n_dis: 0 : 2023-03-06 01:35:37.669464
+    training discriminator: 2023-03-06 01:35:37.884858
+      epoch: 0 loss: 0.7035670876502991
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 1 : 2023-03-06 01:35:38.455932
+    training discriminator: 2023-03-06 01:35:38.688082
+      epoch: 0 loss: 0.6931471824645996
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-06 01:35:39.242958
+    training discriminator: 2023-03-06 01:35:39.483707
+      epoch: 0 loss: 0.6935640573501587
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 62 : 2023-03-06 01:35:40.090061
+    training generator: 2023-03-06 01:37:30.096186
+      epoch: 0 loss: -945.9652099609375
+  iter_n_dis: 0 : 2023-03-06 01:37:30.107174
+    training discriminator: 2023-03-06 01:37:30.343085
+      epoch: 0 loss: 0.6926127672195435
+      epoch: 1 loss: 0.740384429693222
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 1 : 2023-03-06 01:37:30.926305
+    training discriminator: 2023-03-06 01:37:31.179567
+      epoch: 0 loss: 0.9291633367538452
+      epoch: 1 loss: 0.8243005275726318
+      epoch: 2 loss: 0.8086968809366226
+  iter_n_dis: 2 : 2023-03-06 01:37:31.752771
+    training discriminator: 2023-03-06 01:37:32.007074
+      epoch: 0 loss: 0.8631705641746521
+      epoch: 1 loss: 0.8121899217367172
+      epoch: 2 loss: 0.8090402781963348
+batch: 63 : 2023-03-06 01:37:32.614033
+    training generator: 2023-03-06 01:39:23.491057
+      epoch: 0 loss: -1474.27001953125
+  iter_n_dis: 0 : 2023-03-06 01:39:23.502182
+    training discriminator: 2023-03-06 01:39:23.721801
+      epoch: 0 loss: 0.6931471824645996
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 1 : 2023-03-06 01:39:24.288962
+    training discriminator: 2023-03-06 01:39:24.508817
+      epoch: 0 loss: 0.894088864326477
+      epoch: 1 loss: 0.8020172417163849
+      epoch: 2 loss: 0.8044030368328094
+  iter_n_dis: 2 : 2023-03-06 01:39:25.094748
+    training discriminator: 2023-03-06 01:39:25.321220
+      epoch: 0 loss: 0.6931471824645996
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 64 : 2023-03-06 01:39:25.900295
+    training generator: 2023-03-06 01:41:15.443562
+      epoch: 0 loss: -950.5069580078125
+  iter_n_dis: 0 : 2023-03-06 01:41:15.454449
+    training discriminator: 2023-03-06 01:41:15.695595
+      epoch: 0 loss: 0.6931471824645996
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 1 : 2023-03-06 01:41:16.290709
+    training discriminator: 2023-03-06 01:41:16.505703
+      epoch: 0 loss: 0.8951619863510132
+      epoch: 1 loss: 0.8336866497993469
+      epoch: 2 loss: 0.8168546110391617
+  iter_n_dis: 2 : 2023-03-06 01:41:17.072601
+    training discriminator: 2023-03-06 01:41:17.308585
+      epoch: 0 loss: 0.7607630491256714
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 65 : 2023-03-06 01:41:17.886923
+    training generator: 2023-03-06 01:43:08.625912
+      epoch: 0 loss: -949.1668090820312
+  iter_n_dis: 0 : 2023-03-06 01:43:08.636885
+    training discriminator: 2023-03-06 01:43:08.871801
+      epoch: 0 loss: 0.7303666174411774
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 1 : 2023-03-06 01:43:09.466615
+    training discriminator: 2023-03-06 01:43:09.700278
+      epoch: 0 loss: 0.8731174170970917
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-06 01:43:10.290531
+    training discriminator: 2023-03-06 01:43:10.532576
+      epoch: 0 loss: 0.8284547030925751
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 66 : 2023-03-06 01:43:11.100724
+    training generator: 2023-03-06 01:45:01.448381
+      epoch: 0 loss: -950.962646484375
+  iter_n_dis: 0 : 2023-03-06 01:45:01.458936
+    training discriminator: 2023-03-06 01:45:01.692363
+      epoch: 0 loss: 0.6954568326473236
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 1 : 2023-03-06 01:45:02.284825
+    training discriminator: 2023-03-06 01:45:02.542201
+      epoch: 0 loss: 0.7518296241760254
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-06 01:45:03.118068
+    training discriminator: 2023-03-06 01:45:03.352073
+      epoch: 0 loss: 0.9045232236385345
+      epoch: 1 loss: 0.9324579238891602
+      epoch: 2 loss: 0.7998136878013611
+batch: 67 : 2023-03-06 01:45:03.921893
+    training generator: 2023-03-06 01:46:54.414993
+      epoch: 0 loss: -1592.061767578125
+  iter_n_dis: 0 : 2023-03-06 01:46:54.427784
+    training discriminator: 2023-03-06 01:46:54.637347
+      epoch: 0 loss: 0.9445796608924866
+      epoch: 1 loss: 0.8009586781263351
+      epoch: 2 loss: 0.8055959045886993
+  iter_n_dis: 1 : 2023-03-06 01:46:55.219219
+    training discriminator: 2023-03-06 01:46:55.498717
+      epoch: 0 loss: 0.7217783331871033
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-06 01:46:56.073357
+    training discriminator: 2023-03-06 01:46:56.298834
+      epoch: 0 loss: 0.9225156903266907
+      epoch: 1 loss: 0.8116419315338135
+      epoch: 2 loss: 0.8092727959156036
+batch: 68 : 2023-03-06 01:46:56.908201
+    training generator: 2023-03-06 01:48:48.236855
+      epoch: 0 loss: -1545.446044921875
+  iter_n_dis: 0 : 2023-03-06 01:48:48.247748
+    training discriminator: 2023-03-06 01:48:48.478332
+      epoch: 0 loss: 0.9474387764930725
+      epoch: 1 loss: 0.8038782775402069
+      epoch: 2 loss: 0.8058025389909744
+  iter_n_dis: 1 : 2023-03-06 01:48:49.080583
+    training discriminator: 2023-03-06 01:48:49.311451
+      epoch: 0 loss: 0.7281200587749481
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-06 01:48:49.897665
+    training discriminator: 2023-03-06 01:48:50.155692
+      epoch: 0 loss: 0.6931471824645996
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 69 : 2023-03-06 01:48:50.747792
+    training generator: 2023-03-06 01:50:42.404795
+      epoch: 0 loss: -955.4571533203125
+  iter_n_dis: 0 : 2023-03-06 01:50:42.415982
+    training discriminator: 2023-03-06 01:50:42.654127
+      epoch: 0 loss: 1.0657697021961212
+      epoch: 1 loss: 0.8056763112545013
+      epoch: 2 loss: 0.8062343299388885
+  iter_n_dis: 1 : 2023-03-06 01:50:43.205887
+    training discriminator: 2023-03-06 01:50:43.428017
+      epoch: 0 loss: 0.7177076637744904
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-06 01:50:44.006609
+    training discriminator: 2023-03-06 01:50:44.238401
+      epoch: 0 loss: 0.8133785128593445
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 70 : 2023-03-06 01:50:44.839777
+    training generator: 2023-03-06 10:19:33.676264
+      epoch: 0 loss: -954.6921997070312
+  iter_n_dis: 0 : 2023-03-06 10:19:33.687391
+    training discriminator: 2023-03-06 10:19:33.939564
+      epoch: 0 loss: 0.6931471824645996
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 1 : 2023-03-06 10:19:34.524758
+    training discriminator: 2023-03-06 10:19:34.811471
+      epoch: 0 loss: 0.8670119941234589
+      epoch: 1 loss: 0.8349969685077667
+      epoch: 2 loss: 0.8185496628284454
+  iter_n_dis: 2 : 2023-03-06 10:19:35.471923
+    training discriminator: 2023-03-06 10:19:35.703997
+      epoch: 0 loss: 0.7055979073047638
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 71 : 2023-03-06 10:19:36.323121
+    training generator: 2023-03-06 10:21:51.953505
+      epoch: 0 loss: -953.522705078125
+  iter_n_dis: 0 : 2023-03-06 10:21:51.965765
+    training discriminator: 2023-03-06 10:21:52.315465
+      epoch: 0 loss: 0.9383619725704193
+      epoch: 1 loss: 0.8055761754512787
+      epoch: 2 loss: 0.8072704374790192
+  iter_n_dis: 1 : 2023-03-06 10:21:52.955261
+    training discriminator: 2023-03-06 10:21:53.204854
+      epoch: 0 loss: 0.8029204905033112
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-06 10:21:53.865008
+    training discriminator: 2023-03-06 10:21:54.133834
+      epoch: 0 loss: 0.8728444874286652
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 72 : 2023-03-06 10:21:54.840311
+    training generator: 2023-03-06 10:23:59.740047
+      epoch: 0 loss: -954.114501953125
+  iter_n_dis: 0 : 2023-03-06 10:23:59.752189
+    training discriminator: 2023-03-06 10:24:00.050981
+      epoch: 0 loss: 0.9545636177062988
+      epoch: 1 loss: 0.8661926984786987
+      epoch: 2 loss: 0.8111563622951508
+  iter_n_dis: 1 : 2023-03-06 10:24:00.764101
+    training discriminator: 2023-03-06 10:24:01.078497
+      epoch: 0 loss: 0.8840583860874176
+      epoch: 1 loss: 0.804629772901535
+      epoch: 2 loss: 0.806379035115242
+  iter_n_dis: 2 : 2023-03-06 10:24:01.814404
+    training discriminator: 2023-03-06 10:24:02.120955
+      epoch: 0 loss: 0.6954855024814606
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 73 : 2023-03-06 10:24:02.841546
+    training generator: 2023-03-06 10:26:15.132792
+      epoch: 0 loss: -954.958984375
+  iter_n_dis: 0 : 2023-03-06 10:26:15.144082
+    training discriminator: 2023-03-06 10:26:15.376668
+      epoch: 0 loss: 0.939840167760849
+      epoch: 1 loss: 0.8033399879932404
+      epoch: 2 loss: 0.8062206506729126
+  iter_n_dis: 1 : 2023-03-06 10:26:15.971167
+    training discriminator: 2023-03-06 10:26:16.275530
+      epoch: 0 loss: 0.6944076120853424
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-06 10:26:16.896083
+    training discriminator: 2023-03-06 10:26:17.132067
+      epoch: 0 loss: 0.72213014960289
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 74 : 2023-03-06 10:26:17.710228
+    training generator: 2023-03-06 10:28:31.970944
+      epoch: 0 loss: -956.3854370117188
+  iter_n_dis: 0 : 2023-03-06 10:28:31.984739
+    training discriminator: 2023-03-06 10:28:32.245771
+      epoch: 0 loss: 0.6989359259605408
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 1 : 2023-03-06 10:28:32.812827
+    training discriminator: 2023-03-06 10:28:33.088586
+      epoch: 0 loss: 0.9228014051914215
+      epoch: 1 loss: 0.80575892329216
+      epoch: 2 loss: 0.8070932924747467
+  iter_n_dis: 2 : 2023-03-06 10:28:33.677989
+    training discriminator: 2023-03-06 10:28:33.965992
+      epoch: 0 loss: 0.6931471824645996
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 75 : 2023-03-06 10:28:34.592444
+    training generator: 2023-03-06 10:30:46.162724
+      epoch: 0 loss: -959.730712890625
+  iter_n_dis: 0 : 2023-03-06 10:30:46.173620
+    training discriminator: 2023-03-06 10:30:46.395009
+      epoch: 0 loss: 0.8761634528636932
+      epoch: 1 loss: 0.8122595250606537
+      epoch: 2 loss: 0.8082710802555084
+  iter_n_dis: 1 : 2023-03-06 10:30:47.001833
+    training discriminator: 2023-03-06 10:30:47.293674
+      epoch: 0 loss: 0.6931471824645996
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-06 10:30:47.993641
+    training discriminator: 2023-03-06 10:30:48.292273
+      epoch: 0 loss: 0.970357745885849
+      epoch: 1 loss: 0.7975853383541107
+      epoch: 2 loss: 0.795755922794342
+batch: 76 : 2023-03-06 10:30:48.958093
+    training generator: 2023-03-06 10:33:12.535396
+      epoch: 0 loss: -1698.226806640625
+  iter_n_dis: 0 : 2023-03-06 10:33:12.549063
+    training discriminator: 2023-03-06 10:33:12.819740
+      epoch: 0 loss: 0.8909089267253876
+      epoch: 1 loss: 0.8194978535175323
+      epoch: 2 loss: 0.8110306560993195
+  iter_n_dis: 1 : 2023-03-06 10:33:13.409705
+    training discriminator: 2023-03-06 10:33:13.634733
+      epoch: 0 loss: 0.9758800864219666
+      epoch: 1 loss: 0.797095537185669
+      epoch: 2 loss: 0.800551101565361
+  iter_n_dis: 2 : 2023-03-06 10:33:14.254289
+    training discriminator: 2023-03-06 10:33:14.464141
+      epoch: 0 loss: 0.8965093493461609
+      epoch: 1 loss: 0.7542039752006531
+      epoch: 2 loss: 0.6931471824645996
+batch: 77 : 2023-03-06 10:33:15.108494
+    training generator: 2023-03-06 10:35:28.877500
+      epoch: 0 loss: -956.876708984375
+  iter_n_dis: 0 : 2023-03-06 10:35:28.890310
+    training discriminator: 2023-03-06 10:35:29.112251
+      epoch: 0 loss: 0.7373362183570862
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 1 : 2023-03-06 10:35:29.697081
+    training discriminator: 2023-03-06 10:35:29.901086
+      epoch: 0 loss: 0.6931471824645996
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-06 10:35:30.529493
+    training discriminator: 2023-03-06 10:35:30.736479
+      epoch: 0 loss: 0.7331972718238831
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 78 : 2023-03-06 10:35:31.378534
+    training generator: 2023-03-06 10:37:42.317676
+      epoch: 0 loss: -956.9656982421875
+  iter_n_dis: 0 : 2023-03-06 10:37:42.344067
+    training discriminator: 2023-03-06 10:37:42.648105
+      epoch: 0 loss: 0.8034853637218475
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 1 : 2023-03-06 10:37:43.260324
+    training discriminator: 2023-03-06 10:37:43.463240
+      epoch: 0 loss: 0.9039666056632996
+      epoch: 1 loss: 0.8837306201457977
+      epoch: 2 loss: 0.8112104535102844
+  iter_n_dis: 2 : 2023-03-06 10:37:44.064513
+    training discriminator: 2023-03-06 10:37:44.266381
+      epoch: 0 loss: 0.7087758779525757
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 79 : 2023-03-06 10:37:44.913012
+    training generator: 2023-03-06 10:39:48.834892
+      epoch: 0 loss: -957.95068359375
+  iter_n_dis: 0 : 2023-03-06 10:39:48.845926
+    training discriminator: 2023-03-06 10:39:49.060762
+      epoch: 0 loss: 0.9907031357288361
+      epoch: 1 loss: 0.7959966361522675
+      epoch: 2 loss: 0.7984617203474045
+  iter_n_dis: 1 : 2023-03-06 10:39:49.661649
+    training discriminator: 2023-03-06 10:39:49.907565
+      epoch: 0 loss: 0.7782989144325256
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-06 10:39:50.569959
+    training discriminator: 2023-03-06 10:39:50.856511
+      epoch: 0 loss: 0.7114718556404114
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 80 : 2023-03-06 10:39:51.498230
+    training generator: 2023-03-06 10:41:52.398894
+      epoch: 0 loss: -962.0472412109375
+  iter_n_dis: 0 : 2023-03-06 10:41:52.413871
+    training discriminator: 2023-03-06 10:41:52.727385
+      epoch: 0 loss: 0.9441603124141693
+      epoch: 1 loss: 0.8045705854892731
+      epoch: 2 loss: 0.8071534931659698
+  iter_n_dis: 1 : 2023-03-06 10:41:53.535984
+    training discriminator: 2023-03-06 10:41:53.795478
+      epoch: 0 loss: 0.8604344725608826
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-06 10:41:54.421565
+    training discriminator: 2023-03-06 10:41:54.680204
+      epoch: 0 loss: 0.6931471824645996
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 81 : 2023-03-06 10:41:55.300663
+    training generator: 2023-03-06 10:43:58.556015
+      epoch: 0 loss: -960.8712158203125
+  iter_n_dis: 0 : 2023-03-06 10:43:58.569844
+    training discriminator: 2023-03-06 10:43:58.869144
+      epoch: 0 loss: 0.865545928478241
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 1 : 2023-03-06 10:43:59.604456
+    training discriminator: 2023-03-06 10:43:59.890566
+      epoch: 0 loss: 0.941074013710022
+      epoch: 1 loss: 0.8035170435905457
+      epoch: 2 loss: 0.8051809072494507
+  iter_n_dis: 2 : 2023-03-06 10:44:00.606575
+    training discriminator: 2023-03-06 10:44:00.909304
+      epoch: 0 loss: 0.6931471824645996
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 82 : 2023-03-06 10:44:01.588205
+    training generator: 2023-03-06 10:45:59.311258
+      epoch: 0 loss: -958.5695190429688
+  iter_n_dis: 0 : 2023-03-06 10:45:59.342260
+    training discriminator: 2023-03-06 10:45:59.649998
+      epoch: 0 loss: 0.9181109368801117
+      epoch: 1 loss: 0.828689381480217
+      epoch: 2 loss: 0.8129332512617111
+  iter_n_dis: 1 : 2023-03-06 10:46:00.395021
+    training discriminator: 2023-03-06 10:46:00.669588
+      epoch: 0 loss: 0.6931471824645996
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-06 10:46:01.295849
+    training discriminator: 2023-03-06 10:46:01.526300
+      epoch: 0 loss: 0.7547978460788727
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 83 : 2023-03-06 10:46:02.109242
+    training generator: 2023-03-06 10:48:09.372062
+      epoch: 0 loss: -963.1148681640625
+  iter_n_dis: 0 : 2023-03-06 10:48:09.385125
+    training discriminator: 2023-03-06 10:48:09.610246
+      epoch: 0 loss: 0.9510386884212494
+      epoch: 1 loss: 0.8001193702220917
+      epoch: 2 loss: 0.7998773008584976
+  iter_n_dis: 1 : 2023-03-06 10:48:10.228603
+    training discriminator: 2023-03-06 10:48:10.489271
+      epoch: 0 loss: 0.7510150074958801
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-06 10:48:11.100243
+    training discriminator: 2023-03-06 10:48:11.320926
+      epoch: 0 loss: 0.6931471824645996
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 84 : 2023-03-06 10:48:11.905595
+    training generator: 2023-03-06 10:50:11.380668
+      epoch: 0 loss: -959.7769165039062
+  iter_n_dis: 0 : 2023-03-06 10:50:11.391890
+    training discriminator: 2023-03-06 10:50:11.652014
+      epoch: 0 loss: 1.0513797998428345
+      epoch: 1 loss: 0.821063831448555
+      epoch: 2 loss: 0.8101576119661331
+  iter_n_dis: 1 : 2023-03-06 10:50:12.221818
+    training discriminator: 2023-03-06 10:50:12.463685
+      epoch: 0 loss: 0.8963142037391663
+      epoch: 1 loss: 0.8083276748657227
+      epoch: 2 loss: 0.8083405792713165
+  iter_n_dis: 2 : 2023-03-06 10:50:13.116007
+    training discriminator: 2023-03-06 10:50:13.346455
+      epoch: 0 loss: 0.7470846176147461
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 85 : 2023-03-06 10:50:13.999751
+    training generator: 2023-03-06 10:52:11.870897
+      epoch: 0 loss: -961.2316284179688
+  iter_n_dis: 0 : 2023-03-06 10:52:11.894488
+    training discriminator: 2023-03-06 10:52:12.113731
+      epoch: 0 loss: 0.8926372528076172
+      epoch: 1 loss: 0.8145450055599213
+      epoch: 2 loss: 0.8071471154689789
+  iter_n_dis: 1 : 2023-03-06 10:52:12.767707
+    training discriminator: 2023-03-06 10:52:13.014112
+      epoch: 0 loss: 0.7651833891868591
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-06 10:52:13.630114
+    training discriminator: 2023-03-06 10:52:13.877411
+      epoch: 0 loss: 0.7208256125450134
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 86 : 2023-03-06 10:52:14.498772
+    training generator: 2023-03-06 10:54:16.181136
+      epoch: 0 loss: -964.66162109375
+  iter_n_dis: 0 : 2023-03-06 10:54:16.194177
+    training discriminator: 2023-03-06 10:54:16.482188
+      epoch: 0 loss: 0.894770473241806
+      epoch: 1 loss: 0.8259366452693939
+      epoch: 2 loss: 0.8120901882648468
+  iter_n_dis: 1 : 2023-03-06 10:54:17.071167
+    training discriminator: 2023-03-06 10:54:17.308183
+      epoch: 0 loss: 0.9446113109588623
+      epoch: 1 loss: 0.8199333995580673
+      epoch: 2 loss: 0.8111281841993332
+  iter_n_dis: 2 : 2023-03-06 10:54:17.908479
+    training discriminator: 2023-03-06 10:54:18.140401
+      epoch: 0 loss: 0.9049033224582672
+      epoch: 1 loss: 0.8021187037229538
+      epoch: 2 loss: 0.8057632893323898
+batch: 87 : 2023-03-06 10:54:18.756755
+    training generator: 2023-03-06 10:56:21.263936
+      epoch: 0 loss: -1600.320068359375
+  iter_n_dis: 0 : 2023-03-06 10:56:21.291046
+    training discriminator: 2023-03-06 10:56:21.562020
+      epoch: 0 loss: 0.7230600416660309
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 1 : 2023-03-06 10:56:22.210687
+    training discriminator: 2023-03-06 10:56:22.483447
+      epoch: 0 loss: 0.95621058344841
+      epoch: 1 loss: 0.8393515646457672
+      epoch: 2 loss: 0.8136252462863922
+  iter_n_dis: 2 : 2023-03-06 10:56:23.110578
+    training discriminator: 2023-03-06 10:56:23.346554
+      epoch: 0 loss: 0.9776625037193298
+      epoch: 1 loss: 0.7974798679351807
+      epoch: 2 loss: 0.799592599272728
+batch: 88 : 2023-03-06 10:56:23.978399
+    training generator: 2023-03-06 10:58:41.573970
+      epoch: 0 loss: -1617.978759765625
+  iter_n_dis: 0 : 2023-03-06 10:58:41.587697
+    training discriminator: 2023-03-06 10:58:41.809152
+      epoch: 0 loss: 0.9002915620803833
+      epoch: 1 loss: 0.8145411759614944
+      epoch: 2 loss: 0.8106254488229752
+  iter_n_dis: 1 : 2023-03-06 10:58:42.364551
+    training discriminator: 2023-03-06 10:58:42.603911
+      epoch: 0 loss: 0.8393777012825012
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-06 10:58:43.166102
+    training discriminator: 2023-03-06 10:58:43.380501
+      epoch: 0 loss: 0.6931471824645996
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 89 : 2023-03-06 10:58:43.995289
+    training generator: 2023-03-06 11:00:56.816324
+      epoch: 0 loss: -964.605224609375
+  iter_n_dis: 0 : 2023-03-06 11:00:56.829175
+    training discriminator: 2023-03-06 11:00:57.064321
+      epoch: 0 loss: 0.9585663974285126
+      epoch: 1 loss: 0.8339184820652008
+      epoch: 2 loss: 0.812350332736969
+  iter_n_dis: 1 : 2023-03-06 11:00:57.725497
+    training discriminator: 2023-03-06 11:00:58.044124
+      epoch: 0 loss: 0.6931168437004089
+      epoch: 1 loss: 0.7116288244724274
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-06 11:00:58.761066
+    training discriminator: 2023-03-06 11:00:59.053042
+      epoch: 0 loss: 0.8960373401641846
+      epoch: 1 loss: 0.81561379134655
+      epoch: 2 loss: 0.8099765479564667
+batch: 90 : 2023-03-06 11:00:59.643918
+    training generator: 2023-03-06 11:03:04.737050
+      epoch: 0 loss: -1517.6585693359375
+  iter_n_dis: 0 : 2023-03-06 11:03:04.750151
+    training discriminator: 2023-03-06 11:03:05.103979
+      epoch: 0 loss: 0.9040305614471436
+      epoch: 1 loss: 0.9233225286006927
+      epoch: 2 loss: 0.8001007288694382
+  iter_n_dis: 1 : 2023-03-06 11:03:05.863568
+    training discriminator: 2023-03-06 11:03:06.172348
+      epoch: 0 loss: 0.9210708141326904
+      epoch: 1 loss: 0.8117408156394958
+      epoch: 2 loss: 0.8104418814182281
+  iter_n_dis: 2 : 2023-03-06 11:03:06.783658
+    training discriminator: 2023-03-06 11:03:07.015673
+      epoch: 0 loss: 0.6931471824645996
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 91 : 2023-03-06 11:03:07.711928
+    training generator: 2023-03-06 11:05:20.793863
+      epoch: 0 loss: -968.390380859375
+  iter_n_dis: 0 : 2023-03-06 11:05:20.817309
+    training discriminator: 2023-03-06 11:05:21.043380
+      epoch: 0 loss: 0.9397789239883423
+      epoch: 1 loss: 0.8232605755329132
+      epoch: 2 loss: 0.8116766214370728
+  iter_n_dis: 1 : 2023-03-06 11:05:21.603866
+    training discriminator: 2023-03-06 11:05:21.827161
+      epoch: 0 loss: 0.6931471824645996
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-06 11:05:22.401217
+    training discriminator: 2023-03-06 11:05:22.633924
+      epoch: 0 loss: 0.6931471824645996
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 92 : 2023-03-06 11:05:23.222125
+    training generator: 2023-03-06 11:07:42.705123
+      epoch: 0 loss: -969.0167236328125
+  iter_n_dis: 0 : 2023-03-06 11:07:42.720432
+    training discriminator: 2023-03-06 11:07:43.068888
+      epoch: 0 loss: 0.6931471824645996
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 1 : 2023-03-06 11:07:43.688473
+    training discriminator: 2023-03-06 11:07:44.077509
+      epoch: 0 loss: 0.9629198312759399
+      epoch: 1 loss: 0.8004379272460938
+      epoch: 2 loss: 0.8021064102649689
+  iter_n_dis: 2 : 2023-03-06 11:07:44.685332
+    training discriminator: 2023-03-06 11:07:44.912073
+      epoch: 0 loss: 0.6931471824645996
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 93 : 2023-03-06 11:07:45.499714
+    training generator: 2023-03-06 11:09:52.691200
+      epoch: 0 loss: -970.3863525390625
+  iter_n_dis: 0 : 2023-03-06 11:09:52.701946
+    training discriminator: 2023-03-06 11:09:53.008390
+      epoch: 0 loss: 0.9276564717292786
+      epoch: 1 loss: 0.8036259859800339
+      epoch: 2 loss: 0.8048586547374725
+  iter_n_dis: 1 : 2023-03-06 11:09:53.611619
+    training discriminator: 2023-03-06 11:09:53.862540
+      epoch: 0 loss: 0.7917998731136322
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-06 11:09:54.479686
+    training discriminator: 2023-03-06 11:09:54.707508
+      epoch: 0 loss: 0.9145939946174622
+      epoch: 1 loss: 0.8391402959823608
+      epoch: 2 loss: 0.8091816604137421
+batch: 94 : 2023-03-06 11:09:55.294289
+    training generator: 2023-03-06 11:11:56.061115
+      epoch: 0 loss: -1508.428466796875
+  iter_n_dis: 0 : 2023-03-06 11:11:56.072180
+    training discriminator: 2023-03-06 11:11:56.348527
+      epoch: 0 loss: 0.6931471824645996
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 1 : 2023-03-06 11:11:56.913688
+    training discriminator: 2023-03-06 11:11:57.149770
+      epoch: 0 loss: 0.6931471824645996
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-06 11:11:57.758349
+    training discriminator: 2023-03-06 11:11:57.968708
+      epoch: 0 loss: 0.8957248330116272
+      epoch: 1 loss: 0.8067038655281067
+      epoch: 2 loss: 0.8084067106246948
+batch: 95 : 2023-03-06 11:11:58.563802
+    training generator: 2023-03-06 11:13:55.746117
+      epoch: 0 loss: -1660.216796875
+  iter_n_dis: 0 : 2023-03-06 11:13:55.759129
+    training discriminator: 2023-03-06 11:13:56.006819
+      epoch: 0 loss: 0.7474076151847839
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 1 : 2023-03-06 11:13:56.563239
+    training discriminator: 2023-03-06 11:13:56.824745
+      epoch: 0 loss: 0.8726378679275513
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-06 11:13:57.399663
+    training discriminator: 2023-03-06 11:13:57.631849
+      epoch: 0 loss: 0.7294733822345734
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 96 : 2023-03-06 11:13:58.230957
+    training generator: 2023-03-06 11:16:13.444136
+      epoch: 0 loss: -971.5128173828125
+  iter_n_dis: 0 : 2023-03-06 11:16:13.457358
+    training discriminator: 2023-03-06 11:16:13.668247
+      epoch: 0 loss: 0.9544478952884674
+      epoch: 1 loss: 0.8403275907039642
+      epoch: 2 loss: 0.8130284994840622
+  iter_n_dis: 1 : 2023-03-06 11:16:14.238096
+    training discriminator: 2023-03-06 11:16:14.464077
+      epoch: 0 loss: 0.8443971872329712
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-06 11:16:15.047288
+    training discriminator: 2023-03-06 11:16:15.279628
+      epoch: 0 loss: 0.8106484413146973
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 97 : 2023-03-06 11:16:15.890034
+    training generator: 2023-03-06 11:18:23.439094
+      epoch: 0 loss: -972.67236328125
+  iter_n_dis: 0 : 2023-03-06 11:18:23.462197
+    training discriminator: 2023-03-06 11:18:23.680874
+      epoch: 0 loss: 0.913042813539505
+      epoch: 1 loss: 0.8519353270530701
+      epoch: 2 loss: 0.811910942196846
+  iter_n_dis: 1 : 2023-03-06 11:18:24.236066
+    training discriminator: 2023-03-06 11:18:24.449562
+      epoch: 0 loss: 0.9053168296813965
+      epoch: 1 loss: 0.8085775226354599
+      epoch: 2 loss: 0.8087229579687119
+  iter_n_dis: 2 : 2023-03-06 11:18:25.036595
+    training discriminator: 2023-03-06 11:18:25.308623
+      epoch: 0 loss: 0.6931471824645996
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 98 : 2023-03-06 11:18:25.865514
+    training generator: 2023-03-06 11:20:32.514125
+      epoch: 0 loss: -973.0040283203125
+  iter_n_dis: 0 : 2023-03-06 11:20:32.525879
+    training discriminator: 2023-03-06 11:20:32.750290
+      epoch: 0 loss: 0.6982835829257965
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 1 : 2023-03-06 11:20:33.358010
+    training discriminator: 2023-03-06 11:20:33.560174
+      epoch: 0 loss: 0.9480299353599548
+      epoch: 1 loss: 0.8016102015972137
+      epoch: 2 loss: 0.8032198846340179
+  iter_n_dis: 2 : 2023-03-06 11:20:34.115028
+    training discriminator: 2023-03-06 11:20:34.352829
+      epoch: 0 loss: 0.7699821889400482
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 99 : 2023-03-06 11:20:34.927230
+    training generator: 2023-03-06 11:22:41.310733
+      epoch: 0 loss: -972.443603515625
+  iter_n_dis: 0 : 2023-03-06 11:22:41.321845
+    training discriminator: 2023-03-06 11:22:41.551246
+      epoch: 0 loss: 0.9369193613529205
+      epoch: 1 loss: 0.8017092943191528
+      epoch: 2 loss: 0.8035498857498169
+  iter_n_dis: 1 : 2023-03-06 11:22:42.200358
+    training discriminator: 2023-03-06 11:22:42.443757
+      epoch: 0 loss: 0.9598138332366943
+      epoch: 1 loss: 0.8036806285381317
+      epoch: 2 loss: 0.8041340410709381
+  iter_n_dis: 2 : 2023-03-06 11:22:43.001252
+    training discriminator: 2023-03-06 11:22:43.244983
+      epoch: 0 loss: 0.9245410561561584
+      epoch: 1 loss: 0.7979045212268829
+      epoch: 2 loss: 0.8015182316303253
+batch: 100 : 2023-03-06 11:22:43.931185
+    training generator: 2023-03-06 11:24:50.158779
+      epoch: 0 loss: -1536.238037109375
+  iter_n_dis: 0 : 2023-03-06 11:24:50.178172
+    training discriminator: 2023-03-06 11:24:50.392398
+      epoch: 0 loss: 0.6931471824645996
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 1 : 2023-03-06 11:24:50.971440
+    training discriminator: 2023-03-06 11:24:51.217184
+      epoch: 0 loss: 0.6931471824645996
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-06 11:24:51.769042
+    training discriminator: 2023-03-06 11:24:51.978546
+      epoch: 0 loss: 0.937303364276886
+      epoch: 1 loss: 0.8225552588701248
+      epoch: 2 loss: 0.8109615594148636
+batch: 101 : 2023-03-06 11:24:52.545620
+    training generator: 2023-03-06 11:26:52.337251
+      epoch: 0 loss: -1576.9151611328125
+  iter_n_dis: 0 : 2023-03-06 11:26:52.350037
+    training discriminator: 2023-03-06 11:26:52.556872
+      epoch: 0 loss: 0.7195053696632385
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 1 : 2023-03-06 11:26:53.124390
+    training discriminator: 2023-03-06 11:26:53.382944
+      epoch: 0 loss: 0.9065184891223907
+      epoch: 1 loss: 0.8121815174818039
+      epoch: 2 loss: 0.8113624751567841
+  iter_n_dis: 2 : 2023-03-06 11:26:53.936949
+    training discriminator: 2023-03-06 11:26:54.149303
+      epoch: 0 loss: 0.8431633710861206
+      epoch: 1 loss: 0.8154799044132233
+      epoch: 2 loss: 0.8107184618711472
+batch: 102 : 2023-03-06 11:26:54.739470
+    training generator: 2023-03-06 11:29:13.852651
+      epoch: 0 loss: -1525.32080078125
+  iter_n_dis: 0 : 2023-03-06 11:29:13.873753
+    training discriminator: 2023-03-06 11:29:14.187499
+      epoch: 0 loss: 0.9025656580924988
+      epoch: 1 loss: 0.8260434567928314
+      epoch: 2 loss: 0.811100035905838
+  iter_n_dis: 1 : 2023-03-06 11:29:14.961968
+    training discriminator: 2023-03-06 11:29:15.342695
+      epoch: 0 loss: 0.6931471824645996
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-06 11:29:16.115338
+    training discriminator: 2023-03-06 11:29:16.431816
+      epoch: 0 loss: 0.9491494297981262
+      epoch: 1 loss: 0.7962436974048615
+      epoch: 2 loss: 0.7991797924041748
+batch: 103 : 2023-03-06 11:29:17.219640
+    training generator: 2023-03-06 11:31:43.017477
+      epoch: 0 loss: -1571.0447998046875
+  iter_n_dis: 0 : 2023-03-06 11:31:43.031058
+    training discriminator: 2023-03-06 11:31:43.328189
+      epoch: 0 loss: 0.6931471824645996
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 1 : 2023-03-06 11:31:44.111425
+    training discriminator: 2023-03-06 11:31:44.386990
+      epoch: 0 loss: 0.7555797100067139
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-06 11:31:45.037743
+    training discriminator: 2023-03-06 11:31:45.258811
+      epoch: 0 loss: 0.873185783624649
+      epoch: 1 loss: 0.8384246528148651
+      epoch: 2 loss: 0.8200329542160034
+batch: 104 : 2023-03-06 11:31:45.899927
+    training generator: 2023-03-06 11:34:06.244866
+      epoch: 0 loss: -1363.782958984375
+  iter_n_dis: 0 : 2023-03-06 11:34:06.257986
+    training discriminator: 2023-03-06 11:34:06.479941
+      epoch: 0 loss: 0.6936522722244263
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 1 : 2023-03-06 11:34:07.066783
+    training discriminator: 2023-03-06 11:34:07.293708
+      epoch: 0 loss: 0.8834149837493896
+      epoch: 1 loss: 0.8947296142578125
+      epoch: 2 loss: 0.8215185701847076
+  iter_n_dis: 2 : 2023-03-06 11:34:07.870847
+    training discriminator: 2023-03-06 11:34:08.135269
+      epoch: 0 loss: 0.8974705338478088
+      epoch: 1 loss: 0.8178016841411591
+      epoch: 2 loss: 0.8083262294530869
+batch: 105 : 2023-03-06 11:34:08.705165
+    training generator: 2023-03-06 11:36:16.649562
+      epoch: 0 loss: -1478.3729248046875
+  iter_n_dis: 0 : 2023-03-06 11:36:16.672589
+    training discriminator: 2023-03-06 11:36:16.935652
+      epoch: 0 loss: 0.8752842247486115
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 1 : 2023-03-06 11:36:17.614064
+    training discriminator: 2023-03-06 11:36:17.938057
+      epoch: 0 loss: 0.7251805067062378
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-06 11:36:18.632270
+    training discriminator: 2023-03-06 11:36:18.942723
+      epoch: 0 loss: 0.9134542644023895
+      epoch: 1 loss: 0.8000652343034744
+      epoch: 2 loss: 0.8032539188861847
+batch: 106 : 2023-03-06 11:36:19.574091
+    training generator: 2023-03-06 11:38:25.921632
+      epoch: 0 loss: -1602.696044921875
+  iter_n_dis: 0 : 2023-03-06 11:38:25.942732
+    training discriminator: 2023-03-06 11:38:26.201523
+      epoch: 0 loss: 0.9069932997226715
+      epoch: 1 loss: 0.8009316623210907
+      epoch: 2 loss: 0.8025991767644882
+  iter_n_dis: 1 : 2023-03-06 11:38:26.783364
+    training discriminator: 2023-03-06 11:38:27.019496
+      epoch: 0 loss: 0.7877591550350189
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-06 11:38:27.637267
+    training discriminator: 2023-03-06 11:38:27.914973
+      epoch: 0 loss: 0.9815120100975037
+      epoch: 1 loss: 0.8105405271053314
+      epoch: 2 loss: 0.8095525801181793
+batch: 107 : 2023-03-06 11:38:28.575186
+    training generator: 2023-03-06 11:40:51.325677
+      epoch: 0 loss: -1606.36767578125
+  iter_n_dis: 0 : 2023-03-06 11:40:51.338755
+    training discriminator: 2023-03-06 11:40:51.605738
+      epoch: 0 loss: 0.7658974230289459
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 1 : 2023-03-06 11:40:52.347205
+    training discriminator: 2023-03-06 11:40:52.606865
+      epoch: 0 loss: 0.9358507096767426
+      epoch: 1 loss: 0.8072319030761719
+      epoch: 2 loss: 0.8083354383707047
+  iter_n_dis: 2 : 2023-03-06 11:40:53.250300
+    training discriminator: 2023-03-06 11:40:53.487233
+      epoch: 0 loss: 0.745188295841217
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 108 : 2023-03-06 11:40:54.077140
+    training generator: 2023-03-06 11:43:00.685642
+      epoch: 0 loss: -977.7335815429688
+  iter_n_dis: 0 : 2023-03-06 11:43:00.698911
+    training discriminator: 2023-03-06 11:43:00.996251
+      epoch: 0 loss: 0.9336407780647278
+      epoch: 1 loss: 0.8166098147630692
+      epoch: 2 loss: 0.8112440556287766
+  iter_n_dis: 1 : 2023-03-06 11:43:01.695397
+    training discriminator: 2023-03-06 11:43:01.969293
+      epoch: 0 loss: 0.6931471824645996
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-06 11:43:02.639798
+    training discriminator: 2023-03-06 11:43:02.924414
+      epoch: 0 loss: 0.6953828036785126
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 109 : 2023-03-06 11:43:03.518366
+    training generator: 2023-03-06 11:45:05.417105
+      epoch: 0 loss: -977.113525390625
+  iter_n_dis: 0 : 2023-03-06 11:45:05.439926
+    training discriminator: 2023-03-06 11:45:05.690390
+      epoch: 0 loss: 0.6991680860519409
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 1 : 2023-03-06 11:45:06.400072
+    training discriminator: 2023-03-06 11:45:06.733846
+      epoch: 0 loss: 0.7790248990058899
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-06 11:45:07.481388
+    training discriminator: 2023-03-06 11:45:07.787807
+      epoch: 0 loss: 0.6931471824645996
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 110 : 2023-03-06 11:45:08.347261
+    training generator: 2023-03-06 11:47:17.964733
+      epoch: 0 loss: -978.4638671875
+  iter_n_dis: 0 : 2023-03-06 11:47:17.975844
+    training discriminator: 2023-03-06 11:47:18.184820
+      epoch: 0 loss: 0.9017156064510345
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 1 : 2023-03-06 11:47:18.739554
+    training discriminator: 2023-03-06 11:47:18.967877
+      epoch: 0 loss: 0.7467738091945648
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-06 11:47:19.601754
+    training discriminator: 2023-03-06 11:47:19.885903
+      epoch: 0 loss: 0.8853990733623505
+      epoch: 1 loss: 0.8074188232421875
+      epoch: 2 loss: 0.8072622418403625
+batch: 111 : 2023-03-06 11:47:20.477053
+    training generator: 2023-03-06 11:49:29.166270
+      epoch: 0 loss: -1528.00048828125
+  iter_n_dis: 0 : 2023-03-06 11:49:29.177666
+    training discriminator: 2023-03-06 11:49:29.400232
+      epoch: 0 loss: 0.6931471824645996
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 1 : 2023-03-06 11:49:29.993612
+    training discriminator: 2023-03-06 11:49:30.242382
+      epoch: 0 loss: 0.6931471824645996
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-06 11:49:30.833653
+    training discriminator: 2023-03-06 11:49:31.101029
+      epoch: 0 loss: 0.6931471824645996
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 112 : 2023-03-06 11:49:31.661723
+    training generator: 2023-03-06 11:51:40.720464
+      epoch: 0 loss: -984.62890625
+  iter_n_dis: 0 : 2023-03-06 11:51:40.732695
+    training discriminator: 2023-03-06 11:51:40.988568
+      epoch: 0 loss: 0.6931471824645996
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 1 : 2023-03-06 11:51:41.640429
+    training discriminator: 2023-03-06 11:51:41.957991
+      epoch: 0 loss: 0.6931471824645996
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-06 11:51:42.575800
+    training discriminator: 2023-03-06 11:51:42.812685
+      epoch: 0 loss: 0.6931471824645996
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 113 : 2023-03-06 11:51:43.419751
+    training generator: 2023-03-06 11:53:54.464315
+      epoch: 0 loss: -979.119140625
+  iter_n_dis: 0 : 2023-03-06 11:53:54.475225
+    training discriminator: 2023-03-06 11:53:54.682391
+      epoch: 0 loss: 0.9749320447444916
+      epoch: 1 loss: 0.8019220679998398
+      epoch: 2 loss: 0.8041391670703888
+  iter_n_dis: 1 : 2023-03-06 11:53:55.248958
+    training discriminator: 2023-03-06 11:53:55.490334
+      epoch: 0 loss: 0.8959126472473145
+      epoch: 1 loss: 0.8023936599493027
+      epoch: 2 loss: 0.8053505122661591
+  iter_n_dis: 2 : 2023-03-06 11:53:56.070754
+    training discriminator: 2023-03-06 11:53:56.287213
+      epoch: 0 loss: 0.6941041648387909
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 114 : 2023-03-06 11:53:56.854787
+    training generator: 2023-03-06 11:55:56.847027
+      epoch: 0 loss: -984.4549560546875
+  iter_n_dis: 0 : 2023-03-06 11:55:56.857543
+    training discriminator: 2023-03-06 11:55:57.112053
+      epoch: 0 loss: 0.7454295754432678
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 1 : 2023-03-06 11:55:57.685928
+    training discriminator: 2023-03-06 11:55:57.974341
+      epoch: 0 loss: 0.7785480916500092
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-06 11:55:58.558548
+    training discriminator: 2023-03-06 11:55:58.813642
+      epoch: 0 loss: 0.6931471824645996
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 115 : 2023-03-06 11:55:59.408947
+    training generator: 2023-03-06 11:58:06.798706
+      epoch: 0 loss: -984.266357421875
+  iter_n_dis: 0 : 2023-03-06 11:58:06.809993
+    training discriminator: 2023-03-06 11:58:07.036178
+      epoch: 0 loss: 0.8575679659843445
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 1 : 2023-03-06 11:58:07.591259
+    training discriminator: 2023-03-06 11:58:07.829001
+      epoch: 0 loss: 0.706743061542511
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-06 11:58:08.491158
+    training discriminator: 2023-03-06 11:58:08.829984
+      epoch: 0 loss: 0.766509622335434
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 116 : 2023-03-06 11:58:09.526009
+    training generator: 2023-03-06 12:00:24.098462
+      epoch: 0 loss: -984.10791015625
+  iter_n_dis: 0 : 2023-03-06 12:00:24.109468
+    training discriminator: 2023-03-06 12:00:24.370251
+      epoch: 0 loss: 0.6931471824645996
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 1 : 2023-03-06 12:00:24.930758
+    training discriminator: 2023-03-06 12:00:25.183514
+      epoch: 0 loss: 0.7112394869327545
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-06 12:00:25.821878
+    training discriminator: 2023-03-06 12:00:26.034974
+      epoch: 0 loss: 0.868602842092514
+      epoch: 1 loss: 0.862066775560379
+      epoch: 2 loss: 0.827619731426239
+batch: 117 : 2023-03-06 12:00:26.639907
+    training generator: 2023-03-06 12:02:30.487637
+      epoch: 0 loss: -1381.0870361328125
+  iter_n_dis: 0 : 2023-03-06 12:02:30.498318
+    training discriminator: 2023-03-06 12:02:30.739532
+      epoch: 0 loss: 0.8961129188537598
+      epoch: 1 loss: 0.7986150681972504
+      epoch: 2 loss: 0.7999767065048218
+  iter_n_dis: 1 : 2023-03-06 12:02:31.387197
+    training discriminator: 2023-03-06 12:02:31.591717
+      epoch: 0 loss: 0.6947179734706879
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+  iter_n_dis: 2 : 2023-03-06 12:02:32.177574
+    training discriminator: 2023-03-06 12:02:32.497164
+      epoch: 0 loss: 0.9223763346672058
+      epoch: 1 loss: 0.8215021640062332
+      epoch: 2 loss: 0.8106008470058441
+batch: 118 : 2023-03-06 12:02:33.057518
+    training generator: 2023-03-06 12:04:34.690734
+      epoch: 0 loss: -1580.945068359375
+  iter_n_dis: 0 : 2023-03-06 12:04:34.704153
+    training discriminator: 2023-03-06 12:04:34.962833
+      epoch: 0 loss: 0.9288634061813354
+      epoch: 1 loss: 0.8383478820323944
+      epoch: 2 loss: 0.8108038008213043
+  iter_n_dis: 1 : 2023-03-06 12:04:35.720618
+    training discriminator: 2023-03-06 12:04:36.073031
+      epoch: 0 loss: 0.9792358577251434
+      epoch: 1 loss: 0.7945133745670319
+      epoch: 2 loss: 0.7981349229812622
+  iter_n_dis: 2 : 2023-03-06 12:04:36.714640
+    training discriminator: 2023-03-06 12:04:36.986414
+      epoch: 0 loss: 0.7186106145381927
+      epoch: 1 loss: 0.6931471824645996
+      epoch: 2 loss: 0.6931471824645996
+batch: 119 : 2023-03-06 12:04:37.614601
+    training generator: 2023-03-06 12:06:48.097244
+      epoch: 0 loss: -984.913330078125
+  iter_n_dis: 0 : 2023-03-06 12:06:48.125653
+    training discriminator: 2023-03-06 12:06:48.328077
+      epoch: 0 loss: 0.8793043494224548
+      epoch: 1 loss: 0.8004922568798065
+      epoch: 2 loss: 0.8034948408603668
+  iter_n_dis: 1 : 2023-03-06 12:06:48.908519
+    training discriminator: 2023-03-06 12:06:49.111333
+      epoch: 0 loss: 0.9525225460529327
+      epoch: 1 loss: 0.8020188510417938
+      epoch: 2 loss: 0.8045456111431122
+  iter_n_dis: 2 : 2023-03-06 12:06:49.694023
+    training discriminator: 2023-03-06 12:06:49.896726
+      epoch: 0 loss: 0.9586089253425598
+      epoch: 1 loss: 0.7965890914201736
+      epoch: 2 loss: 0.79652239382267
+###### training done: 2023-03-06 12:06:50.475330
