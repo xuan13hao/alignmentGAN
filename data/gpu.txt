@@ -64,4 +64,19 @@ Allocated:0.0GB
 Cached:   0.0GBdatetime:2023-03-06 12:55:00.172983, device name:NVIDIA GeForce GTX 1050 Ti
 Memory Usage:
 Allocated:0.0GB
+Cached:   0.0GBdatetime:2023-03-06 16:26:43.798232, device name:NVIDIA GeForce GTX 1050 Ti
+Memory Usage:
+Allocated:0.0GB
+Cached:   0.0GBdatetime:2023-03-06 16:28:47.624043, device name:NVIDIA GeForce GTX 1050 Ti
+Memory Usage:
+Allocated:0.0GB
+Cached:   0.0GBdatetime:2023-03-06 16:34:49.273572, device name:NVIDIA GeForce GTX 1050 Ti
+Memory Usage:
+Allocated:0.0GB
+Cached:   0.0GBdatetime:2023-03-06 16:43:15.447212, device name:NVIDIA GeForce GTX 1050 Ti
+Memory Usage:
+Allocated:0.0GB
+Cached:   0.0GBdatetime:2023-03-06 16:46:45.522935, device name:NVIDIA GeForce GTX 1050 Ti
+Memory Usage:
+Allocated:0.0GB
 Cached:   0.0GB
