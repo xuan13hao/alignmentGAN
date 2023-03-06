@@ -10,7 +10,8 @@ fastafile = open(out_file, "w")
 # Iterate through SAM file
 for read in samfile.fetch():
     # Write read to fasta file
-    if read.reference_name == "chr1": 
+    # if read.reference_name == "chr1": 
+    if "N" not in read.seq:
         fastafile.write(">" + read.qname + "\n")
         fastafile.write(read.seq + "\n")
 

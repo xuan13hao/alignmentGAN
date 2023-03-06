@@ -9,7 +9,7 @@ from data_processing import decode
 
 def main(batch_size=1):
     model = torch.load(PATH+'generator.pkl')
-    reverse_vocab = torch.load(PATH+'reverse_vocab.pkl')
+    reverse_vocab = torch.load(PATH+'ref_reverse_vocab.pkl')
 
     num = model.generate(batch_size=batch_size)
     log = openLog('genTxt_predict.txt')
