@@ -7,32 +7,130 @@ import pdb
 import torch
 import torch.optim as optim
 import torch.nn as nn
-
+import pandas as pd
+from itertools import chain
+from collections import Counter
 import generator
 import discriminator
 import helpers
 
-from data_processing import read_sampleFile
 
 CUDA = False
 VOCAB_SIZE = 6
 MAX_SEQ_LEN = 101
 START_LETTER = 0
-BATCH_SIZE = 32
+BATCH_SIZE = 1
 MLE_TRAIN_EPOCHS = 100
 ADV_TRAIN_EPOCHS = 50
-POS_NEG_SAMPLES = 10000
-
+POS_NEG_SAMPLES = 5
+SEQ_LENGTH = 101
 GEN_EMBEDDING_DIM = 32
 GEN_HIDDEN_DIM = 32
 DIS_EMBEDDING_DIM = 64
 DIS_HIDDEN_DIM = 64
 
 # oracle_samples_path = './oracle_samples.trc'
-oracle_state_dict_path = './oracle_EMBDIM32_HIDDENDIM32_VOCAB5000_MAXSEQLEN20.trc'
-# pretrained_gen_path = './gen_MLEtrain_EMBDIM32_HIDDENDIM32_VOCAB5000_MAXSEQLEN20.trc'
-# pretrained_dis_path = './dis_pretrain_EMBDIM_64_HIDDENDIM64_VOCAB5000_MAXSEQLEN20.trc'
+# oracle_state_dict_path = './oracle_EMBDIM32_HIDDENDIM32_VOCAB5000_MAXSEQLEN20.trc'
+pretrained_gen_path = './gen_MLEtrain.pkl'
+pretrained_dis_path = './dis_pretrain.pkl'
+PATH = ""
 
+def read_sampleFile(file='kmer.pkl', pad_token='PAD',DEVICE = 'cpu', num=None):
+    if file[-3:]=='pkl' or file[-3:]=='csv':
+        if file[-3:] == 'pkl':
+            data = pd.read_pickle(file)
+        else:
+            data = pd.read_csv(file)
+        # print(data)
+        if num is not None:
+            num = min(num,len(data))
+            data = data[0:num]
+        lineList_all = data.values.tolist()
+        # print(lineList_all)
+        characters = set(chain.from_iterable(lineList_all))
+        # print(characters)
+        lineList_all = [['START'] + w for w in lineList_all]
+        # print(lineList_all)
+        x_lengths = [len(x) - Counter(x)[pad_token] for x in lineList_all]
+        # print(x_lengths)
+    else:
+        lineList_all = list()
+        characters = list()
+        x_lengths = list()
+        count = 0
+        with open(file, 'r', encoding='utf-8-sig') as f:
+            for line in f:
+                line.strip()
+                lineList = list(line)
+                try:
+                    lineList.remove('\n')
+                except ValueError:
+                    pass
+                x_lengths.append(len(lineList) + 1)
+                
+                characters.extend(lineList)
+                # print(characters)
+                # print(len(characters))
+                if len(lineList)<SEQ_LENGTH:
+                    lineList.extend([pad_token] * (SEQ_LENGTH - len(lineList)))
+                lineList_all.append(['START']+lineList)
+                count += 1
+                if num is not None and count >= num:
+                    break
+    # print(characters)
+    vocabulary = dict([(y,x+1) for x, y in enumerate(set(characters))])
+    reverse_vocab = dict([(x+1,y) for x, y in enumerate(set(characters))])
+    # print(vocabulary)
+    # print(reverse_vocab)
+    # add start and end tag:
+    vocabulary['START'] = 0
+    reverse_vocab[0] = 'START'
+    vocabulary['A'] = 1
+    reverse_vocab[1] = 'A'
+    vocabulary['C'] = 2
+    reverse_vocab[2] = 'C'
+    vocabulary['G'] = 3
+    reverse_vocab[3] = 'G'
+    vocabulary['T'] = 4
+    reverse_vocab[4] = 'T'
+    vocabulary[pad_token] = 5
+    reverse_vocab[5] = pad_token
+    # if pad_token not in vocabulary.keys():
+    #     vocabulary[pad_token] = len(vocabulary)
+    #     reverse_vocab[len(vocabulary)-1] = pad_token
+    vocabulary['END'] = 6
+    reverse_vocab[6] = 'END'
+    # print(vocabulary)
+    # print(reverse_vocab)
+    # print(vocabulary,":",reverse_vocab)
+    tmp = sorted(zip(x_lengths,lineList_all), reverse=True)
+    x_lengths = [x for x,y in tmp]
+    lineList_all = [y for x,y in tmp]
+    generated_data = [int(vocabulary[x]) for y in lineList_all for i,x in enumerate(y) if i<SEQ_LENGTH]
+    # generated_data = [int(vocabulary[x]) for y in lineList_all for i,x in enumerate(y) if i<SEQ_LENGTH]
+    # print(generated_data)
+    # print(generated_data)
+    # to tensor
+    x = torch.tensor(generated_data,device=DEVICE).view(-1,SEQ_LENGTH)
+    # print(x)
+    return x.int(), vocabulary, reverse_vocab, x_lengths
+
+
+def train_baseline(oracle,oracle_opt,train_data,max_len,epochs):
+# Define your loss function
+    for epoch in range(epochs):
+        print('epoch %d : ' % (epoch + 1), end='')
+        sys.stdout.flush()
+        total_loss = 0
+        for i in range(BATCH_SIZE):
+            inp, target = helpers.batchwise_sample(oracle,len(train_data),batch_size = 32)
+            oracle_opt.zero_grad()
+            loss = oracle.batchNLLLoss(inp, target)
+            loss.backward()
+            oracle_opt.step()
+            total_loss += loss.data.item()
+        # total_loss = total_loss / ceil(POS_NEG_SAMPLES / float(BATCH_SIZE)) / MAX_SEQ_LEN
+        # print(' average_train_NLL = %.4f' % (total_loss))
 
 def train_generator_MLE(gen, gen_opt, oracle, real_data_samples, epochs):
     """
@@ -98,8 +196,8 @@ def train_discriminator(discriminator, dis_opt, real_data_samples, generator, or
     """
 
     # generating a small validation set before training (using oracle and generator)
-    pos_val = oracle.sample(100)
-    neg_val = generator.sample(100)
+    pos_val = oracle.sample(1)
+    neg_val = generator.sample(1)
     val_inp, val_target = helpers.prepare_discriminator_data(pos_val, neg_val, gpu=CUDA)
 
     for d_step in range(d_steps):
@@ -137,13 +235,19 @@ def train_discriminator(discriminator, dis_opt, real_data_samples, generator, or
 
 # MAIN
 if __name__ == '__main__':
-    oracle = generator.Generator(GEN_EMBEDDING_DIM, GEN_HIDDEN_DIM, VOCAB_SIZE, MAX_SEQ_LEN, gpu=CUDA)
-    # oracle.load_state_dict(torch.load(oracle_state_dict_path))
-    # print(oracle)
-    # oracle_samples = torch.load(oracle_samples_path).type(torch.LongTensor)
     x, vocabulary, reverse_vocab, sentence_lengths = read_sampleFile(file = "kmer.pkl")
     x_ref, vocabulary_ref, reverse_vocab_ref, sentence_lengths_ref = read_sampleFile(file = "reference.pkl")
-    # oracle_samples = x
+    oracle = generator.Generator(GEN_EMBEDDING_DIM, GEN_HIDDEN_DIM, VOCAB_SIZE, MAX_SEQ_LEN, gpu=CUDA,oracle_init = True)
+    # orcale_optimizer = optim.Adam(oracle.parameters(), lr=1e-2)
+    # train_baseline(oracle,orcale_optimizer,x,MAX_SEQ_LEN,20)
+    # torch.save(oracle, 'oracle.pkl')
+    # oracle.torch.load("oracle_state_dict_path")
+    # print(oracle)
+    # oracle_samples = torch.load(oracle_samples_path).type(torch.LongTensor)
+
+    x_ref = x_ref.cpu()
+    # train_baseline(oracle,x,MAX_SEQ_LEN)
+    oracle_samples = x.cpu()
     # a new oracle can be generated by passing oracle_init=True in the generator constructor
     # samples for the new oracle can be generated using helpers.batchwise_sample()
     # print(oracle_samples)
@@ -151,27 +255,31 @@ if __name__ == '__main__':
     gen = generator.Generator(GEN_EMBEDDING_DIM, GEN_HIDDEN_DIM, VOCAB_SIZE, MAX_SEQ_LEN, gpu=CUDA)
     dis = discriminator.Discriminator(DIS_EMBEDDING_DIM, DIS_HIDDEN_DIM, VOCAB_SIZE, MAX_SEQ_LEN, gpu=CUDA)
 
-    if CUDA:
-        oracle = oracle.cuda()
-        gen = gen.cuda()
-        dis = dis.cuda()
-        x = x.cuda()
+    # if CUDA:
+    #     print("Running CUDA")
+    #     oracle = oracle.cuda()
+    #     gen = gen.cuda()
+    #     dis = dis.cuda()
+        # x = x.cuda()
 
     # GENERATOR MLE TRAINING use reference to train generator
     print('Starting Generator MLE Training...')
     gen_optimizer = optim.Adam(gen.parameters(), lr=1e-2)
     train_generator_MLE(gen, gen_optimizer, oracle, x_ref, MLE_TRAIN_EPOCHS)
-
+    # 8888888888888
+    # torch.save(gen, pretrained_gen_path)
+    # torch.save(gen_optimizer, "opt_pretrained_gen_MLE.pkl")
     # # torch.save(gen.state_dict(), pretrained_gen_path)
     # # gen.load_state_dict(torch.load(pretrained_gen_path))
-
+    # gen = torch.load(pretrained_gen_path)
+    # gen_optimizer = optim.Adam(gen.parameters(), lr=1e-2)
     # # PRETRAIN DISCRIMINATOR
-    # print('\nStarting Discriminator Training...')
+    print('\nStarting Discriminator Training...')
     dis_optimizer = optim.Adagrad(dis.parameters())
     train_discriminator(dis, dis_optimizer, x, gen, oracle, 50, 3)
-
-    # # torch.save(dis.state_dict(), pretrained_dis_path)
-    # # dis.load_state_dict(torch.load(pretrained_dis_path))
+    # torch.save(dis, pretrained_dis_path)
+    # torch.save(dis_optimizer, "opt_pretrained_dis.pkl")
+    # dis.load_state_dict(torch.load(pretrained_dis_path))
 
     # ADVERSARIAL TRAINING
     print('\nStarting Adversarial Training...')
@@ -189,3 +297,9 @@ if __name__ == '__main__':
         # TRAIN DISCRIMINATOR
         print('\nAdversarial Training Discriminator : ')
         train_discriminator(dis, dis_optimizer, x, gen, oracle, 5, 3)
+    try:
+        torch.save(gen, 'generator.pkl')
+        torch.save(reverse_vocab_ref, 'ref_reverse_vocab.pkl')
+        print('successfully saved generator model.')
+    except:
+        print('error: model saving failed!!!!!!')

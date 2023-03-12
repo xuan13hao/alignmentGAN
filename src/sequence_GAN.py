@@ -9,6 +9,7 @@ Based on SeqGAN: Sequence Generative Adversarial Nets with Policy Gradient,
 Translated from the original tensorflow repo: 
     https://github.com/LantaoYu/SeqGAN, and adjusted for wider usability.
 Many thanks to the original authors. 
+export LD_LIBRARY_PATH=/usr/lib/wsl/lib:$LD_LIBRARY_PATH
 """
 import sys
 from datetime import datetime
@@ -42,7 +43,7 @@ def pretrain_generator(x,start_token,end_token,ignored_tokens=None,
     #     print('error: model saving failed!!!!!!')
     return generator
 
-def train_discriminator_wrapper(x, x_gen, batch_size=1, vocab_size=65):
+def train_discriminator_wrapper(x, x_gen, batch_size=1, vocab_size=6):
     y = gen_label(len(x),fixed_value=1)
     y_gen = gen_label(len(x_gen),fixed_value=0)
     x_train = torch.cat([x.int(),x_gen.int()], dim=0)
