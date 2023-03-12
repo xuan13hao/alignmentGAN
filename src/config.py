@@ -24,7 +24,7 @@ FILTER_SIZE = list(range(1,SEQ_LENGTH))
 NUM_FILTER =  ([10] + [20] * 9 + [16] * SEQ_LENGTH)[0:SEQ_LENGTH-1]
 # NUM_FILTER =  ([1] + [1] * 9 + [1] * SEQ_LENGTH)[0:SEQ_LENGTH-1]
 DIS_NUM_EPOCH = 3
-DIS_NUM_EPOCH_PRETRAIN = 3
+DIS_NUM_EPOCH_PRETRAIN = 5
 GEN_NUM_EPOCH = 3
 GEN_NUM_EPOCH_PRETRAIN = 120
 GEN_HIDDEN_DIM = 48
@@ -43,14 +43,14 @@ def openLog(filename='record.txt'):
     return log
 
 if DEVICE.type == 'cuda':
-    print("Available: ",torch.cuda.is_available())
+    print("GPU Available: ",torch.cuda.is_available())
     NrGPU = torch.cuda.device_count()
-    print('number of GPUs available:{}'.format(NrGPU))
+    print('Number of GPUs available:{}'.format(NrGPU))
     log = openLog('gpu.txt')
-    log.write('datetime:{}, device name:{}\n'.format(datetime.now(),
+    log.write('Datetime:{}, Device Name:{}\n'.format(datetime.now(),
                                           torch.cuda.get_device_name(0)))
     log.write('Memory Usage:')
-    log.write('\nAllocated:'+str(round(torch.cuda.memory_allocated(0)/1024**3,1))+'GB')
-    log.write('\nCached:   '+str(round(torch.cuda.memory_cached(0)/1024**3,1))+'GB')
+    log.write('\nAllocated:'+str(round(torch.cuda.memory_allocated(0)/1024**3,1))+'GB\n')
+    log.write('\nCached:   '+str(round(torch.cuda.memory_cached(0)/1024**3,1))+'GB\n')
     log.close()
 # print("Available: ",torch.cuda.is_available())

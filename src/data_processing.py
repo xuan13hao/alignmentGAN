@@ -16,7 +16,7 @@ from collections import Counter
 import torch
 from config import SEQ_LENGTH,GENERATE_NUM,DEVICE,PATH
 
-def gen_record(num=GENERATE_NUM, vocab_size=10):
+def gen_record(num=GENERATE_NUM, vocab_size=6):
     # batch x nChannels x Height x Width
     data = torch.rand(num, SEQ_LENGTH-1, device=DEVICE)
     data = torch.abs(data * (vocab_size-2)).int()+1
@@ -90,13 +90,13 @@ def read_sampleFile(file='kmer.pkl', pad_token='PAD', num=None):
     reverse_vocab[3] = 'G'
     vocabulary['T'] = 4
     reverse_vocab[4] = 'T'
-    vocabulary[pad_token] = len(vocabulary)
-    reverse_vocab[len(vocabulary)-1] = pad_token
+    vocabulary[pad_token] = 5
+    reverse_vocab[5] = pad_token
     # if pad_token not in vocabulary.keys():
     #     vocabulary[pad_token] = len(vocabulary)
     #     reverse_vocab[len(vocabulary)-1] = pad_token
-    vocabulary['END'] = len(vocabulary)
-    reverse_vocab[len(vocabulary)-1] = 'END'
+    vocabulary['END'] = 6
+    reverse_vocab[6] = 'END'
     # print(vocabulary)
     # print(reverse_vocab)
     # print(vocabulary,":",reverse_vocab)
@@ -123,9 +123,10 @@ def decode(token_tbl, reverse_vocab, log=None):
 
 # x, vocabulary, reverse_vocab, sentence_lengths = read_sampleFile()
 x1, vocabulary1, reverse_vocab1, sentence_lengths1 = read_sampleFile("kmer.pkl")
-print(reverse_vocab1)
+# print(x1)
+# print(reverse_vocab1)
 x1, vocabulary1_ref, reverse_vocab1_ref, sentence_lengths1 = read_sampleFile("reference.pkl")
-print(reverse_vocab1_ref)
+# print(reverse_vocab1_ref)
 # print(x1.size())
 
 # print(sentence_lengths)

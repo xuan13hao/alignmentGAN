@@ -48,7 +48,7 @@ class Highway(nn.Module):
         return x        
 
 class Discriminator(nn.Module):
-    def __init__(self, filter_size=None, num_filter=None, dropoutRate=0.0, vocab_size=10):
+    def __init__(self, filter_size=None, num_filter=None, dropoutRate=0.0, vocab_size=6):
         super().__init__()
         if filter_size is None:
             self.filter_size = [SEQ_LENGTH]
@@ -96,7 +96,7 @@ class Discriminator(nn.Module):
         y_prob = self.softmax(fc)
         return y_prob
 
-def train_discriminator(train_x=None, train_y=None, batch_size=1, vocab_size=10):
+def train_discriminator(train_x=None, train_y=None, batch_size=1, vocab_size=6):
     if train_x is None:
         x = gen_record(num=batch_size,vocab_size=vocab_size)
     else:
@@ -134,7 +134,7 @@ def train_discriminator(train_x=None, train_y=None, batch_size=1, vocab_size=10)
     log.close()
     return model
 
-def sanityCheck_discriminator(batch_size=1,vocab_size=10):
+def sanityCheck_discriminator(batch_size=1,vocab_size=6):
     ''' test discriminator instantiation and pretraining'''
     log = openLog('test.txt')
     log.write('\n\nTest discriminator.sanityCheck_discriminator: {}\n'.format(datetime.now()))     
