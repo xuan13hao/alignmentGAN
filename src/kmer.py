@@ -46,7 +46,7 @@ def load_seqs(inputFilename,kmer,outputFilename='kmer.pkl'):
 #%%
 if __name__ == '__main__':
 
-    kmer_list = load_seqs('../data/real_dataset_cleaned.fa',1,outputFilename = "kmer.pkl")
-    ref_list = load_seqs('../data/real_illuminia_ref.fa',1,outputFilename = "reference.pkl")
+    kmer_list = load_seqs('../data/real.fa',1,outputFilename = "kmer.pkl")
+    ref_list = load_seqs('../data/ref.fa',1,outputFilename = "reference.pkl")
     # test = load_seqs('../data/test.fa',1,outputFilename = "test.pkl")
     # print(test)

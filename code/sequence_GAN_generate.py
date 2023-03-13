@@ -15,7 +15,7 @@ def decode(token_tbl, reverse_vocab, log=None):
 
 def main(batch_size=1):
     model = torch.load('generator.pkl')
-    out = model.sample(1)
+    out = model.sample(batch_size)
     dict = {}
     dict[0] = "START"
     dict[1] = 'A'
@@ -32,7 +32,7 @@ def main(batch_size=1):
     for i in out:
         for n in i:
             l.append(dict[int(n)])
-    print(''.join(l[1:])+'\n')
+        print(''.join(l[1:])+'\n')
     # reverse_vocab = torch.load('reference.pkl')
     # log = []
     # num = model.generate(batch_size=batch_size)

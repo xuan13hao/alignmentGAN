@@ -17,13 +17,13 @@ import helpers
 
 CUDA = False
 VOCAB_SIZE = 6
-MAX_SEQ_LEN = 101
+MAX_SEQ_LEN = 102
 START_LETTER = 0
 BATCH_SIZE = 1
 MLE_TRAIN_EPOCHS = 100
 ADV_TRAIN_EPOCHS = 50
 POS_NEG_SAMPLES = 5
-SEQ_LENGTH = 101
+SEQ_LENGTH = 102
 GEN_EMBEDDING_DIM = 32
 GEN_HIDDEN_DIM = 32
 DIS_EMBEDDING_DIM = 64
@@ -116,14 +116,15 @@ def read_sampleFile(file='kmer.pkl', pad_token='PAD',DEVICE = 'cpu', num=None):
     return x.int(), vocabulary, reverse_vocab, x_lengths
 
 
-def train_baseline(oracle,oracle_opt,train_data,max_len,epochs):
+def train_baseline(oracle,oracle_opt,train_data,epochs):
 # Define your loss function
     for epoch in range(epochs):
         print('epoch %d : ' % (epoch + 1), end='')
         sys.stdout.flush()
         total_loss = 0
         for i in range(BATCH_SIZE):
-            inp, target = helpers.batchwise_sample(oracle,len(train_data),batch_size = 32)
+            inp, target = helpers.prepare_generator_batch(train_data[i:i + BATCH_SIZE], start_letter=START_LETTER,
+                                                          gpu=CUDA)
             oracle_opt.zero_grad()
             loss = oracle.batchNLLLoss(inp, target)
             loss.backward()
@@ -237,9 +238,9 @@ def train_discriminator(discriminator, dis_opt, real_data_samples, generator, or
 if __name__ == '__main__':
     x, vocabulary, reverse_vocab, sentence_lengths = read_sampleFile(file = "kmer.pkl")
     x_ref, vocabulary_ref, reverse_vocab_ref, sentence_lengths_ref = read_sampleFile(file = "reference.pkl")
-    oracle = generator.Generator(GEN_EMBEDDING_DIM, GEN_HIDDEN_DIM, VOCAB_SIZE, MAX_SEQ_LEN, gpu=CUDA,oracle_init = True)
-    # orcale_optimizer = optim.Adam(oracle.parameters(), lr=1e-2)
-    # train_baseline(oracle,orcale_optimizer,x,MAX_SEQ_LEN,20)
+    oracle = generator.Generator(GEN_EMBEDDING_DIM, GEN_HIDDEN_DIM, VOCAB_SIZE, MAX_SEQ_LEN, gpu=CUDA,oracle_init=True)
+    orcale_optimizer = optim.Adam(oracle.parameters(), lr=1e-2)
+    # train_baseline(oracle,orcale_optimizer,x,MLE_TRAIN_EPOCHS)
     # torch.save(oracle, 'oracle.pkl')
     # oracle.torch.load("oracle_state_dict_path")
     # print(oracle)
@@ -255,11 +256,11 @@ if __name__ == '__main__':
     gen = generator.Generator(GEN_EMBEDDING_DIM, GEN_HIDDEN_DIM, VOCAB_SIZE, MAX_SEQ_LEN, gpu=CUDA)
     dis = discriminator.Discriminator(DIS_EMBEDDING_DIM, DIS_HIDDEN_DIM, VOCAB_SIZE, MAX_SEQ_LEN, gpu=CUDA)
 
-    # if CUDA:
-    #     print("Running CUDA")
-    #     oracle = oracle.cuda()
-    #     gen = gen.cuda()
-    #     dis = dis.cuda()
+    if CUDA:
+        print("Running CUDA")
+        oracle = oracle.cuda()
+        gen = gen.cuda()
+        dis = dis.cuda()
         # x = x.cuda()
 
     # GENERATOR MLE TRAINING use reference to train generator
