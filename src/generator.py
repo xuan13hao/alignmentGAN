@@ -121,7 +121,7 @@ class GeneratorLoss(nn.Module):
         prod = torch.mul(x2,pred2)
         reduced_prod = torch.sum(prod, dim=1)
         rewards_prod = torch.mul(reduced_prod, rewards.view(-1))
-        generator_loss = -torch.sum(rewards_prod)
+        generator_loss = torch.sum(rewards_prod)
         return generator_loss
     
     def createOneHotDummy(self, dim):
