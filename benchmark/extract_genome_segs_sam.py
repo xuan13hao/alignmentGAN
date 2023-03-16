@@ -5,6 +5,7 @@ from Bio import SeqIO
 sam_file = sys.argv[1]
 geno_file = sys.argv[2]
 out_file = sys.argv[3]
+read_file = sys.argv[4]
 
 
 # Open the SAM file for reading
@@ -13,10 +14,13 @@ sam_file = pysam.AlignmentFile(sam_file, 'r')
 genome_file = SeqIO.to_dict(SeqIO.parse(geno_file, 'fasta'))
 # Open the output FASTA file for writing
 output_file = open(out_file, 'w')
-
+reads_file = open(read_file, 'w')
+i = 0
 # Loop through the aligned reads in the SAM file
 for read in sam_file.fetch():
-
+    i = i + 1
+    if i == 10000:
+        break
     # Check if the read is mapped to the genome
     if read.is_unmapped:
         continue
@@ -28,11 +32,12 @@ for read in sam_file.fetch():
 
     # Extract the aligned segment from the genome FASTA file: eg.. chr1
     # if chrom == "chr1":
-    if end - start <= 101:
+    if end - start == 101 and "N" not in read.seq:
         segment = genome_file[chrom][start:end].upper()
-
-    # Write the segment to the output FASTA file
+        # Write the segment to the output FASTA file
         output_file.write(">{}:{}-{}\n{}\n".format(chrom, start+1, end, segment.seq))
+        reads_file.write(">" + read.qname + "\n")
+        reads_file.write(read.seq + "\n")
 
 # Close the files
 sam_file.close()
