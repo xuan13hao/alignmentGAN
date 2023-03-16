@@ -1,1 +1,1 @@
-# alignmentGAN
+# Read GAN
