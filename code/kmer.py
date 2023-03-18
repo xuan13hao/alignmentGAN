@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-Kmer
+Kmer 
+Created on Thu March 10 11:14:08 2023
 """
 from itertools import chain
 import pandas as pd
@@ -46,7 +47,7 @@ def load_seqs(inputFilename,kmer,outputFilename='kmer.pkl'):
 #%%
 if __name__ == '__main__':
 
-    kmer_list = load_seqs('real_reads.fa',1,outputFilename = "kmer.pkl")
-    ref_list = load_seqs('real_ref.fa',1,outputFilename = "reference.pkl")
+    kmer_list = load_seqs('real.fa',1,outputFilename = "kmer.pkl")
+    ref_list = load_seqs('ref.fa',1,outputFilename = "reference.pkl")
     # test = load_seqs('../data/test.fa',1,outputFilename = "test.pkl")
-    print(kmer_list)
+    # print(kmer_list)

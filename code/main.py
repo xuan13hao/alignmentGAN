@@ -13,7 +13,9 @@ from collections import Counter
 import Generator
 import Discriminator
 import helpers
-
+"""
+Created on Thu March 1 11:14:08 2023
+"""
 
 CUDA = True
 VOCAB_SIZE = 6
@@ -197,8 +199,8 @@ def train_discriminator(discriminator, dis_opt, real_data_samples, generator, or
     """
 
     # generating a small validation set before training (using oracle and generator)
-    pos_val = oracle.sample(1)
-    neg_val = generator.sample(1)
+    pos_val = oracle.sample(100)
+    neg_val = generator.sample(100)
     val_inp, val_target = helpers.prepare_discriminator_data(pos_val, neg_val, gpu=CUDA)
 
     for d_step in range(d_steps):
@@ -238,7 +240,7 @@ def train_discriminator(discriminator, dis_opt, real_data_samples, generator, or
 if __name__ == '__main__':
     x, vocabulary, reverse_vocab, sentence_lengths = read_sampleFile(file = "kmer.pkl")
     x_ref, vocabulary_ref, reverse_vocab_ref, sentence_lengths_ref = read_sampleFile(file = "reference.pkl")
-    oracle = Generator.Generator(GEN_EMBEDDING_DIM, GEN_HIDDEN_DIM, VOCAB_SIZE, MAX_SEQ_LEN, gpu=CUDA,oracle_init=True)
+    oracle = Generator.Generator(GEN_EMBEDDING_DIM, GEN_HIDDEN_DIM, VOCAB_SIZE, MAX_SEQ_LEN, gpu=CUDA,oracle_init= True)
     orcale_optimizer = optim.Adam(oracle.parameters(), lr=1e-2)
     # train_baseline(oracle,orcale_optimizer,x,MLE_TRAIN_EPOCHS)
     # torch.save(oracle, 'oracle.pkl')
