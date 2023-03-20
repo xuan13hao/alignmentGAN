@@ -6,7 +6,7 @@ import sys
 import torch
 
 def decode(batch_size=1):
-    model = torch.load('generator_3_16_101.pkl')
+    model = torch.load('generator.pkl')
     out = model.sample(batch_size)
     dict = {}
     dict[1] = 'A'
