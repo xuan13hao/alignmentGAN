@@ -33,8 +33,8 @@ DIS_HIDDEN_DIM = 64
 
 # oracle_samples_path = './oracle_samples.trc'
 # oracle_state_dict_path = './oracle_EMBDIM32_HIDDENDIM32_VOCAB5000_MAXSEQLEN20.trc'
-pretrained_gen_path = './gen_MLEtrain.pkl'
-pretrained_dis_path = './dis_pretrain.pkl'
+# pretrained_gen_path = './gen_MLEtrain.pkl'
+# pretrained_dis_path = './dis_pretrain.pkl'
 PATH = ""
 
 def read_sampleFile(file='kmer.pkl', pad_token='PAD', num=None):
@@ -199,10 +199,10 @@ def train_discriminator(discriminator, dis_opt, real_data_samples, generator, or
     """
 
     # generating a small validation set before training (using oracle and generator)
-    pos_val = oracle.sample(100)
-    neg_val = generator.sample(100)
-    val_inp, val_target = helpers.prepare_discriminator_data(pos_val, neg_val, gpu=CUDA)
-
+    pos_val = oracle.sample(50)
+    neg_val = generator.sample(50)
+    # val_inp, val_target = helpers.prepare_discriminator_data(pos_val, neg_val, gpu=CUDA)#???????????
+    val_inp, val_target = helpers.prepare_discriminator_data(pos_val, neg_val, gpu=CUDA)#???????????
     for d_step in range(d_steps):
         s = helpers.batchwise_sample(generator, POS_NEG_SAMPLES, BATCH_SIZE)
         dis_inp, dis_target = helpers.prepare_discriminator_data(real_data_samples, s, gpu=CUDA)
@@ -240,8 +240,8 @@ def train_discriminator(discriminator, dis_opt, real_data_samples, generator, or
 if __name__ == '__main__':
     x, vocabulary, reverse_vocab, sentence_lengths = read_sampleFile(file = "kmer.pkl")
     x_ref, vocabulary_ref, reverse_vocab_ref, sentence_lengths_ref = read_sampleFile(file = "reference.pkl")
-    oracle = Generator.Generator(GEN_EMBEDDING_DIM, GEN_HIDDEN_DIM, VOCAB_SIZE, MAX_SEQ_LEN, gpu=CUDA,oracle_init= True)
-    orcale_optimizer = optim.Adam(oracle.parameters(), lr=1e-2)
+    oracle = Generator.Generator(GEN_EMBEDDING_DIM, GEN_HIDDEN_DIM, VOCAB_SIZE, MAX_SEQ_LEN, gpu=CUDA)
+    orcale_optimizer = optim.Adam(oracle.parameters(), lr=1e-3)
     # train_baseline(oracle,orcale_optimizer,x,MLE_TRAIN_EPOCHS)
     # torch.save(oracle, 'oracle.pkl')
     # oracle.torch.load("oracle_state_dict_path")
@@ -268,7 +268,8 @@ if __name__ == '__main__':
 
     # GENERATOR MLE TRAINING use reference to train generator
     print('Starting Generator MLE Training...')
-    gen_optimizer = optim.Adam(gen.parameters(), lr=1e-2)
+    # gen_optimizer = optim.Adam(gen.parameters(), lr=1e-2)
+    gen_optimizer = optim.Adam(gen.parameters(), lr=1e-3)
     train_generator_MLE(gen, gen_optimizer, oracle, x_ref, MLE_TRAIN_EPOCHS)
     # 8888888888888
     # torch.save(gen, pretrained_gen_path)
