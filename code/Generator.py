@@ -128,7 +128,7 @@ class Generator(nn.Module):
             out, h = self.forward(inp[i], h)
             # TODO: should h be detached from graph (.detach())?
             for j in range(batch_size):
-                loss += -out[j][target.data[i][j]]*reward[j]     # log(P(y_t|Y_1:Y_{t-1})) * Q
+                loss += -out[j][target.data[i][j]]*reward[j]     # log(P(y_t|Y_1:Y_{t-1})) * Q ????????????
 
         return loss/batch_size
 
