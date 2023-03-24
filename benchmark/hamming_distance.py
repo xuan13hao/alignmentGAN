@@ -1,23 +1,19 @@
-def hamming_distance(a, b):
-    """
-    Returns the Hamming distance between two sequences a and b.
-    """
-    if len(a) != len(b):
-        raise ValueError("Sequences must be of equal length")
+def hamming_distance(s1, s2):
+    if len(s1) != len(s2):
+        raise ValueError("Strings must be of equal length")
+    return sum(c1 != c2 for c1, c2 in zip(s1, s2))
 
-    return sum(1 for x, y in zip(a, b) if x != y)
+t1 = "GAAAATCTCTCATGTACTCATTTAATAAAAATCAATACCTAGTACCAGGGAGGGAGATAATTGAATCTCTGTTGTCATTGTAGTCTCATGGTGGGAGGGAC"
+r1 = "GAAAATCTCATCTTGAATTGTAGCTCCCATAATCCCCACATGTTGTGGGAGGGACCCAGTGGGAGATAATTGAATCATGGTGGTGGGTTTTCCCCATGCTG"
+dis1 = hamming_distance(t1,r1) 
+print(dis1) # 65 Similarity = 35.6%
 
-def sequence_similarity(a, b):
-    """
-    Returns a float between 0 and 1 representing the similarity between
-    two sequences using Hamming distance.
-    """
-    distance = hamming_distance(a, b)
-    max_distance = max(len(a), len(b))
-    return 1 - (distance / max_distance)
+t2 = "TAGCAATCTCTGTAGTGCAATAATATCATGTAGCTATCAATACATACTAATAAATAATAAATAATTCATGTATGTCTTTAGCAGTGCAATGTAGCTAGTTC"
+r2 = "TAGCAATCATGTAACAAAAGCCTAACTATATAATATGTCAGGATATAGTTATAAATAATCCAAGTGGAAGCCTATATATTTTAAGGCCAAGATAGTGACCG"
+dis2 = hamming_distance(t2,r2)
+print(dis2) # 68 Similarity = 32.6%
 
-# Example usage
-target = "CTCATGTCATTTCATTTATTCATTGTTTTTTTTTATTTTTTTATATCTATTTTTTTCATTCATTGTTTTTTTTTTTATATTCATTATCATTATTCATTCAT"
-subject = "GAATTCAATTTTAATATAAAAATTTGAAACATCCTGTTTCATTGTAAGACATTGATTAATTCATGTTTTCAACTGGCAAACAGAGAAAAAGGAGGGAAGAG"
-similarity = sequence_similarity(target, subject)
-print(f"Similarity between '{subject}' and '{target}': {similarity}")
+t3 = "TCAGCTCATGTACATAATCCAAGTGGGGAGATAGTGAGAGAGAGAATGGAGTGCATCATGTGTGCAATGTGCTATGTAGTTCCCAGTGGGAGGGACCCAGT"
+r3 = "TCATTAAACCTCTCTTTCTTTATAAATTACCCAGTCTCGAGTATGTCTTTCTTAGCAGTGTGAGAATGGACTAATACACTCAGCTTGGTCGTTGTTGGTAT"
+dis3 = hamming_distance(t3,r3)
+print(dis3) # 73 Similarity = 27.2%
