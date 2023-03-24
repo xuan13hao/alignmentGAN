@@ -201,7 +201,7 @@ def train_discriminator(discriminator, dis_opt, real_data_samples, generator, or
 
     # generating a small validation set before training (using oracle and generator)
     # pos_val = oracle.sample(50)
-    neg_val = generator.sample(50)
+    # neg_val = generator.sample(50)
     # val_inp, val_target = helpers.prepare_discriminator_data(pos_val, neg_val, gpu=CUDA)#???????????
     # val_inp, val_target = helpers.prepare_discriminator_data(pos_val, neg_val, gpu=CUDA)#???????????
     for d_step in range(d_steps):
