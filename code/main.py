@@ -183,6 +183,7 @@ def train_generator_PG(gen, gen_opt, oracle, dis, num_batches):
 
         gen_opt.zero_grad()
         pg_loss = gen.batchPGLoss(inp, target, rewards)
+        # print("pg_loss:", print)
         pg_loss.backward()
         gen_opt.step()
 
@@ -219,6 +220,7 @@ def train_discriminator(discriminator, dis_opt, real_data_samples, generator, or
                 out = discriminator.batchClassify(inp)
                 loss_fn = nn.BCELoss()
                 loss = loss_fn(out, target)
+                # print("BECloss = ",loss)
                 loss.backward()
                 dis_opt.step()
 
@@ -238,6 +240,7 @@ def train_discriminator(discriminator, dis_opt, real_data_samples, generator, or
             #     total_loss, total_acc, torch.sum((val_pred>0.5)==(val_target>0.5)).data.item()/101.))
             print(' Average Loss = %.4f, Train acc = %.4f' % (
                 total_loss, total_acc))
+            
 
 # MAIN
 if __name__ == '__main__':
@@ -307,7 +310,7 @@ if __name__ == '__main__':
         train_discriminator(dis, dis_optimizer, real, gen, oracle, 5, 3)
     try:
         torch.save(gen, 'generator.pkl')
-        torch.save(reverse_vocab_ref, 'ref_reverse_vocab.pkl')
+        torch.save(dis, 'discriminator.pkl')
         print('successfully saved generator model.')
     except:
         print('error: model saving failed!!!!!!')
