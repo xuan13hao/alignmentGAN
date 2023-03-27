@@ -117,7 +117,7 @@ class Generator(nn.Module):
 
             inp should be target with <s> (start letter) prepended
         """
-
+        print("reward = ",reward)
         batch_size, seq_len = inp.size()
         inp = inp.permute(1, 0)          # seq_len x batch_size
         target = target.permute(1, 0)    # seq_len x batch_size
@@ -128,7 +128,7 @@ class Generator(nn.Module):
             out, h = self.forward(inp[i], h)
             # TODO: should h be detached from graph (.detach())?
             for j in range(batch_size):
-                loss += -out[j][target.data[i][j]]*reward[j]     # log(P(y_t|Y_1:Y_{t-1})) * Q ????????????
-
+                loss += -out[j][target.data[i][j]]*reward[j]     # log(P(y_t|Y_1:Y_{t-1})) * Q 
+        # print("pgloss = ",loss/batch_size)
         return loss/batch_size
 

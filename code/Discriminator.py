@@ -52,7 +52,7 @@ class Discriminator(nn.Module):
         Returns: out
             - out: batch_size ([0,1] score)
         """
-
+        # print("inp = ",inp)
         h = self.init_hidden(inp.size()[0])
         out = self.forward(inp, h)
         return out.view(-1)
@@ -69,5 +69,6 @@ class Discriminator(nn.Module):
         loss_fn = nn.BCELoss()
         h = self.init_hidden(inp.size()[0])
         out = self.forward(inp, h)
+        # print("batchBCELoss = ",loss_fn(out, target))
         return loss_fn(out, target)
 
