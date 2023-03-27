@@ -3,12 +3,13 @@
 Kmer 
 Created on Thu March 10 11:14:08 2023
 """
+
 from itertools import chain
 import pandas as pd
-SEQ_LENGTH = 101
+SEQ_LENGTH = 99
 import fasta
 # ,mask_token = 'MASK'
-# L - K + 1    200 - 3 + 1
+# L - K + 1    101 - 3 + 1 = 99
 def DNAToWord(dna, K,pad_token='PAD',mask_token = 'MASK'):
     kmers = []
     length = len(dna)
@@ -44,10 +45,14 @@ def load_seqs(inputFilename,kmer,outputFilename='kmer.pkl'):
     return seqs
 
 
+
+
 #%%
 if __name__ == '__main__':
 
-    kmer_list = load_seqs('real.fa',1,outputFilename = "kmer.pkl")
-    ref_list = load_seqs('ref.fa',1,outputFilename = "reference.pkl")
+    kmer_list = load_seqs('real.fa',3,outputFilename = "kmer.pkl")
+    ref_list = load_seqs('ref.fa',3,outputFilename = "reference.pkl")
     # test = load_seqs('../data/test.fa',1,outputFilename = "test.pkl")
-    # print(kmer_list)
+    print(kmer_list)
+    # dic = generate_all_kmers(1)
+    # print(dic)
