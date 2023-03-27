@@ -3,7 +3,7 @@ from math import ceil
 import numpy as np
 import sys
 import pdb
-
+from itertools import product
 import torch
 import torch.optim as optim
 import torch.nn as nn
@@ -18,14 +18,14 @@ Created on Thu March 1 11:14:08 2023
 """
 
 CUDA = True
-VOCAB_SIZE = 6
-MAX_SEQ_LEN = 101
+VOCAB_SIZE = 66
+MAX_SEQ_LEN = 99
 START_LETTER = 0
 BATCH_SIZE = 1
 MLE_TRAIN_EPOCHS = 100
 ADV_TRAIN_EPOCHS = 50
 POS_NEG_SAMPLES = 5
-SEQ_LENGTH = 101
+SEQ_LENGTH = 99
 GEN_EMBEDDING_DIM = 32
 GEN_HIDDEN_DIM = 32
 DIS_EMBEDDING_DIM = 64
@@ -37,7 +37,18 @@ DIS_HIDDEN_DIM = 64
 # pretrained_dis_path = './dis_pretrain.pkl'
 PATH = ""
 
-def read_sampleFile(file='kmer.pkl', pad_token='PAD', num=None):
+def generate_all_kmers(k):
+    alphabet = "ACGT"
+    kmers = [''.join(p) for p in product(alphabet, repeat=k)]
+    # print(kmers)
+    idx = 0
+    kmer_dict = {}
+    for kmer in kmers:
+        idx = idx + 1
+        kmer_dict[kmer] = idx
+    return kmer_dict
+
+def read_sampleFile(k, file='kmer.pkl', pad_token='PAD',num=None):
     if file[-3:]=='pkl' or file[-3:]=='csv':
         if file[-3:] == 'pkl':
             data = pd.read_pickle(file)
@@ -79,29 +90,30 @@ def read_sampleFile(file='kmer.pkl', pad_token='PAD', num=None):
                 count += 1
                 if num is not None and count >= num:
                     break
-    # print(characters)
-    vocabulary = dict([(y,x+1) for x, y in enumerate(set(characters))])
-    reverse_vocab = dict([(x+1,y) for x, y in enumerate(set(characters))])
-    # print(vocabulary)
-    # print(reverse_vocab)
-    # add start and end tag:
-    vocabulary['START'] = 0
-    reverse_vocab[0] = 'START'
-    vocabulary['A'] = 1
-    reverse_vocab[1] = 'A'
-    vocabulary['C'] = 2
-    reverse_vocab[2] = 'C'
-    vocabulary['G'] = 3
-    reverse_vocab[3] = 'G'
-    vocabulary['T'] = 4
-    reverse_vocab[4] = 'T'
-    vocabulary[pad_token] = 5
-    reverse_vocab[5] = pad_token
-    # if pad_token not in vocabulary.keys():
-    #     vocabulary[pad_token] = len(vocabulary)
-    #     reverse_vocab[len(vocabulary)-1] = pad_token
-    vocabulary['END'] = 6
-    reverse_vocab[6] = 'END'
+    # # print(characters)
+    # vocabulary = dict([(y,x+1) for x, y in enumerate(set(characters))])
+    # reverse_vocab = dict([(x+1,y) for x, y in enumerate(set(characters))])
+    # # print(vocabulary)
+    # # print(reverse_vocab)
+    # # add start and end tag:
+    # vocabulary['START'] = 0
+    # reverse_vocab[0] = 'START'
+    # vocabulary['A'] = 1
+    # reverse_vocab[1] = 'A'
+    # vocabulary['C'] = 2
+    # reverse_vocab[2] = 'C'
+    # vocabulary['G'] = 3
+    # reverse_vocab[3] = 'G'
+    # vocabulary['T'] = 4
+    # reverse_vocab[4] = 'T'
+    # vocabulary[pad_token] = 5
+    # reverse_vocab[5] = pad_token
+    # # if pad_token not in vocabulary.keys():
+    # #     vocabulary[pad_token] = len(vocabulary)
+    # #     reverse_vocab[len(vocabulary)-1] = pad_token
+    # vocabulary['END'] = 6
+    # reverse_vocab[6] = 'END'
+    vocabulary = generate_all_kmers(k)
     # print(vocabulary)
     # print(reverse_vocab)
     # print(vocabulary,":",reverse_vocab)
@@ -115,7 +127,8 @@ def read_sampleFile(file='kmer.pkl', pad_token='PAD', num=None):
     # to tensor
     x = torch.tensor(generated_data).view(-1,SEQ_LENGTH)
     # print(x)
-    return x.int(), vocabulary, reverse_vocab, x_lengths
+    #x.int(), vocabulary, reverse_vocab, x_lengths
+    return x.int(), vocabulary, x_lengths
 
 
 def train_baseline(oracle,oracle_opt,train_data,epochs):
@@ -244,10 +257,12 @@ def train_discriminator(discriminator, dis_opt, real_data_samples, generator, or
 
 # MAIN
 if __name__ == '__main__':
-    real, vocabulary, reverse_vocab, sentence_lengths = read_sampleFile(file = "kmer.pkl")
-    fake, vocabulary_ref, reverse_vocab_ref, sentence_lengths_ref = read_sampleFile(file = "reference.pkl")
+    real, vocabulary, sentence_lengths = read_sampleFile(file = "kmer.pkl",k = 3)
+    fake, vocabulary_ref,  sentence_lengths_ref = read_sampleFile(file = "reference.pkl", k = 3)
     oracle = Generator.Generator(GEN_EMBEDDING_DIM, GEN_HIDDEN_DIM, VOCAB_SIZE, MAX_SEQ_LEN, gpu=CUDA)
     orcale_optimizer = optim.Adam(oracle.parameters(), lr=1e-2)
+    # print(real)
+    # print(vocabulary)
     # train_baseline(oracle,orcale_optimizer,x,MLE_TRAIN_EPOCHS)
     # torch.save(oracle, 'oracle.pkl')
     # oracle.torch.load("oracle_state_dict_path")
