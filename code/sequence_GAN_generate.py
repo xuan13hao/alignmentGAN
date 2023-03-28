@@ -34,8 +34,8 @@ def decode(k,batch_size=1):
         for n in i:
             l.append(dict[int(n)])
         seq = generate_sequence(l)
-        print(seq)
-        # print(''.join(l)+'\n')
+        # print(seq)
+        print(seq+'\n')
 
 if __name__ == '__main__':
     try:

@@ -21,10 +21,10 @@ CUDA = True
 VOCAB_SIZE = 66
 MAX_SEQ_LEN = 99
 START_LETTER = 0
-BATCH_SIZE = 1
+BATCH_SIZE = 32
 MLE_TRAIN_EPOCHS = 100
-ADV_TRAIN_EPOCHS = 50
-POS_NEG_SAMPLES = 5
+ADV_TRAIN_EPOCHS = 150
+POS_NEG_SAMPLES = 9517
 SEQ_LENGTH = 99
 GEN_EMBEDDING_DIM = 32
 GEN_HIDDEN_DIM = 32
@@ -201,10 +201,10 @@ def train_generator_PG(gen, gen_opt, oracle, dis, num_batches):
         gen_opt.step()
 
     # sample from generator and compute oracle NLL
-    # oracle_loss = helpers.batchwise_oracle_nll(gen, oracle, POS_NEG_SAMPLES, BATCH_SIZE, MAX_SEQ_LEN,
-    #                                                start_letter=START_LETTER, gpu=CUDA)
+    oracle_loss = helpers.batchwise_oracle_nll(gen, oracle, POS_NEG_SAMPLES, BATCH_SIZE, MAX_SEQ_LEN,
+                                                   start_letter=START_LETTER, gpu=CUDA)
 
-    # print(' oracle_sample_NLL = %.4f' % oracle_loss)
+    print(' oracle_sample_NLL = %.4f' % oracle_loss)
 
 
 def train_discriminator(discriminator, dis_opt, real_data_samples, generator, oracle, d_steps, epochs):
@@ -258,10 +258,11 @@ def train_discriminator(discriminator, dis_opt, real_data_samples, generator, or
 # MAIN
 if __name__ == '__main__':
     real, vocabulary, sentence_lengths = read_sampleFile(file = "kmer.pkl",k = 3)
-    fake, vocabulary_ref,  sentence_lengths_ref = read_sampleFile(file = "reference.pkl", k = 3)
+    fake, vocabulary_ref, sentence_lengths_ref = read_sampleFile(file = "reference.pkl", k = 3)
     oracle = Generator.Generator(GEN_EMBEDDING_DIM, GEN_HIDDEN_DIM, VOCAB_SIZE, MAX_SEQ_LEN, gpu=CUDA)
-    orcale_optimizer = optim.Adam(oracle.parameters(), lr=1e-2)
-    # print(real)
+    orcale_optimizer = optim.Adam(oracle.parameters(), lr=1e-3)
+    print("Real Sample num = ",len(real))
+    print("Fake Sample num = ",len(fake))
     # print(vocabulary)
     # train_baseline(oracle,orcale_optimizer,x,MLE_TRAIN_EPOCHS)
     # torch.save(oracle, 'oracle.pkl')
@@ -288,9 +289,9 @@ if __name__ == '__main__':
         fake = fake.cuda()
 
     # GENERATOR MLE TRAINING use reference to train generator
-    # print('Starting Generator MLE Training...')
+    print('Starting Generator MLE Training...')
     # gen_optimizer = optim.Adam(gen.parameters(), lr=1e-2)
-    gen_optimizer = optim.Adam(gen.parameters(), lr=1e-2)
+    gen_optimizer = optim.Adam(gen.parameters(), lr=1e-3)
     train_generator_MLE(gen, gen_optimizer, oracle, fake, MLE_TRAIN_EPOCHS)
     # 8888888888888
     # torch.save(gen, pretrained_gen_path)
@@ -300,7 +301,7 @@ if __name__ == '__main__':
     # gen = torch.load(pretrained_gen_path)
     # gen_optimizer = optim.Adam(gen.parameters(), lr=1e-2)
     # # PRETRAIN DISCRIMINATOR
-    # print('\nStarting Discriminator Training...')
+    print('\nStarting Discriminator Training...')
     dis_optimizer = optim.Adagrad(dis.parameters())
     train_discriminator(dis, dis_optimizer, real, gen, oracle, 50, 3)
     # torch.save(dis, pretrained_dis_path)
@@ -316,7 +317,7 @@ if __name__ == '__main__':
     for epoch in range(ADV_TRAIN_EPOCHS):
         # print('\n--------\nEPOCH %d\n--------' % (epoch+1))
         # TRAIN GENERATOR
-        # print('\nAdversarial Training Generator : ', end='')
+        print('\nAdversarial Training Generator : ', end='')
         sys.stdout.flush()
         train_generator_PG(gen, gen_optimizer, oracle, dis, 1)
 
