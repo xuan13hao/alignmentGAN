@@ -50,8 +50,8 @@ def load_seqs(inputFilename,kmer,outputFilename='kmer.pkl'):
 #%%
 if __name__ == '__main__':
 
-    kmer_list = load_seqs('real.fa',3,outputFilename = "kmer.pkl")
-    ref_list = load_seqs('ref.fa',3,outputFilename = "reference.pkl")
+    kmer_list = load_seqs('real_reads.fa',3,outputFilename = "kmer.pkl")
+    ref_list = load_seqs('real_ref.fa',3,outputFilename = "reference.pkl")
     # test = load_seqs('../data/test.fa',1,outputFilename = "test.pkl")
     print(kmer_list)
     # dic = generate_all_kmers(1)
