@@ -18,14 +18,13 @@ Created on Thu March 1 11:14:08 2023
 """
 
 CUDA = True
-VOCAB_SIZE = 66
-MAX_SEQ_LEN = 99
+VOCAB_SIZE = 1026# 1024 + 2
 START_LETTER = 0
-BATCH_SIZE = 32
+BATCH_SIZE = 1
 MLE_TRAIN_EPOCHS = 100
-ADV_TRAIN_EPOCHS = 150
-POS_NEG_SAMPLES = 9517
-SEQ_LENGTH = 99
+ADV_TRAIN_EPOCHS = 50
+POS_NEG_SAMPLES = 10
+SEQ_LENGTH = 97
 GEN_EMBEDDING_DIM = 32
 GEN_HIDDEN_DIM = 32
 DIS_EMBEDDING_DIM = 64
@@ -173,7 +172,7 @@ def train_generator_MLE(gen, gen_opt, oracle, real_data_samples, epochs):
         #         sys.stdout.flush()
 
         # # each loss in a batch is loss per sample
-        total_loss = total_loss / ceil(POS_NEG_SAMPLES / float(BATCH_SIZE)) / MAX_SEQ_LEN
+        total_loss = total_loss / ceil(POS_NEG_SAMPLES / float(BATCH_SIZE)) / SEQ_LENGTH
 
         # # sample from generator and compute oracle NLL
         # oracle_loss = helpers.batchwise_oracle_nll(gen, oracle, POS_NEG_SAMPLES, BATCH_SIZE, MAX_SEQ_LEN,
@@ -201,7 +200,7 @@ def train_generator_PG(gen, gen_opt, oracle, dis, num_batches):
         gen_opt.step()
 
     # sample from generator and compute oracle NLL
-    oracle_loss = helpers.batchwise_oracle_nll(gen, oracle, POS_NEG_SAMPLES, BATCH_SIZE, MAX_SEQ_LEN,
+    oracle_loss = helpers.batchwise_oracle_nll(gen, oracle, POS_NEG_SAMPLES, BATCH_SIZE, SEQ_LENGTH,
                                                    start_letter=START_LETTER, gpu=CUDA)
 
     print(' oracle_sample_NLL = %.4f' % oracle_loss)
@@ -257,13 +256,14 @@ def train_discriminator(discriminator, dis_opt, real_data_samples, generator, or
 
 # MAIN
 if __name__ == '__main__':
-    real, vocabulary, sentence_lengths = read_sampleFile(file = "kmer.pkl",k = 3)
-    fake, vocabulary_ref, sentence_lengths_ref = read_sampleFile(file = "reference.pkl", k = 3)
-    oracle = Generator.Generator(GEN_EMBEDDING_DIM, GEN_HIDDEN_DIM, VOCAB_SIZE, MAX_SEQ_LEN, gpu=CUDA)
-    orcale_optimizer = optim.Adam(oracle.parameters(), lr=1e-3)
+    real, vocabulary, sentence_lengths = read_sampleFile(file = "kmer.pkl",k = 5)
+    fake, vocabulary_ref, sentence_lengths_ref = read_sampleFile(file = "reference.pkl", k = 5)
+    oracle = Generator.Generator(GEN_EMBEDDING_DIM, GEN_HIDDEN_DIM, VOCAB_SIZE, SEQ_LENGTH, gpu=CUDA)
+    orcale_optimizer = optim.Adam(oracle.parameters(), lr=1e-2)
     print("Real Sample num = ",len(real))
     print("Fake Sample num = ",len(fake))
     # print(vocabulary)
+    
     # train_baseline(oracle,orcale_optimizer,x,MLE_TRAIN_EPOCHS)
     # torch.save(oracle, 'oracle.pkl')
     # oracle.torch.load("oracle_state_dict_path")
@@ -277,8 +277,8 @@ if __name__ == '__main__':
     # samples for the new oracle can be generated using helpers.batchwise_sample()
     # print(oracle_samples)
     # print(x)
-    gen = Generator.Generator(GEN_EMBEDDING_DIM, GEN_HIDDEN_DIM, VOCAB_SIZE, MAX_SEQ_LEN, gpu=CUDA)
-    dis = Discriminator.Discriminator(DIS_EMBEDDING_DIM, DIS_HIDDEN_DIM, VOCAB_SIZE, MAX_SEQ_LEN, gpu=CUDA)
+    gen = Generator.Generator(GEN_EMBEDDING_DIM, GEN_HIDDEN_DIM, VOCAB_SIZE, SEQ_LENGTH, gpu=CUDA)
+    dis = Discriminator.Discriminator(DIS_EMBEDDING_DIM, DIS_HIDDEN_DIM, VOCAB_SIZE, SEQ_LENGTH, gpu=CUDA)
 
     if CUDA:
         print("Running CUDA")
@@ -291,7 +291,7 @@ if __name__ == '__main__':
     # GENERATOR MLE TRAINING use reference to train generator
     print('Starting Generator MLE Training...')
     # gen_optimizer = optim.Adam(gen.parameters(), lr=1e-2)
-    gen_optimizer = optim.Adam(gen.parameters(), lr=1e-3)
+    gen_optimizer = optim.Adam(gen.parameters(), lr=1e-2)
     train_generator_MLE(gen, gen_optimizer, oracle, fake, MLE_TRAIN_EPOCHS)
     # 8888888888888
     # torch.save(gen, pretrained_gen_path)

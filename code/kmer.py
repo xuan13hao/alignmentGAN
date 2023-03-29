@@ -6,11 +6,11 @@ Created on Thu March 10 11:14:08 2023
 
 from itertools import chain
 import pandas as pd
-SEQ_LENGTH = 99
+SEQ_LENGTH = 97
 import fasta
 # ,mask_token = 'MASK'
-# L - K + 1    101 - 3 + 1 = 99
-def DNAToWord(dna, K,pad_token='PAD',mask_token = 'MASK'):
+# L - K + 1    101 - 5 + 1 = 97
+def DNAToWord(dna, K ,pad_token='PAD',mask_token = 'MASK'):
     kmers = []
     length = len(dna)
     for i in range(length - K + 1):
@@ -50,8 +50,8 @@ def load_seqs(inputFilename,kmer,outputFilename='kmer.pkl'):
 #%%
 if __name__ == '__main__':
 
-    kmer_list = load_seqs('real_reads.fa',3,outputFilename = "kmer.pkl")
-    ref_list = load_seqs('real_ref.fa',3,outputFilename = "reference.pkl")
+    kmer_list = load_seqs('real.fa',5,outputFilename = "kmer.pkl")
+    ref_list = load_seqs('ref.fa',5,outputFilename = "reference.pkl")
     # test = load_seqs('../data/test.fa',1,outputFilename = "test.pkl")
     print(kmer_list)
     # dic = generate_all_kmers(1)
