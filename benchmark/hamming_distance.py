@@ -1,19 +1,31 @@
-def hamming_distance(s1, s2):
-    if len(s1) != len(s2):
-        raise ValueError("Strings must be of equal length")
-    return sum(c1 != c2 for c1, c2 in zip(s1, s2))
+from Bio import SeqIO
+from Bio.Seq import Seq
+from Bio import pairwise2
+from Bio.pairwise2 import format_alignment
 
-t1 = "GAAAATCCCCAACTATATAATTTGAAACATCCTGTTTCATTGTAGCTCCCACGTGCGCAATGTGTTCATTGTAGCTCCCATAATCCCCACGTGCGCAATTG"
-r1 = "GAAAATCTCATCTTGAATTGTAGCTCCCATAATCCCCACATGTTGTGGGAGGGACCCAGTGGGAGATAATTGAATCATGGTGGTGGGTTTTCCCCATGCTG"
-dis1 = hamming_distance(t1,r1) 
-print(dis1) # 65 Similarity = 35.6%
+# read the sequences from the two FASTA files
+sequences1 = SeqIO.index("gen.fa", "fasta")
+sequences2 = SeqIO.index("real.fa", "fasta")
 
-t2 = "TAGCAATCTCTGTAGTGCAATAATATCATGTAGCTATCAATACATACTAATAAATAATAAATAATTCATGTATGTCTTTAGCAGTGCAATGTAGCTAGTTC"
-r2 = "TAGCAATCATGTAACAAAAGCCTAACTATATAATATGTCAGGATATAGTTATAAATAATCCAAGTGGAAGCCTATATATTTTAAGGCCAAGATAGTGACCG"
-dis2 = hamming_distance(t2,r2)
-print(dis2) # 68 Similarity = 32.6%
+# create a list to store the similarity percentages for each sequence pair
+similarity_list = []
 
-t3 = "TCATTAAACCTCTCTTTCTTTATAAATTACCCAGTGGGAGATAATTGAATGGACTAATACATAGTATTATAAATTACCCAGTGGGAGATAATTGAAACATC"
-r3 = "TCATTAAACCTCTCTTTCTTTATAAATTACCCAGTCTCGAGTATGTCTTTCTTAGCAGTGTGAGAATGGACTAATACACTCAGCTTGGTCGTTGTTGGTAT"
-dis3 = hamming_distance(t3,r3)
-print(dis3) # 73 Similarity = 27.2%
+# iterate over the two sequence lists and compare each sequence in file1 to each sequence in file2
+for seq1_id in sequences1:
+    for seq2_id in sequences2:
+        seq1 = sequences1[seq1_id].seq
+        seq2 = sequences2[seq2_id].seq
+        # calculate the Hamming distance between the two sequences
+        distance = sum(1 for a, b in zip(seq1, seq2) if a != b)
+        # calculate the similarity percentage and store it in the list
+        similarity_percentage = (len(seq1) - distance) / len(seq1) * 100
+        similarity_list.append((seq1_id, seq2_id, similarity_percentage))
+
+# sort the sequence pairs by their similarity percentage in descending order
+sorted_list = sorted(similarity_list, key=lambda x: x[2], reverse=True)
+
+# print the sorted sequence pairs
+for pair in sorted_list:
+    print(f"{pair[0]} vs {pair[1]}: {pair[2]:.2f}% similarity")
+
+

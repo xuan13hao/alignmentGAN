@@ -18,6 +18,7 @@ def decode_all_kmers(k):
     return kmer_dict
 
 def generate_sequence(kmer_list):
+    # print(kmer_list)
     sequence = kmer_list[0]
     k = len(kmer_list[0])
     for i in range(1, len(kmer_list)):
@@ -28,14 +29,21 @@ def decode(k,batch_size=1):
     model = torch.load('generator.pkl')
     out = model.sample(batch_size)
     dict = decode_all_kmers(k)
-    print(out)
-    l = []
+    reads_file = open("../benchmark/gen.fa", 'w')
+    # print(out)
+    seqs = []
+    idx = 0
     for i in out:
+        idx = idx + 1
+        l = []
         for n in i:
             l.append(dict[int(n)])
         seq = generate_sequence(l)
+        # seqs.append(">"+idx+"\n"+seq+"\n")
+        reads_file.write(">"+str(idx)+"\n"+seq+"\n")
+        # print(">",idx)
         # print(seq)
-        print(seq+'\n')
+    
 
 if __name__ == '__main__':
     try:
@@ -43,6 +51,6 @@ if __name__ == '__main__':
     except IndexError:
         batch_size = 1
     
-    decode(3, batch_size)
+    decode(5, batch_size)
     # print(result[0])
     

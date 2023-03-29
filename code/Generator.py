@@ -117,7 +117,7 @@ class Generator(nn.Module):
 
             inp should be target with <s> (start letter) prepended
         """
-        print("reward = ",reward)
+        # print("reward = ",reward)
         batch_size, seq_len = inp.size()
         inp = inp.permute(1, 0)          # seq_len x batch_size
         target = target.permute(1, 0)    # seq_len x batch_size
