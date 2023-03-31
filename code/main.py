@@ -18,13 +18,13 @@ Created on Thu March 1 11:14:08 2023
 """
 
 CUDA = True
-VOCAB_SIZE = 1026# 1024 + 2
+VOCAB_SIZE = 66# 1024 + 2
 START_LETTER = 0
 BATCH_SIZE = 1
 MLE_TRAIN_EPOCHS = 100
 ADV_TRAIN_EPOCHS = 50
 POS_NEG_SAMPLES = 10
-SEQ_LENGTH = 97
+SEQ_LENGTH = 99
 GEN_EMBEDDING_DIM = 32
 GEN_HIDDEN_DIM = 32
 DIS_EMBEDDING_DIM = 64
@@ -256,8 +256,8 @@ def train_discriminator(discriminator, dis_opt, real_data_samples, generator, or
 
 # MAIN
 if __name__ == '__main__':
-    real, vocabulary, sentence_lengths = read_sampleFile(file = "kmer.pkl",k = 5)
-    fake, vocabulary_ref, sentence_lengths_ref = read_sampleFile(file = "reference.pkl", k = 5)
+    real, vocabulary, sentence_lengths = read_sampleFile(file = "kmer.pkl",k = 3)
+    fake, vocabulary_ref, sentence_lengths_ref = read_sampleFile(file = "reference.pkl", k = 3)
     oracle = Generator.Generator(GEN_EMBEDDING_DIM, GEN_HIDDEN_DIM, VOCAB_SIZE, SEQ_LENGTH, gpu=CUDA)
     orcale_optimizer = optim.Adam(oracle.parameters(), lr=1e-2)
     print("Real Sample num = ",len(real))

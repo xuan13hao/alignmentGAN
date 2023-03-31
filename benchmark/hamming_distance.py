@@ -23,9 +23,12 @@ for seq1_id in sequences1:
 
 # sort the sequence pairs by their similarity percentage in descending order
 sorted_list = sorted(similarity_list, key=lambda x: x[2], reverse=True)
-
+seq_len = len(sequences1)
+i = 0
 # print the sorted sequence pairs
 for pair in sorted_list:
-    print(f"{pair[0]} vs {pair[1]}: {pair[2]:.2f}% similarity")
+    i = i + 1
+    if i <= seq_len:
+        print(f"{pair[0]} \t {pair[1]} \t {pair[2]:.2f}")
 
 
