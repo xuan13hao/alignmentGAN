@@ -6,10 +6,17 @@ Created on Thu March 10 11:14:08 2023
 
 from itertools import chain
 import pandas as pd
+<<<<<<< HEAD
 SEQ_LENGTH = 45 
 import fasta
 # ,mask_token = 'MASK'
 # L - K + 1    101 - 6 + 1 = 96 50- 6 + 1
+=======
+SEQ_LENGTH = 99
+import fasta
+# ,mask_token = 'MASK'
+# L - K + 1    101 - 3 + 1 = 99
+>>>>>>> 87e3b5fcfa6bec1dfa7d1132ca0f91035da96161
 def DNAToWord(dna, K ,pad_token='PAD',mask_token = 'MASK'):
     kmers = []
     length = len(dna)
@@ -50,10 +57,15 @@ def load_seqs(inputFilename,kmer,outputFilename='kmer.pkl'):
 #%%
 if __name__ == '__main__':
 
+<<<<<<< HEAD
     kmer_list = load_seqs('real.fa',6,outputFilename = "kmer.pkl")
     ref_list = load_seqs('ref.fa',6,outputFilename = "reference.pkl")
     # kmer_list = load_seqs('real_reads.fa',6,outputFilename = "kmer.pkl")
     # ref_list = load_seqs('real_ref.fa',6,outputFilename = "reference.pkl")
+=======
+    kmer_list = load_seqs('real.fa',3,outputFilename = "kmer.pkl")
+    ref_list = load_seqs('ref.fa',3,outputFilename = "reference.pkl")
+>>>>>>> 87e3b5fcfa6bec1dfa7d1132ca0f91035da96161
     # test = load_seqs('../data/test.fa',1,outputFilename = "test.pkl")
     print(kmer_list)
     # dic = generate_all_kmers(1)

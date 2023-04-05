@@ -4,8 +4,13 @@ from Bio import pairwise2
 from Bio.pairwise2 import format_alignment
 
 # read the sequences from the two FASTA files
+<<<<<<< HEAD
 sequences2 = SeqIO.index("gen.fa", "fasta")
 sequences1 = SeqIO.index("real.fa", "fasta")
+=======
+sequences1 = SeqIO.index("gen.fa", "fasta")
+sequences2 = SeqIO.index("real.fa", "fasta")
+>>>>>>> 87e3b5fcfa6bec1dfa7d1132ca0f91035da96161
 
 # create a list to store the similarity percentages for each sequence pair
 similarity_list = []
@@ -22,6 +27,7 @@ for seq1_id in sequences1:
         similarity_list.append((seq1_id, seq2_id, similarity_percentage))
 
 # sort the sequence pairs by their similarity percentage in descending order
+<<<<<<< HEAD
 sorted_list = sorted(similarity_list, key=lambda x: x[0], reverse=True)
 seq_len = len(sequences1)
 max_list = []
@@ -52,3 +58,15 @@ print("Average Accuracy = ",sum(max_list)/len(max_list))
 
 # for id, tp in dic.items():
 #     print(id,":",tp)
+=======
+sorted_list = sorted(similarity_list, key=lambda x: x[2], reverse=True)
+seq_len = len(sequences1)
+i = 0
+# print the sorted sequence pairs
+for pair in sorted_list:
+    i = i + 1
+    if i <= seq_len:
+        print(f"{pair[0]} \t {pair[1]} \t {pair[2]:.2f}")
+
+
+>>>>>>> 87e3b5fcfa6bec1dfa7d1132ca0f91035da96161
