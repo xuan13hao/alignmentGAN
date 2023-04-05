@@ -37,9 +37,9 @@ for read in sam_file.fetch():
         segment = genome_file[chrom][start:end].upper()
         # Write the segment to the output FASTA file
         new_seq = read.qname + segment.seq 
-        print(new_seq)
+        # print(new_seq)
         output_file.write(">{}:{}-{}\n{}\n".format(chrom, start+1, end, segment.seq))
-        reads_file.write(">" + read.qname + "\n")
+        reads_file.write(">" + read.qname+"_"+str(read.reference_name)+":"+str(read.reference_start)+"-"+str(read.reference_end)+ "\n")
         reads_file.write(read.seq + "\n")
         contact_reads.write(">{}:{}-{}-{}\n{}\n".format(chrom, start+1, end,read.qname, new_seq))
 

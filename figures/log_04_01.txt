@@ -1,0 +1,1207 @@
+Real Sample num =  9517
+Fake Sample num =  9517
+Running CUDA
+Starting Generator MLE Training...
+ Average Train NLL = 3.0689
+ Average Train NLL = 1.4852
+ Average Train NLL = 1.4260
+ Average Train NLL = 1.3964
+ Average Train NLL = 1.3745
+ Average Train NLL = 1.3570
+ Average Train NLL = 1.3424
+ Average Train NLL = 1.3295
+ Average Train NLL = 1.3187
+ Average Train NLL = 1.3085
+ Average Train NLL = 1.3016
+ Average Train NLL = 1.2925
+ Average Train NLL = 1.2850
+ Average Train NLL = 1.2788
+ Average Train NLL = 1.2729
+ Average Train NLL = 1.2684
+ Average Train NLL = 1.2712
+ Average Train NLL = 1.2687
+ Average Train NLL = 1.2581
+ Average Train NLL = 1.2531
+ Average Train NLL = 1.2524
+ Average Train NLL = 1.2478
+ Average Train NLL = 1.2523
+ Average Train NLL = 1.2554
+ Average Train NLL = 1.2473
+ Average Train NLL = 1.2434
+ Average Train NLL = 1.2402
+ Average Train NLL = 1.2439
+ Average Train NLL = 1.2396
+ Average Train NLL = 1.2338
+ Average Train NLL = 1.2352
+ Average Train NLL = 1.2320
+ Average Train NLL = 1.2349
+ Average Train NLL = 1.2367
+ Average Train NLL = 1.2341
+ Average Train NLL = 1.2276
+ Average Train NLL = 1.2273
+ Average Train NLL = 1.2399
+ Average Train NLL = 1.2284
+ Average Train NLL = 1.2249
+ Average Train NLL = 1.2300
+ Average Train NLL = 1.2274
+ Average Train NLL = 1.2284
+ Average Train NLL = 1.2276
+ Average Train NLL = 1.2285
+ Average Train NLL = 1.2293
+ Average Train NLL = 1.2269
+ Average Train NLL = 1.2411
+ Average Train NLL = 1.2261
+ Average Train NLL = 1.2259
+ Average Train NLL = 1.2326
+ Average Train NLL = 1.2237
+ Average Train NLL = 1.2277
+ Average Train NLL = 1.2298
+ Average Train NLL = 1.2296
+ Average Train NLL = 1.2246
+ Average Train NLL = 1.2221
+ Average Train NLL = 1.2269
+ Average Train NLL = 1.2254
+ Average Train NLL = 1.2244
+ Average Train NLL = 1.2445
+ Average Train NLL = 1.2279
+ Average Train NLL = 1.2217
+ Average Train NLL = 1.2171
+ Average Train NLL = 1.2224
+ Average Train NLL = 1.2270
+ Average Train NLL = 1.2243
+ Average Train NLL = 1.2251
+ Average Train NLL = 1.2256
+ Average Train NLL = 1.2207
+ Average Train NLL = 1.2290
+ Average Train NLL = 1.2193
+ Average Train NLL = 1.2222
+ Average Train NLL = 1.2353
+ Average Train NLL = 1.2342
+ Average Train NLL = 1.2218
+ Average Train NLL = 1.2207
+ Average Train NLL = 1.2263
+ Average Train NLL = 1.2272
+ Average Train NLL = 1.2215
+ Average Train NLL = 1.2205
+ Average Train NLL = 1.2231
+ Average Train NLL = 1.2292
+ Average Train NLL = 1.2315
+ Average Train NLL = 1.2246
+ Average Train NLL = 1.2248
+ Average Train NLL = 1.2279
+ Average Train NLL = 1.2229
+ Average Train NLL = 1.2223
+ Average Train NLL = 1.2405
+ Average Train NLL = 1.2317
+ Average Train NLL = 1.2239
+ Average Train NLL = 1.2233
+ Average Train NLL = 1.2259
+ Average Train NLL = 1.2528
+ Average Train NLL = 1.2408
+ Average Train NLL = 1.2350
+ Average Train NLL = 1.2335
+ Average Train NLL = 1.2318
+ Average Train NLL = 1.2331
+
+Starting Discriminator Training...
+ Average Loss = 0.6595, Train acc = 0.5884
+ Average Loss = 0.4937, Train acc = 0.7658
+ Average Loss = 0.3642, Train acc = 0.8462
+ Average Loss = 0.3297, Train acc = 0.8651
+ Average Loss = 0.2729, Train acc = 0.8948
+ Average Loss = 0.2326, Train acc = 0.9125
+ Average Loss = 0.2445, Train acc = 0.9072
+ Average Loss = 0.2089, Train acc = 0.9229
+ Average Loss = 0.1834, Train acc = 0.9375
+ Average Loss = 0.1984, Train acc = 0.9271
+ Average Loss = 0.1676, Train acc = 0.9426
+ Average Loss = 0.1444, Train acc = 0.9521
+ Average Loss = 0.1704, Train acc = 0.9393
+ Average Loss = 0.1439, Train acc = 0.9513
+ Average Loss = 0.1248, Train acc = 0.9611
+ Average Loss = 0.1490, Train acc = 0.9490
+ Average Loss = 0.1244, Train acc = 0.9590
+ Average Loss = 0.1068, Train acc = 0.9681
+ Average Loss = 0.1261, Train acc = 0.9583
+ Average Loss = 0.1025, Train acc = 0.9679
+ Average Loss = 0.0869, Train acc = 0.9739
+ Average Loss = 0.1124, Train acc = 0.9631
+ Average Loss = 0.0884, Train acc = 0.9732
+ Average Loss = 0.0739, Train acc = 0.9796
+ Average Loss = 0.1016, Train acc = 0.9688
+ Average Loss = 0.0809, Train acc = 0.9767
+ Average Loss = 0.0674, Train acc = 0.9822
+ Average Loss = 0.0979, Train acc = 0.9695
+ Average Loss = 0.0769, Train acc = 0.9772
+ Average Loss = 0.0635, Train acc = 0.9825
+ Average Loss = 0.0849, Train acc = 0.9741
+ Average Loss = 0.0650, Train acc = 0.9815
+ Average Loss = 0.0509, Train acc = 0.9876
+ Average Loss = 0.0826, Train acc = 0.9768
+ Average Loss = 0.0635, Train acc = 0.9834
+ Average Loss = 0.0506, Train acc = 0.9881
+ Average Loss = 0.0706, Train acc = 0.9786
+ Average Loss = 0.0528, Train acc = 0.9852
+ Average Loss = 0.0406, Train acc = 0.9897
+ Average Loss = 0.0717, Train acc = 0.9804
+ Average Loss = 0.0532, Train acc = 0.9860
+ Average Loss = 0.0418, Train acc = 0.9901
+ Average Loss = 0.0660, Train acc = 0.9822
+ Average Loss = 0.0498, Train acc = 0.9881
+ Average Loss = 0.0402, Train acc = 0.9912
+ Average Loss = 0.0607, Train acc = 0.9836
+ Average Loss = 0.0455, Train acc = 0.9889
+ Average Loss = 0.0365, Train acc = 0.9915
+ Average Loss = 0.0569, Train acc = 0.9851
+ Average Loss = 0.0426, Train acc = 0.9891
+ Average Loss = 0.0315, Train acc = 0.9931
+ Average Loss = 0.0533, Train acc = 0.9868
+ Average Loss = 0.0394, Train acc = 0.9910
+ Average Loss = 0.0301, Train acc = 0.9940
+ Average Loss = 0.0618, Train acc = 0.9842
+ Average Loss = 0.0454, Train acc = 0.9895
+ Average Loss = 0.0340, Train acc = 0.9923
+ Average Loss = 0.0588, Train acc = 0.9852
+ Average Loss = 0.0440, Train acc = 0.9895
+ Average Loss = 0.0325, Train acc = 0.9933
+ Average Loss = 0.0526, Train acc = 0.9864
+ Average Loss = 0.0387, Train acc = 0.9914
+ Average Loss = 0.0293, Train acc = 0.9939
+ Average Loss = 0.0458, Train acc = 0.9886
+ Average Loss = 0.0329, Train acc = 0.9923
+ Average Loss = 0.0233, Train acc = 0.9953
+ Average Loss = 0.0453, Train acc = 0.9884
+ Average Loss = 0.0347, Train acc = 0.9906
+ Average Loss = 0.0237, Train acc = 0.9947
+ Average Loss = 0.0500, Train acc = 0.9873
+ Average Loss = 0.0351, Train acc = 0.9920
+ Average Loss = 0.0270, Train acc = 0.9945
+ Average Loss = 0.0414, Train acc = 0.9892
+ Average Loss = 0.0290, Train acc = 0.9934
+ Average Loss = 0.0208, Train acc = 0.9957
+ Average Loss = 0.0417, Train acc = 0.9902
+ Average Loss = 0.0299, Train acc = 0.9933
+ Average Loss = 0.0224, Train acc = 0.9955
+ Average Loss = 0.0417, Train acc = 0.9903
+ Average Loss = 0.0297, Train acc = 0.9935
+ Average Loss = 0.0225, Train acc = 0.9956
+ Average Loss = 0.0402, Train acc = 0.9909
+ Average Loss = 0.0292, Train acc = 0.9940
+ Average Loss = 0.0227, Train acc = 0.9960
+ Average Loss = 0.0377, Train acc = 0.9913
+ Average Loss = 0.0262, Train acc = 0.9946
+ Average Loss = 0.0199, Train acc = 0.9962
+ Average Loss = 0.0345, Train acc = 0.9913
+ Average Loss = 0.0231, Train acc = 0.9950
+ Average Loss = 0.0177, Train acc = 0.9964
+ Average Loss = 0.0350, Train acc = 0.9920
+ Average Loss = 0.0234, Train acc = 0.9949
+ Average Loss = 0.0171, Train acc = 0.9968
+ Average Loss = 0.0392, Train acc = 0.9913
+ Average Loss = 0.0271, Train acc = 0.9941
+ Average Loss = 0.0214, Train acc = 0.9962
+ Average Loss = 0.0379, Train acc = 0.9914
+ Average Loss = 0.0273, Train acc = 0.9948
+ Average Loss = 0.0214, Train acc = 0.9961
+ Average Loss = 0.0341, Train acc = 0.9923
+ Average Loss = 0.0237, Train acc = 0.9945
+ Average Loss = 0.0175, Train acc = 0.9965
+ Average Loss = 0.0340, Train acc = 0.9929
+ Average Loss = 0.0241, Train acc = 0.9947
+ Average Loss = 0.0183, Train acc = 0.9968
+ Average Loss = 0.0256, Train acc = 0.9938
+ Average Loss = 0.0179, Train acc = 0.9963
+ Average Loss = 0.0128, Train acc = 0.9975
+ Average Loss = 0.0310, Train acc = 0.9931
+ Average Loss = 0.0228, Train acc = 0.9952
+ Average Loss = 0.0164, Train acc = 0.9967
+ Average Loss = 0.0310, Train acc = 0.9925
+ Average Loss = 0.0219, Train acc = 0.9955
+ Average Loss = 0.0154, Train acc = 0.9973
+ Average Loss = 0.0290, Train acc = 0.9933
+ Average Loss = 0.0187, Train acc = 0.9959
+ Average Loss = 0.0146, Train acc = 0.9972
+ Average Loss = 0.0314, Train acc = 0.9919
+ Average Loss = 0.0200, Train acc = 0.9955
+ Average Loss = 0.0144, Train acc = 0.9967
+ Average Loss = 0.0352, Train acc = 0.9933
+ Average Loss = 0.0257, Train acc = 0.9950
+ Average Loss = 0.0203, Train acc = 0.9965
+ Average Loss = 0.0348, Train acc = 0.9922
+ Average Loss = 0.0241, Train acc = 0.9949
+ Average Loss = 0.0171, Train acc = 0.9965
+ Average Loss = 0.0301, Train acc = 0.9933
+ Average Loss = 0.0210, Train acc = 0.9961
+ Average Loss = 0.0151, Train acc = 0.9976
+ Average Loss = 0.0311, Train acc = 0.9939
+ Average Loss = 0.0224, Train acc = 0.9956
+ Average Loss = 0.0164, Train acc = 0.9972
+ Average Loss = 0.0257, Train acc = 0.9945
+ Average Loss = 0.0185, Train acc = 0.9964
+ Average Loss = 0.0138, Train acc = 0.9979
+ Average Loss = 0.0254, Train acc = 0.9946
+ Average Loss = 0.0176, Train acc = 0.9964
+ Average Loss = 0.0133, Train acc = 0.9973
+ Average Loss = 0.0262, Train acc = 0.9945
+ Average Loss = 0.0174, Train acc = 0.9968
+ Average Loss = 0.0129, Train acc = 0.9973
+ Average Loss = 0.0253, Train acc = 0.9943
+ Average Loss = 0.0164, Train acc = 0.9967
+ Average Loss = 0.0110, Train acc = 0.9982
+ Average Loss = 0.0263, Train acc = 0.9944
+ Average Loss = 0.0183, Train acc = 0.9967
+ Average Loss = 0.0136, Train acc = 0.9976
+ Average Loss = 0.0261, Train acc = 0.9943
+ Average Loss = 0.0177, Train acc = 0.9968
+ Average Loss = 0.0131, Train acc = 0.9978
+
+Adversarial Training Generator :  oracle_sample_NLL = 8.3570
+
+Adversarial Training Discriminator :
+ Average Loss = 0.0213, Train acc = 0.9952
+ Average Loss = 0.0150, Train acc = 0.9970
+ Average Loss = 0.0100, Train acc = 0.9983
+ Average Loss = 0.0270, Train acc = 0.9945
+ Average Loss = 0.0187, Train acc = 0.9962
+ Average Loss = 0.0130, Train acc = 0.9976
+ Average Loss = 0.0193, Train acc = 0.9954
+ Average Loss = 0.0133, Train acc = 0.9973
+ Average Loss = 0.0088, Train acc = 0.9985
+ Average Loss = 0.0249, Train acc = 0.9941
+ Average Loss = 0.0148, Train acc = 0.9970
+ Average Loss = 0.0106, Train acc = 0.9978
+ Average Loss = 0.0278, Train acc = 0.9951
+ Average Loss = 0.0199, Train acc = 0.9964
+ Average Loss = 0.0157, Train acc = 0.9974
+
+Adversarial Training Generator :  oracle_sample_NLL = 8.3578
+
+Adversarial Training Discriminator :
+ Average Loss = 0.0203, Train acc = 0.9956
+ Average Loss = 0.0129, Train acc = 0.9974
+ Average Loss = 0.0089, Train acc = 0.9986
+ Average Loss = 0.0239, Train acc = 0.9950
+ Average Loss = 0.0163, Train acc = 0.9968
+ Average Loss = 0.0116, Train acc = 0.9978
+ Average Loss = 0.0244, Train acc = 0.9948
+ Average Loss = 0.0171, Train acc = 0.9970
+ Average Loss = 0.0131, Train acc = 0.9980
+ Average Loss = 0.0211, Train acc = 0.9953
+ Average Loss = 0.0143, Train acc = 0.9971
+ Average Loss = 0.0099, Train acc = 0.9980
+ Average Loss = 0.0204, Train acc = 0.9961
+ Average Loss = 0.0142, Train acc = 0.9976
+ Average Loss = 0.0103, Train acc = 0.9985
+
+Adversarial Training Generator :  oracle_sample_NLL = 8.3573
+
+Adversarial Training Discriminator :
+ Average Loss = 0.0183, Train acc = 0.9965
+ Average Loss = 0.0125, Train acc = 0.9976
+ Average Loss = 0.0096, Train acc = 0.9985
+ Average Loss = 0.0213, Train acc = 0.9953
+ Average Loss = 0.0132, Train acc = 0.9971
+ Average Loss = 0.0087, Train acc = 0.9982
+ Average Loss = 0.0158, Train acc = 0.9966
+ Average Loss = 0.0101, Train acc = 0.9981
+ Average Loss = 0.0068, Train acc = 0.9989
+ Average Loss = 0.0206, Train acc = 0.9962
+ Average Loss = 0.0147, Train acc = 0.9973
+ Average Loss = 0.0112, Train acc = 0.9981
+ Average Loss = 0.0152, Train acc = 0.9966
+ Average Loss = 0.0093, Train acc = 0.9978
+ Average Loss = 0.0058, Train acc = 0.9991
+
+Adversarial Training Generator :  oracle_sample_NLL = 8.3571
+
+Adversarial Training Discriminator :
+ Average Loss = 0.0151, Train acc = 0.9971
+ Average Loss = 0.0098, Train acc = 0.9982
+ Average Loss = 0.0069, Train acc = 0.9991
+ Average Loss = 0.0147, Train acc = 0.9971
+ Average Loss = 0.0094, Train acc = 0.9982
+ Average Loss = 0.0066, Train acc = 0.9988
+ Average Loss = 0.0164, Train acc = 0.9968
+ Average Loss = 0.0118, Train acc = 0.9978
+ Average Loss = 0.0091, Train acc = 0.9983
+ Average Loss = 0.0167, Train acc = 0.9968
+ Average Loss = 0.0122, Train acc = 0.9981
+ Average Loss = 0.0098, Train acc = 0.9986
+ Average Loss = 0.0164, Train acc = 0.9968
+ Average Loss = 0.0106, Train acc = 0.9980
+ Average Loss = 0.0074, Train acc = 0.9988
+
+Adversarial Training Generator :  oracle_sample_NLL = 8.3578
+
+Adversarial Training Discriminator :
+ Average Loss = 0.0130, Train acc = 0.9971
+ Average Loss = 0.0093, Train acc = 0.9983
+ Average Loss = 0.0069, Train acc = 0.9986
+ Average Loss = 0.0144, Train acc = 0.9973
+ Average Loss = 0.0098, Train acc = 0.9982
+ Average Loss = 0.0075, Train acc = 0.9987
+ Average Loss = 0.0142, Train acc = 0.9973
+ Average Loss = 0.0095, Train acc = 0.9984
+ Average Loss = 0.0066, Train acc = 0.9989
+ Average Loss = 0.0162, Train acc = 0.9967
+ Average Loss = 0.0112, Train acc = 0.9980
+ Average Loss = 0.0082, Train acc = 0.9986
+ Average Loss = 0.0129, Train acc = 0.9973
+ Average Loss = 0.0083, Train acc = 0.9983
+ Average Loss = 0.0057, Train acc = 0.9991
+
+Adversarial Training Generator :  oracle_sample_NLL = 8.3574
+
+Adversarial Training Discriminator :
+ Average Loss = 0.0145, Train acc = 0.9972
+ Average Loss = 0.0099, Train acc = 0.9979
+ Average Loss = 0.0066, Train acc = 0.9988
+ Average Loss = 0.0140, Train acc = 0.9975
+ Average Loss = 0.0093, Train acc = 0.9982
+ Average Loss = 0.0068, Train acc = 0.9987
+ Average Loss = 0.0129, Train acc = 0.9974
+ Average Loss = 0.0077, Train acc = 0.9985
+ Average Loss = 0.0049, Train acc = 0.9993
+ Average Loss = 0.0121, Train acc = 0.9978
+ Average Loss = 0.0080, Train acc = 0.9989
+ Average Loss = 0.0069, Train acc = 0.9991
+ Average Loss = 0.0120, Train acc = 0.9975
+ Average Loss = 0.0067, Train acc = 0.9988
+ Average Loss = 0.0051, Train acc = 0.9991
+
+Adversarial Training Generator :  oracle_sample_NLL = 8.3574
+
+Adversarial Training Discriminator :
+ Average Loss = 0.0122, Train acc = 0.9972
+ Average Loss = 0.0064, Train acc = 0.9988
+ Average Loss = 0.0045, Train acc = 0.9993
+ Average Loss = 0.0094, Train acc = 0.9983
+ Average Loss = 0.0060, Train acc = 0.9989
+ Average Loss = 0.0040, Train acc = 0.9993
+ Average Loss = 0.0131, Train acc = 0.9974
+ Average Loss = 0.0082, Train acc = 0.9985
+ Average Loss = 0.0054, Train acc = 0.9989
+ Average Loss = 0.0121, Train acc = 0.9977
+ Average Loss = 0.0085, Train acc = 0.9986
+ Average Loss = 0.0061, Train acc = 0.9991
+ Average Loss = 0.0101, Train acc = 0.9981
+ Average Loss = 0.0067, Train acc = 0.9991
+ Average Loss = 0.0057, Train acc = 0.9992
+
+Adversarial Training Generator :  oracle_sample_NLL = 8.3582
+
+Adversarial Training Discriminator :
+ Average Loss = 0.0095, Train acc = 0.9979
+ Average Loss = 0.0057, Train acc = 0.9988
+ Average Loss = 0.0037, Train acc = 0.9993
+ Average Loss = 0.0098, Train acc = 0.9983
+ Average Loss = 0.0061, Train acc = 0.9987
+ Average Loss = 0.0043, Train acc = 0.9992
+ Average Loss = 0.0095, Train acc = 0.9982
+ Average Loss = 0.0058, Train acc = 0.9989
+ Average Loss = 0.0034, Train acc = 0.9994
+ Average Loss = 0.0086, Train acc = 0.9983
+ Average Loss = 0.0053, Train acc = 0.9991
+ Average Loss = 0.0038, Train acc = 0.9995
+ Average Loss = 0.0088, Train acc = 0.9983
+ Average Loss = 0.0052, Train acc = 0.9989
+ Average Loss = 0.0037, Train acc = 0.9993
+
+Adversarial Training Generator :  oracle_sample_NLL = 8.3577
+
+Adversarial Training Discriminator :
+ Average Loss = 0.0088, Train acc = 0.9986
+ Average Loss = 0.0054, Train acc = 0.9992
+ Average Loss = 0.0038, Train acc = 0.9995
+ Average Loss = 0.0055, Train acc = 0.9991
+ Average Loss = 0.0032, Train acc = 0.9995
+ Average Loss = 0.0020, Train acc = 0.9997
+ Average Loss = 0.0076, Train acc = 0.9983
+ Average Loss = 0.0046, Train acc = 0.9990
+ Average Loss = 0.0034, Train acc = 0.9995
+ Average Loss = 0.0079, Train acc = 0.9985
+ Average Loss = 0.0057, Train acc = 0.9989
+ Average Loss = 0.0043, Train acc = 0.9995
+ Average Loss = 0.0075, Train acc = 0.9986
+ Average Loss = 0.0053, Train acc = 0.9992
+ Average Loss = 0.0033, Train acc = 0.9995
+
+Adversarial Training Generator :  oracle_sample_NLL = 8.3580
+
+Adversarial Training Discriminator :
+ Average Loss = 0.0073, Train acc = 0.9985
+ Average Loss = 0.0038, Train acc = 0.9993
+ Average Loss = 0.0026, Train acc = 0.9996
+ Average Loss = 0.0084, Train acc = 0.9983
+ Average Loss = 0.0054, Train acc = 0.9989
+ Average Loss = 0.0037, Train acc = 0.9995
+ Average Loss = 0.0075, Train acc = 0.9987
+ Average Loss = 0.0044, Train acc = 0.9992
+ Average Loss = 0.0030, Train acc = 0.9996
+ Average Loss = 0.0049, Train acc = 0.9991
+ Average Loss = 0.0031, Train acc = 0.9994
+ Average Loss = 0.0015, Train acc = 0.9997
+ Average Loss = 0.0076, Train acc = 0.9987
+ Average Loss = 0.0051, Train acc = 0.9992
+ Average Loss = 0.0035, Train acc = 0.9995
+
+Adversarial Training Generator :  oracle_sample_NLL = 8.3576
+
+Adversarial Training Discriminator :
+ Average Loss = 0.0074, Train acc = 0.9987
+ Average Loss = 0.0050, Train acc = 0.9992
+ Average Loss = 0.0039, Train acc = 0.9996
+ Average Loss = 0.0042, Train acc = 0.9991
+ Average Loss = 0.0025, Train acc = 0.9995
+ Average Loss = 0.0020, Train acc = 0.9996
+ Average Loss = 0.0057, Train acc = 0.9990
+ Average Loss = 0.0039, Train acc = 0.9993
+ Average Loss = 0.0025, Train acc = 0.9996
+ Average Loss = 0.0077, Train acc = 0.9986
+ Average Loss = 0.0050, Train acc = 0.9992
+ Average Loss = 0.0039, Train acc = 0.9994
+ Average Loss = 0.0078, Train acc = 0.9986
+ Average Loss = 0.0041, Train acc = 0.9992
+ Average Loss = 0.0028, Train acc = 0.9994
+
+Adversarial Training Generator :  oracle_sample_NLL = 8.3577
+
+Adversarial Training Discriminator :
+ Average Loss = 0.0061, Train acc = 0.9990
+ Average Loss = 0.0041, Train acc = 0.9993
+ Average Loss = 0.0023, Train acc = 0.9995
+ Average Loss = 0.0078, Train acc = 0.9986
+ Average Loss = 0.0044, Train acc = 0.9993
+ Average Loss = 0.0034, Train acc = 0.9994
+ Average Loss = 0.0046, Train acc = 0.9992
+ Average Loss = 0.0028, Train acc = 0.9996
+ Average Loss = 0.0022, Train acc = 0.9997
+ Average Loss = 0.0055, Train acc = 0.9988
+ Average Loss = 0.0027, Train acc = 0.9995
+ Average Loss = 0.0021, Train acc = 0.9996
+ Average Loss = 0.0060, Train acc = 0.9988
+ Average Loss = 0.0032, Train acc = 0.9995
+ Average Loss = 0.0019, Train acc = 0.9996
+
+Adversarial Training Generator :  oracle_sample_NLL = 8.3582
+
+Adversarial Training Discriminator :
+ Average Loss = 0.0049, Train acc = 0.9991
+ Average Loss = 0.0030, Train acc = 0.9995
+ Average Loss = 0.0016, Train acc = 0.9997
+ Average Loss = 0.0039, Train acc = 0.9993
+ Average Loss = 0.0021, Train acc = 0.9996
+ Average Loss = 0.0010, Train acc = 0.9999
+ Average Loss = 0.0043, Train acc = 0.9989
+ Average Loss = 0.0023, Train acc = 0.9996
+ Average Loss = 0.0015, Train acc = 0.9997
+ Average Loss = 0.0044, Train acc = 0.9991
+ Average Loss = 0.0014, Train acc = 0.9998
+ Average Loss = 0.0010, Train acc = 0.9997
+ Average Loss = 0.0048, Train acc = 0.9990
+ Average Loss = 0.0025, Train acc = 0.9996
+ Average Loss = 0.0010, Train acc = 0.9998
+
+Adversarial Training Generator :  oracle_sample_NLL = 8.3580
+
+Adversarial Training Discriminator :
+ Average Loss = 0.0049, Train acc = 0.9987
+ Average Loss = 0.0021, Train acc = 0.9996
+ Average Loss = 0.0012, Train acc = 0.9998
+ Average Loss = 0.0028, Train acc = 0.9993
+ Average Loss = 0.0015, Train acc = 0.9997
+ Average Loss = 0.0005, Train acc = 1.0000
+ Average Loss = 0.0040, Train acc = 0.9991
+ Average Loss = 0.0014, Train acc = 0.9997
+ Average Loss = 0.0008, Train acc = 0.9998
+ Average Loss = 0.0055, Train acc = 0.9992
+ Average Loss = 0.0034, Train acc = 0.9994
+ Average Loss = 0.0023, Train acc = 0.9997
+ Average Loss = 0.0080, Train acc = 0.9987
+ Average Loss = 0.0052, Train acc = 0.9992
+ Average Loss = 0.0034, Train acc = 0.9994
+
+Adversarial Training Generator :  oracle_sample_NLL = 8.3580
+
+Adversarial Training Discriminator :
+ Average Loss = 0.0032, Train acc = 0.9993
+ Average Loss = 0.0012, Train acc = 0.9998
+ Average Loss = 0.0009, Train acc = 0.9999
+ Average Loss = 0.0068, Train acc = 0.9989
+ Average Loss = 0.0039, Train acc = 0.9994
+ Average Loss = 0.0028, Train acc = 0.9996
+ Average Loss = 0.0047, Train acc = 0.9993
+ Average Loss = 0.0029, Train acc = 0.9996
+ Average Loss = 0.0026, Train acc = 0.9997
+ Average Loss = 0.0029, Train acc = 0.9994
+ Average Loss = 0.0016, Train acc = 0.9997
+ Average Loss = 0.0009, Train acc = 0.9998
+ Average Loss = 0.0024, Train acc = 0.9995
+ Average Loss = 0.0014, Train acc = 0.9998
+ Average Loss = 0.0011, Train acc = 0.9997
+
+Adversarial Training Generator :  oracle_sample_NLL = 8.3576
+
+Adversarial Training Discriminator :
+ Average Loss = 0.0057, Train acc = 0.9991
+ Average Loss = 0.0040, Train acc = 0.9996
+ Average Loss = 0.0033, Train acc = 0.9996
+ Average Loss = 0.0040, Train acc = 0.9992
+ Average Loss = 0.0023, Train acc = 0.9995
+ Average Loss = 0.0013, Train acc = 0.9998
+ Average Loss = 0.0052, Train acc = 0.9992
+ Average Loss = 0.0036, Train acc = 0.9994
+ Average Loss = 0.0025, Train acc = 0.9996
+ Average Loss = 0.0031, Train acc = 0.9993
+ Average Loss = 0.0018, Train acc = 0.9996
+ Average Loss = 0.0012, Train acc = 0.9998
+ Average Loss = 0.0026, Train acc = 0.9994
+ Average Loss = 0.0010, Train acc = 0.9999
+ Average Loss = 0.0006, Train acc = 0.9999
+
+Adversarial Training Generator :  oracle_sample_NLL = 8.3579
+
+Adversarial Training Discriminator :
+ Average Loss = 0.0019, Train acc = 0.9995
+ Average Loss = 0.0010, Train acc = 0.9997
+ Average Loss = 0.0004, Train acc = 1.0000
+ Average Loss = 0.0017, Train acc = 0.9997
+ Average Loss = 0.0007, Train acc = 0.9998
+ Average Loss = 0.0004, Train acc = 0.9999
+ Average Loss = 0.0028, Train acc = 0.9995
+ Average Loss = 0.0016, Train acc = 0.9997
+ Average Loss = 0.0008, Train acc = 0.9998
+ Average Loss = 0.0045, Train acc = 0.9993
+ Average Loss = 0.0028, Train acc = 0.9996
+ Average Loss = 0.0018, Train acc = 0.9998
+ Average Loss = 0.0030, Train acc = 0.9993
+ Average Loss = 0.0015, Train acc = 0.9998
+ Average Loss = 0.0011, Train acc = 0.9999
+
+Adversarial Training Generator :  oracle_sample_NLL = 8.3576
+
+Adversarial Training Discriminator :
+ Average Loss = 0.0022, Train acc = 0.9995
+ Average Loss = 0.0010, Train acc = 0.9997
+ Average Loss = 0.0004, Train acc = 1.0000
+ Average Loss = 0.0021, Train acc = 0.9995
+ Average Loss = 0.0008, Train acc = 0.9998
+ Average Loss = 0.0004, Train acc = 0.9999
+ Average Loss = 0.0029, Train acc = 0.9994
+ Average Loss = 0.0015, Train acc = 0.9997
+ Average Loss = 0.0014, Train acc = 0.9998
+ Average Loss = 0.0025, Train acc = 0.9995
+ Average Loss = 0.0014, Train acc = 0.9997
+ Average Loss = 0.0007, Train acc = 0.9999
+ Average Loss = 0.0039, Train acc = 0.9994
+ Average Loss = 0.0026, Train acc = 0.9996
+ Average Loss = 0.0020, Train acc = 0.9998
+
+Adversarial Training Generator :  oracle_sample_NLL = 8.3575
+
+Adversarial Training Discriminator :
+ Average Loss = 0.0027, Train acc = 0.9995
+ Average Loss = 0.0017, Train acc = 0.9997
+ Average Loss = 0.0013, Train acc = 0.9998
+ Average Loss = 0.0042, Train acc = 0.9991
+ Average Loss = 0.0016, Train acc = 0.9996
+ Average Loss = 0.0010, Train acc = 0.9997
+ Average Loss = 0.0044, Train acc = 0.9991
+ Average Loss = 0.0016, Train acc = 0.9997
+ Average Loss = 0.0006, Train acc = 0.9999
+ Average Loss = 0.0026, Train acc = 0.9995
+ Average Loss = 0.0016, Train acc = 0.9998
+ Average Loss = 0.0009, Train acc = 0.9999
+ Average Loss = 0.0032, Train acc = 0.9995
+ Average Loss = 0.0018, Train acc = 0.9998
+ Average Loss = 0.0008, Train acc = 0.9999
+
+Adversarial Training Generator :  oracle_sample_NLL = 8.3578
+
+Adversarial Training Discriminator :
+ Average Loss = 0.0036, Train acc = 0.9993
+ Average Loss = 0.0019, Train acc = 0.9997
+ Average Loss = 0.0014, Train acc = 0.9997
+ Average Loss = 0.0021, Train acc = 0.9996
+ Average Loss = 0.0005, Train acc = 0.9998
+ Average Loss = 0.0005, Train acc = 0.9999
+ Average Loss = 0.0023, Train acc = 0.9996
+ Average Loss = 0.0013, Train acc = 0.9998
+ Average Loss = 0.0007, Train acc = 0.9999
+ Average Loss = 0.0032, Train acc = 0.9994
+ Average Loss = 0.0020, Train acc = 0.9997
+ Average Loss = 0.0017, Train acc = 0.9998
+ Average Loss = 0.0023, Train acc = 0.9996
+ Average Loss = 0.0014, Train acc = 0.9997
+ Average Loss = 0.0007, Train acc = 0.9999
+
+Adversarial Training Generator :  oracle_sample_NLL = 8.3578
+
+Adversarial Training Discriminator :
+ Average Loss = 0.0029, Train acc = 0.9994
+ Average Loss = 0.0010, Train acc = 0.9998
+ Average Loss = 0.0007, Train acc = 0.9999
+ Average Loss = 0.0037, Train acc = 0.9994
+ Average Loss = 0.0019, Train acc = 0.9996
+ Average Loss = 0.0012, Train acc = 0.9998
+ Average Loss = 0.0014, Train acc = 0.9998
+ Average Loss = 0.0008, Train acc = 0.9999
+ Average Loss = 0.0007, Train acc = 0.9999
+ Average Loss = 0.0045, Train acc = 0.9993
+ Average Loss = 0.0029, Train acc = 0.9996
+ Average Loss = 0.0015, Train acc = 0.9998
+ Average Loss = 0.0019, Train acc = 0.9996
+ Average Loss = 0.0007, Train acc = 0.9999
+ Average Loss = 0.0004, Train acc = 0.9999
+
+Adversarial Training Generator :  oracle_sample_NLL = 8.3582
+
+Adversarial Training Discriminator :
+ Average Loss = 0.0022, Train acc = 0.9996
+ Average Loss = 0.0015, Train acc = 0.9998
+ Average Loss = 0.0010, Train acc = 0.9999
+ Average Loss = 0.0026, Train acc = 0.9995
+ Average Loss = 0.0010, Train acc = 0.9998
+ Average Loss = 0.0010, Train acc = 0.9998
+ Average Loss = 0.0020, Train acc = 0.9996
+ Average Loss = 0.0011, Train acc = 0.9998
+ Average Loss = 0.0005, Train acc = 0.9999
+ Average Loss = 0.0031, Train acc = 0.9994
+ Average Loss = 0.0014, Train acc = 0.9996
+ Average Loss = 0.0004, Train acc = 0.9999
+ Average Loss = 0.0033, Train acc = 0.9995
+ Average Loss = 0.0012, Train acc = 0.9997
+ Average Loss = 0.0009, Train acc = 0.9999
+
+Adversarial Training Generator :  oracle_sample_NLL = 8.3576
+
+Adversarial Training Discriminator :
+ Average Loss = 0.0055, Train acc = 0.9993
+ Average Loss = 0.0037, Train acc = 0.9995
+ Average Loss = 0.0031, Train acc = 0.9996
+ Average Loss = 0.0030, Train acc = 0.9994
+ Average Loss = 0.0019, Train acc = 0.9997
+ Average Loss = 0.0014, Train acc = 0.9998
+ Average Loss = 0.0024, Train acc = 0.9996
+ Average Loss = 0.0012, Train acc = 0.9997
+ Average Loss = 0.0007, Train acc = 0.9999
+ Average Loss = 0.0011, Train acc = 0.9998
+ Average Loss = 0.0007, Train acc = 0.9999
+ Average Loss = 0.0005, Train acc = 0.9999
+ Average Loss = 0.0013, Train acc = 0.9997
+ Average Loss = 0.0008, Train acc = 0.9999
+ Average Loss = 0.0004, Train acc = 0.9999
+
+Adversarial Training Generator :  oracle_sample_NLL = 8.3573
+
+Adversarial Training Discriminator :
+ Average Loss = 0.0027, Train acc = 0.9995
+ Average Loss = 0.0012, Train acc = 0.9998
+ Average Loss = 0.0008, Train acc = 0.9999
+ Average Loss = 0.0014, Train acc = 0.9997
+ Average Loss = 0.0008, Train acc = 0.9998
+ Average Loss = 0.0003, Train acc = 0.9999
+ Average Loss = 0.0012, Train acc = 0.9996
+ Average Loss = 0.0007, Train acc = 0.9999
+ Average Loss = 0.0003, Train acc = 0.9999
+ Average Loss = 0.0018, Train acc = 0.9997
+ Average Loss = 0.0013, Train acc = 0.9998
+ Average Loss = 0.0006, Train acc = 0.9999
+ Average Loss = 0.0026, Train acc = 0.9996
+ Average Loss = 0.0015, Train acc = 0.9998
+ Average Loss = 0.0016, Train acc = 0.9999
+
+Adversarial Training Generator :  oracle_sample_NLL = 8.3576
+
+Adversarial Training Discriminator :
+ Average Loss = 0.0016, Train acc = 0.9997
+ Average Loss = 0.0008, Train acc = 0.9998
+ Average Loss = 0.0003, Train acc = 0.9999
+ Average Loss = 0.0022, Train acc = 0.9995
+ Average Loss = 0.0011, Train acc = 0.9998
+ Average Loss = 0.0008, Train acc = 0.9998
+ Average Loss = 0.0019, Train acc = 0.9996
+ Average Loss = 0.0006, Train acc = 0.9999
+ Average Loss = 0.0003, Train acc = 1.0000
+ Average Loss = 0.0015, Train acc = 0.9997
+ Average Loss = 0.0008, Train acc = 0.9999
+ Average Loss = 0.0007, Train acc = 0.9999
+ Average Loss = 0.0008, Train acc = 0.9997
+ Average Loss = 0.0003, Train acc = 0.9999
+ Average Loss = 0.0001, Train acc = 1.0000
+
+Adversarial Training Generator :  oracle_sample_NLL = 8.3577
+
+Adversarial Training Discriminator :
+ Average Loss = 0.0024, Train acc = 0.9996
+ Average Loss = 0.0017, Train acc = 0.9996
+ Average Loss = 0.0010, Train acc = 0.9999
+ Average Loss = 0.0024, Train acc = 0.9996
+ Average Loss = 0.0013, Train acc = 0.9997
+ Average Loss = 0.0008, Train acc = 0.9998
+ Average Loss = 0.0020, Train acc = 0.9996
+ Average Loss = 0.0011, Train acc = 0.9999
+ Average Loss = 0.0005, Train acc = 0.9999
+ Average Loss = 0.0013, Train acc = 0.9998
+ Average Loss = 0.0004, Train acc = 0.9999
+ Average Loss = 0.0003, Train acc = 0.9999
+ Average Loss = 0.0019, Train acc = 0.9996
+ Average Loss = 0.0009, Train acc = 0.9998
+ Average Loss = 0.0003, Train acc = 0.9999
+
+Adversarial Training Generator :  oracle_sample_NLL = 8.3573
+
+Adversarial Training Discriminator :
+ Average Loss = 0.0018, Train acc = 0.9997
+ Average Loss = 0.0015, Train acc = 0.9998
+ Average Loss = 0.0010, Train acc = 0.9998
+ Average Loss = 0.0034, Train acc = 0.9996
+ Average Loss = 0.0023, Train acc = 0.9998
+ Average Loss = 0.0016, Train acc = 0.9999
+ Average Loss = 0.0020, Train acc = 0.9996
+ Average Loss = 0.0015, Train acc = 0.9998
+ Average Loss = 0.0006, Train acc = 0.9998
+ Average Loss = 0.0020, Train acc = 0.9996
+ Average Loss = 0.0008, Train acc = 0.9999
+ Average Loss = 0.0006, Train acc = 0.9999
+ Average Loss = 0.0026, Train acc = 0.9996
+ Average Loss = 0.0018, Train acc = 0.9997
+ Average Loss = 0.0009, Train acc = 0.9998
+
+Adversarial Training Generator :  oracle_sample_NLL = 8.3573
+
+Adversarial Training Discriminator :
+ Average Loss = 0.0018, Train acc = 0.9995
+ Average Loss = 0.0005, Train acc = 0.9998
+ Average Loss = 0.0002, Train acc = 1.0000
+ Average Loss = 0.0016, Train acc = 0.9997
+ Average Loss = 0.0006, Train acc = 0.9998
+ Average Loss = 0.0002, Train acc = 1.0000
+ Average Loss = 0.0015, Train acc = 0.9997
+ Average Loss = 0.0008, Train acc = 0.9999
+ Average Loss = 0.0007, Train acc = 0.9999
+ Average Loss = 0.0016, Train acc = 0.9996
+ Average Loss = 0.0007, Train acc = 0.9999
+ Average Loss = 0.0005, Train acc = 0.9999
+ Average Loss = 0.0025, Train acc = 0.9996
+ Average Loss = 0.0008, Train acc = 0.9998
+ Average Loss = 0.0003, Train acc = 0.9999
+
+Adversarial Training Generator :  oracle_sample_NLL = 8.3577
+
+Adversarial Training Discriminator :
+ Average Loss = 0.0016, Train acc = 0.9997
+ Average Loss = 0.0004, Train acc = 0.9999
+ Average Loss = 0.0002, Train acc = 1.0000
+ Average Loss = 0.0023, Train acc = 0.9995
+ Average Loss = 0.0012, Train acc = 0.9998
+ Average Loss = 0.0006, Train acc = 0.9999
+ Average Loss = 0.0011, Train acc = 0.9998
+ Average Loss = 0.0002, Train acc = 1.0000
+ Average Loss = 0.0001, Train acc = 1.0000
+ Average Loss = 0.0019, Train acc = 0.9997
+ Average Loss = 0.0014, Train acc = 0.9998
+ Average Loss = 0.0003, Train acc = 0.9999
+ Average Loss = 0.0026, Train acc = 0.9996
+ Average Loss = 0.0020, Train acc = 0.9996
+ Average Loss = 0.0010, Train acc = 0.9999
+
+Adversarial Training Generator :  oracle_sample_NLL = 8.3575
+
+Adversarial Training Discriminator :
+ Average Loss = 0.0034, Train acc = 0.9995
+ Average Loss = 0.0018, Train acc = 0.9996
+ Average Loss = 0.0010, Train acc = 0.9998
+ Average Loss = 0.0039, Train acc = 0.9995
+ Average Loss = 0.0028, Train acc = 0.9996
+ Average Loss = 0.0020, Train acc = 0.9996
+ Average Loss = 0.0016, Train acc = 0.9998
+ Average Loss = 0.0009, Train acc = 0.9999
+ Average Loss = 0.0007, Train acc = 0.9998
+ Average Loss = 0.0008, Train acc = 0.9997
+ Average Loss = 0.0005, Train acc = 0.9999
+ Average Loss = 0.0002, Train acc = 1.0000
+ Average Loss = 0.0031, Train acc = 0.9995
+ Average Loss = 0.0019, Train acc = 0.9996
+ Average Loss = 0.0011, Train acc = 0.9998
+
+Adversarial Training Generator :  oracle_sample_NLL = 8.3576
+
+Adversarial Training Discriminator :
+ Average Loss = 0.0024, Train acc = 0.9996
+ Average Loss = 0.0011, Train acc = 0.9998
+ Average Loss = 0.0010, Train acc = 0.9998
+ Average Loss = 0.0015, Train acc = 0.9997
+ Average Loss = 0.0005, Train acc = 0.9998
+ Average Loss = 0.0002, Train acc = 1.0000
+ Average Loss = 0.0013, Train acc = 0.9998
+ Average Loss = 0.0007, Train acc = 0.9998
+ Average Loss = 0.0002, Train acc = 1.0000
+ Average Loss = 0.0025, Train acc = 0.9995
+ Average Loss = 0.0009, Train acc = 0.9998
+ Average Loss = 0.0008, Train acc = 0.9998
+ Average Loss = 0.0008, Train acc = 0.9999
+ Average Loss = 0.0002, Train acc = 1.0000
+ Average Loss = 0.0002, Train acc = 1.0000
+
+Adversarial Training Generator :  oracle_sample_NLL = 8.3579
+
+Adversarial Training Discriminator :
+ Average Loss = 0.0006, Train acc = 0.9998
+ Average Loss = 0.0002, Train acc = 1.0000
+ Average Loss = 0.0001, Train acc = 0.9999
+ Average Loss = 0.0014, Train acc = 0.9997
+ Average Loss = 0.0007, Train acc = 0.9999
+ Average Loss = 0.0006, Train acc = 0.9999
+ Average Loss = 0.0010, Train acc = 0.9998
+ Average Loss = 0.0003, Train acc = 0.9999
+ Average Loss = 0.0001, Train acc = 1.0000
+ Average Loss = 0.0010, Train acc = 0.9997
+ Average Loss = 0.0002, Train acc = 0.9999
+ Average Loss = 0.0001, Train acc = 1.0000
+ Average Loss = 0.0016, Train acc = 0.9998
+ Average Loss = 0.0014, Train acc = 0.9999
+ Average Loss = 0.0012, Train acc = 0.9999
+
+Adversarial Training Generator :  oracle_sample_NLL = 8.3574
+
+Adversarial Training Discriminator :
+ Average Loss = 0.0006, Train acc = 0.9998
+ Average Loss = 0.0003, Train acc = 0.9999
+ Average Loss = 0.0002, Train acc = 0.9999
+ Average Loss = 0.0011, Train acc = 0.9997
+ Average Loss = 0.0007, Train acc = 0.9997
+ Average Loss = 0.0004, Train acc = 0.9999
+ Average Loss = 0.0018, Train acc = 0.9996
+ Average Loss = 0.0007, Train acc = 0.9998
+ Average Loss = 0.0002, Train acc = 1.0000
+ Average Loss = 0.0009, Train acc = 0.9999
+ Average Loss = 0.0005, Train acc = 0.9999
+ Average Loss = 0.0002, Train acc = 0.9999
+ Average Loss = 0.0008, Train acc = 0.9998
+ Average Loss = 0.0005, Train acc = 0.9999
+ Average Loss = 0.0002, Train acc = 1.0000
+
+Adversarial Training Generator :  oracle_sample_NLL = 8.3575
+
+Adversarial Training Discriminator :
+ Average Loss = 0.0012, Train acc = 0.9998
+ Average Loss = 0.0009, Train acc = 0.9999
+ Average Loss = 0.0008, Train acc = 0.9999
+ Average Loss = 0.0014, Train acc = 0.9998
+ Average Loss = 0.0011, Train acc = 0.9999
+ Average Loss = 0.0007, Train acc = 0.9999
+ Average Loss = 0.0015, Train acc = 0.9997
+ Average Loss = 0.0005, Train acc = 0.9999
+ Average Loss = 0.0003, Train acc = 0.9999
+ Average Loss = 0.0010, Train acc = 0.9998
+ Average Loss = 0.0004, Train acc = 0.9999
+ Average Loss = 0.0001, Train acc = 1.0000
+ Average Loss = 0.0021, Train acc = 0.9998
+ Average Loss = 0.0016, Train acc = 0.9999
+ Average Loss = 0.0015, Train acc = 0.9999
+
+Adversarial Training Generator :  oracle_sample_NLL = 8.3574
+
+Adversarial Training Discriminator :
+ Average Loss = 0.0005, Train acc = 0.9999
+ Average Loss = 0.0001, Train acc = 1.0000
+ Average Loss = 0.0001, Train acc = 1.0000
+ Average Loss = 0.0019, Train acc = 0.9997
+ Average Loss = 0.0012, Train acc = 0.9998
+ Average Loss = 0.0007, Train acc = 0.9999
+ Average Loss = 0.0008, Train acc = 0.9998
+ Average Loss = 0.0003, Train acc = 0.9999
+ Average Loss = 0.0002, Train acc = 1.0000
+ Average Loss = 0.0018, Train acc = 0.9998
+ Average Loss = 0.0015, Train acc = 0.9998
+ Average Loss = 0.0010, Train acc = 0.9999
+ Average Loss = 0.0013, Train acc = 0.9998
+ Average Loss = 0.0004, Train acc = 0.9999
+ Average Loss = 0.0002, Train acc = 0.9999
+
+Adversarial Training Generator :  oracle_sample_NLL = 8.3578
+
+Adversarial Training Discriminator :
+ Average Loss = 0.0027, Train acc = 0.9996
+ Average Loss = 0.0017, Train acc = 0.9996
+ Average Loss = 0.0011, Train acc = 0.9998
+ Average Loss = 0.0013, Train acc = 0.9998
+ Average Loss = 0.0009, Train acc = 0.9999
+ Average Loss = 0.0004, Train acc = 0.9999
+ Average Loss = 0.0011, Train acc = 0.9997
+ Average Loss = 0.0007, Train acc = 0.9998
+ Average Loss = 0.0007, Train acc = 0.9998
+ Average Loss = 0.0004, Train acc = 0.9998
+ Average Loss = 0.0003, Train acc = 0.9999
+ Average Loss = 0.0002, Train acc = 0.9999
+ Average Loss = 0.0012, Train acc = 0.9998
+ Average Loss = 0.0007, Train acc = 0.9999
+ Average Loss = 0.0004, Train acc = 0.9999
+
+Adversarial Training Generator :  oracle_sample_NLL = 8.3574
+
+Adversarial Training Discriminator :
+ Average Loss = 0.0003, Train acc = 0.9999
+ Average Loss = 0.0002, Train acc = 0.9999
+ Average Loss = 0.0001, Train acc = 1.0000
+ Average Loss = 0.0024, Train acc = 0.9996
+ Average Loss = 0.0016, Train acc = 0.9997
+ Average Loss = 0.0003, Train acc = 0.9999
+ Average Loss = 0.0016, Train acc = 0.9998
+ Average Loss = 0.0008, Train acc = 0.9999
+ Average Loss = 0.0006, Train acc = 0.9999
+ Average Loss = 0.0003, Train acc = 0.9999
+ Average Loss = 0.0001, Train acc = 1.0000
+ Average Loss = 0.0001, Train acc = 1.0000
+ Average Loss = 0.0028, Train acc = 0.9995
+ Average Loss = 0.0011, Train acc = 0.9998
+ Average Loss = 0.0005, Train acc = 0.9999
+
+Adversarial Training Generator :  oracle_sample_NLL = 8.3578
+
+Adversarial Training Discriminator :
+ Average Loss = 0.0010, Train acc = 0.9998
+ Average Loss = 0.0001, Train acc = 1.0000
+ Average Loss = 0.0001, Train acc = 1.0000
+ Average Loss = 0.0011, Train acc = 0.9998
+ Average Loss = 0.0006, Train acc = 0.9999
+ Average Loss = 0.0003, Train acc = 0.9999
+ Average Loss = 0.0016, Train acc = 0.9996
+ Average Loss = 0.0007, Train acc = 0.9998
+ Average Loss = 0.0003, Train acc = 0.9999
+ Average Loss = 0.0009, Train acc = 0.9998
+ Average Loss = 0.0001, Train acc = 1.0000
+ Average Loss = 0.0001, Train acc = 1.0000
+ Average Loss = 0.0016, Train acc = 0.9997
+ Average Loss = 0.0011, Train acc = 0.9999
+ Average Loss = 0.0009, Train acc = 0.9998
+
+Adversarial Training Generator :  oracle_sample_NLL = 8.3575
+
+Adversarial Training Discriminator :
+ Average Loss = 0.0014, Train acc = 0.9998
+ Average Loss = 0.0007, Train acc = 0.9999
+ Average Loss = 0.0002, Train acc = 0.9999
+ Average Loss = 0.0017, Train acc = 0.9996
+ Average Loss = 0.0007, Train acc = 0.9999
+ Average Loss = 0.0005, Train acc = 0.9999
+ Average Loss = 0.0008, Train acc = 0.9998
+ Average Loss = 0.0003, Train acc = 0.9999
+ Average Loss = 0.0004, Train acc = 0.9999
+ Average Loss = 0.0006, Train acc = 0.9998
+ Average Loss = 0.0001, Train acc = 1.0000
+ Average Loss = 0.0001, Train acc = 1.0000
+ Average Loss = 0.0015, Train acc = 0.9998
+ Average Loss = 0.0019, Train acc = 0.9997
+ Average Loss = 0.0013, Train acc = 0.9998
+
+Adversarial Training Generator :  oracle_sample_NLL = 8.3576
+
+Adversarial Training Discriminator :
+ Average Loss = 0.0019, Train acc = 0.9997
+ Average Loss = 0.0015, Train acc = 0.9999
+ Average Loss = 0.0014, Train acc = 0.9999
+ Average Loss = 0.0017, Train acc = 0.9998
+ Average Loss = 0.0016, Train acc = 0.9999
+ Average Loss = 0.0015, Train acc = 0.9999
+ Average Loss = 0.0010, Train acc = 0.9998
+ Average Loss = 0.0004, Train acc = 0.9999
+ Average Loss = 0.0004, Train acc = 0.9999
+ Average Loss = 0.0015, Train acc = 0.9997
+ Average Loss = 0.0007, Train acc = 0.9999
+ Average Loss = 0.0004, Train acc = 0.9999
+ Average Loss = 0.0004, Train acc = 0.9999
+ Average Loss = 0.0001, Train acc = 1.0000
+ Average Loss = 0.0002, Train acc = 1.0000
+
+Adversarial Training Generator :  oracle_sample_NLL = 8.3578
+
+Adversarial Training Discriminator :
+ Average Loss = 0.0013, Train acc = 0.9997
+ Average Loss = 0.0008, Train acc = 0.9999
+ Average Loss = 0.0006, Train acc = 0.9998
+ Average Loss = 0.0005, Train acc = 0.9998
+ Average Loss = 0.0002, Train acc = 1.0000
+ Average Loss = 0.0002, Train acc = 0.9999
+ Average Loss = 0.0009, Train acc = 0.9999
+ Average Loss = 0.0006, Train acc = 0.9999
+ Average Loss = 0.0004, Train acc = 0.9999
+ Average Loss = 0.0017, Train acc = 0.9997
+ Average Loss = 0.0007, Train acc = 0.9998
+ Average Loss = 0.0001, Train acc = 1.0000
+ Average Loss = 0.0004, Train acc = 0.9998
+ Average Loss = 0.0002, Train acc = 0.9999
+ Average Loss = 0.0002, Train acc = 1.0000
+
+Adversarial Training Generator :  oracle_sample_NLL = 8.3576
+
+Adversarial Training Discriminator :
+ Average Loss = 0.0015, Train acc = 0.9996
+ Average Loss = 0.0005, Train acc = 0.9998
+ Average Loss = 0.0002, Train acc = 1.0000
+ Average Loss = 0.0014, Train acc = 0.9997
+ Average Loss = 0.0007, Train acc = 0.9999
+ Average Loss = 0.0007, Train acc = 0.9999
+ Average Loss = 0.0021, Train acc = 0.9996
+ Average Loss = 0.0013, Train acc = 0.9998
+ Average Loss = 0.0010, Train acc = 0.9999
+ Average Loss = 0.0024, Train acc = 0.9997
+ Average Loss = 0.0015, Train acc = 0.9998
+ Average Loss = 0.0007, Train acc = 0.9998
+ Average Loss = 0.0018, Train acc = 0.9997
+ Average Loss = 0.0010, Train acc = 0.9999
+ Average Loss = 0.0004, Train acc = 0.9999
+
+Adversarial Training Generator :  oracle_sample_NLL = 8.3575
+
+Adversarial Training Discriminator :
+ Average Loss = 0.0026, Train acc = 0.9996
+ Average Loss = 0.0010, Train acc = 0.9998
+ Average Loss = 0.0009, Train acc = 0.9998
+ Average Loss = 0.0012, Train acc = 0.9998
+ Average Loss = 0.0003, Train acc = 0.9999
+ Average Loss = 0.0001, Train acc = 1.0000
+ Average Loss = 0.0005, Train acc = 0.9998
+ Average Loss = 0.0001, Train acc = 1.0000
+ Average Loss = 0.0001, Train acc = 1.0000
+ Average Loss = 0.0019, Train acc = 0.9997
+ Average Loss = 0.0004, Train acc = 0.9999
+ Average Loss = 0.0001, Train acc = 1.0000
+ Average Loss = 0.0007, Train acc = 0.9998
+ Average Loss = 0.0002, Train acc = 0.9999
+ Average Loss = 0.0001, Train acc = 1.0000
+
+Adversarial Training Generator :  oracle_sample_NLL = 8.3579
+
+Adversarial Training Discriminator :
+ Average Loss = 0.0004, Train acc = 0.9999
+ Average Loss = 0.0001, Train acc = 1.0000
+ Average Loss = 0.0000, Train acc = 1.0000
+ Average Loss = 0.0015, Train acc = 0.9997
+ Average Loss = 0.0006, Train acc = 0.9999
+ Average Loss = 0.0002, Train acc = 0.9999
+ Average Loss = 0.0025, Train acc = 0.9997
+ Average Loss = 0.0019, Train acc = 0.9998
+ Average Loss = 0.0011, Train acc = 0.9999
+ Average Loss = 0.0008, Train acc = 0.9999
+ Average Loss = 0.0008, Train acc = 0.9999
+ Average Loss = 0.0009, Train acc = 0.9999
+ Average Loss = 0.0010, Train acc = 0.9998
+ Average Loss = 0.0005, Train acc = 0.9999
+ Average Loss = 0.0002, Train acc = 0.9999
+
+Adversarial Training Generator :  oracle_sample_NLL = 8.3575
+
+Adversarial Training Discriminator :
+ Average Loss = 0.0009, Train acc = 0.9998
+ Average Loss = 0.0002, Train acc = 1.0000
+ Average Loss = 0.0001, Train acc = 1.0000
+ Average Loss = 0.0005, Train acc = 0.9999
+ Average Loss = 0.0001, Train acc = 1.0000
+ Average Loss = 0.0001, Train acc = 1.0000
+ Average Loss = 0.0017, Train acc = 0.9998
+ Average Loss = 0.0014, Train acc = 0.9998
+ Average Loss = 0.0011, Train acc = 0.9999
+ Average Loss = 0.0007, Train acc = 0.9998
+ Average Loss = 0.0001, Train acc = 1.0000
+ Average Loss = 0.0001, Train acc = 0.9999
+ Average Loss = 0.0010, Train acc = 0.9998
+ Average Loss = 0.0004, Train acc = 0.9999
+ Average Loss = 0.0001, Train acc = 1.0000
+
+Adversarial Training Generator :  oracle_sample_NLL = 8.3576
+
+Adversarial Training Discriminator :
+ Average Loss = 0.0013, Train acc = 0.9998
+ Average Loss = 0.0006, Train acc = 0.9999
+ Average Loss = 0.0006, Train acc = 0.9999
+ Average Loss = 0.0008, Train acc = 0.9999
+ Average Loss = 0.0006, Train acc = 0.9998
+ Average Loss = 0.0006, Train acc = 0.9998
+ Average Loss = 0.0006, Train acc = 0.9999
+ Average Loss = 0.0001, Train acc = 1.0000
+ Average Loss = 0.0001, Train acc = 1.0000
+ Average Loss = 0.0012, Train acc = 0.9998
+ Average Loss = 0.0008, Train acc = 0.9998
+ Average Loss = 0.0005, Train acc = 0.9999
+ Average Loss = 0.0012, Train acc = 0.9998
+ Average Loss = 0.0007, Train acc = 0.9999
+ Average Loss = 0.0005, Train acc = 0.9999
+
+Adversarial Training Generator :  oracle_sample_NLL = 8.3574
+
+Adversarial Training Discriminator :
+ Average Loss = 0.0007, Train acc = 0.9998
+ Average Loss = 0.0002, Train acc = 1.0000
+ Average Loss = 0.0001, Train acc = 1.0000
+ Average Loss = 0.0006, Train acc = 0.9999
+ Average Loss = 0.0001, Train acc = 0.9999
+ Average Loss = 0.0002, Train acc = 0.9999
+ Average Loss = 0.0006, Train acc = 0.9999
+ Average Loss = 0.0004, Train acc = 0.9999
+ Average Loss = 0.0002, Train acc = 0.9999
+ Average Loss = 0.0005, Train acc = 0.9999
+ Average Loss = 0.0003, Train acc = 0.9999
+ Average Loss = 0.0003, Train acc = 0.9999
+ Average Loss = 0.0015, Train acc = 0.9997
+ Average Loss = 0.0013, Train acc = 0.9999
+ Average Loss = 0.0012, Train acc = 0.9998
+
+Adversarial Training Generator :  oracle_sample_NLL = 8.3579
+
+Adversarial Training Discriminator :
+ Average Loss = 0.0011, Train acc = 0.9998
+ Average Loss = 0.0007, Train acc = 0.9998
+ Average Loss = 0.0001, Train acc = 1.0000
+ Average Loss = 0.0004, Train acc = 0.9999
+ Average Loss = 0.0001, Train acc = 0.9999
+ Average Loss = 0.0001, Train acc = 1.0000
+ Average Loss = 0.0009, Train acc = 0.9998
+ Average Loss = 0.0004, Train acc = 0.9999
+ Average Loss = 0.0004, Train acc = 0.9999
+ Average Loss = 0.0011, Train acc = 0.9997
+ Average Loss = 0.0004, Train acc = 0.9999
+ Average Loss = 0.0001, Train acc = 1.0000
+ Average Loss = 0.0020, Train acc = 0.9997
+ Average Loss = 0.0009, Train acc = 0.9998
+ Average Loss = 0.0004, Train acc = 0.9999
+
+Adversarial Training Generator :  oracle_sample_NLL = 8.3575
+
+Adversarial Training Discriminator :
+ Average Loss = 0.0007, Train acc = 0.9998
+ Average Loss = 0.0005, Train acc = 0.9999
+ Average Loss = 0.0003, Train acc = 0.9999
+ Average Loss = 0.0017, Train acc = 0.9997
+ Average Loss = 0.0008, Train acc = 0.9999
+ Average Loss = 0.0007, Train acc = 0.9999
+ Average Loss = 0.0011, Train acc = 0.9998
+ Average Loss = 0.0004, Train acc = 0.9998
+ Average Loss = 0.0002, Train acc = 1.0000
+ Average Loss = 0.0002, Train acc = 0.9999
+ Average Loss = 0.0001, Train acc = 1.0000
+ Average Loss = 0.0001, Train acc = 1.0000
+ Average Loss = 0.0008, Train acc = 0.9998
+ Average Loss = 0.0002, Train acc = 1.0000
+ Average Loss = 0.0001, Train acc = 1.0000
+
+Adversarial Training Generator :  oracle_sample_NLL = 8.3576
+
+Adversarial Training Discriminator :
+ Average Loss = 0.0024, Train acc = 0.9995
+ Average Loss = 0.0009, Train acc = 0.9998
+ Average Loss = 0.0006, Train acc = 0.9998
+ Average Loss = 0.0009, Train acc = 0.9999
+ Average Loss = 0.0001, Train acc = 1.0000
+ Average Loss = 0.0003, Train acc = 0.9998
+ Average Loss = 0.0010, Train acc = 0.9998
+ Average Loss = 0.0009, Train acc = 0.9999
+ Average Loss = 0.0004, Train acc = 0.9999
+ Average Loss = 0.0005, Train acc = 0.9999
+ Average Loss = 0.0001, Train acc = 1.0000
+ Average Loss = 0.0001, Train acc = 1.0000
+ Average Loss = 0.0007, Train acc = 0.9999
+ Average Loss = 0.0002, Train acc = 0.9999
+ Average Loss = 0.0001, Train acc = 1.0000
+successfully saved generator model.
