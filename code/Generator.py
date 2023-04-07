@@ -103,7 +103,6 @@ class Generator(nn.Module):
             loss += loss_fn(out, target[i])
 
         return loss     # per batch
-<<<<<<< HEAD
     # def batchPGLoss(self, inp, target, reward):
     #     batch_size, seq_len = inp.size()
     #     inp = inp.permute(1, 0)
@@ -117,8 +116,6 @@ class Generator(nn.Module):
     #         loss += -(log_probs[range(batch_size), target.data[i]] * reward).mean()  # Compute KL loss
     #     return loss
 
-=======
->>>>>>> 87e3b5fcfa6bec1dfa7d1132ca0f91035da96161
 
     def batchPGLoss(self, inp, target, reward):
         """
@@ -148,9 +145,6 @@ class Generator(nn.Module):
         # print("pgloss = ",loss/batch_size)
         return loss/batch_size
 
-<<<<<<< HEAD
 
 
 
-=======
->>>>>>> 87e3b5fcfa6bec1dfa7d1132ca0f91035da96161

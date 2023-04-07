@@ -18,27 +18,15 @@ Created on Thu March 1 11:14:08 2023
 """
 
 CUDA = True
-<<<<<<< HEAD
-VOCAB_SIZE = 4098# 16384
+VOCAB_SIZE = 4097 # 4097 16,384
 START_LETTER = 0
-BATCH_SIZE = 8
-MLE_TRAIN_EPOCHS = 500
-ADV_TRAIN_EPOCHS = 100
-POS_NEG_SAMPLES = 100
-SEQ_LENGTH = 45
-GEN_EMBEDDING_DIM = 32 #32
-GEN_HIDDEN_DIM = 32 # 32
-=======
-VOCAB_SIZE = 66# 1024 + 2
-START_LETTER = 0
-BATCH_SIZE = 1
+BATCH_SIZE = 32
 MLE_TRAIN_EPOCHS = 100
-ADV_TRAIN_EPOCHS = 50
-POS_NEG_SAMPLES = 10
-SEQ_LENGTH = 99
-GEN_EMBEDDING_DIM = 32
-GEN_HIDDEN_DIM = 32
->>>>>>> 87e3b5fcfa6bec1dfa7d1132ca0f91035da96161
+ADV_TRAIN_EPOCHS = 100
+POS_NEG_SAMPLES = 1000
+SEQ_LENGTH = 96
+GEN_EMBEDDING_DIM = 256 #32
+GEN_HIDDEN_DIM = 256 # 32
 DIS_EMBEDDING_DIM = 64
 DIS_HIDDEN_DIM = 64
 
@@ -101,47 +89,11 @@ def read_sampleFile(k, file='kmer.pkl', pad_token='PAD',num=None):
                 count += 1
                 if num is not None and count >= num:
                     break
-<<<<<<< HEAD
     vocabulary = generate_all_kmers(k)
-=======
-    # # print(characters)
-    # vocabulary = dict([(y,x+1) for x, y in enumerate(set(characters))])
-    # reverse_vocab = dict([(x+1,y) for x, y in enumerate(set(characters))])
-    # # print(vocabulary)
-    # # print(reverse_vocab)
-    # # add start and end tag:
-    # vocabulary['START'] = 0
-    # reverse_vocab[0] = 'START'
-    # vocabulary['A'] = 1
-    # reverse_vocab[1] = 'A'
-    # vocabulary['C'] = 2
-    # reverse_vocab[2] = 'C'
-    # vocabulary['G'] = 3
-    # reverse_vocab[3] = 'G'
-    # vocabulary['T'] = 4
-    # reverse_vocab[4] = 'T'
-    # vocabulary[pad_token] = 5
-    # reverse_vocab[5] = pad_token
-    # # if pad_token not in vocabulary.keys():
-    # #     vocabulary[pad_token] = len(vocabulary)
-    # #     reverse_vocab[len(vocabulary)-1] = pad_token
-    # vocabulary['END'] = 6
-    # reverse_vocab[6] = 'END'
-    vocabulary = generate_all_kmers(k)
-    # print(vocabulary)
-    # print(reverse_vocab)
-    # print(vocabulary,":",reverse_vocab)
->>>>>>> 87e3b5fcfa6bec1dfa7d1132ca0f91035da96161
     tmp = sorted(zip(x_lengths,lineList_all), reverse=True)
     x_lengths = [x for x,y in tmp]
     lineList_all = [y for x,y in tmp]
     generated_data = [int(vocabulary[x]) for y in lineList_all for i,x in enumerate(y) if i<SEQ_LENGTH]
-<<<<<<< HEAD
-=======
-    # generated_data = [int(vocabulary[x]) for y in lineList_all for i,x in enumerate(y) if i<SEQ_LENGTH]
-    # print(generated_data)
-    # print(generated_data)
->>>>>>> 87e3b5fcfa6bec1dfa7d1132ca0f91035da96161
     # to tensor
     x = torch.tensor(generated_data).view(-1,SEQ_LENGTH)
     # print(x)
@@ -208,12 +160,7 @@ def train_generator_PG(gen, gen_opt, oracle, dis, num_batches):
     """
 
     for batch in range(num_batches):
-<<<<<<< HEAD
-        # s = gen.sample(BATCH_SIZE*2)        # 64 works best
-        s = gen.sample(BATCH_SIZE)  
-=======
         s = gen.sample(BATCH_SIZE*2)        # 64 works best
->>>>>>> 87e3b5fcfa6bec1dfa7d1132ca0f91035da96161
         inp, target = helpers.prepare_generator_batch(s, start_letter=START_LETTER, gpu=CUDA)
         rewards = dis.batchClassify(target)
 
@@ -280,17 +227,10 @@ def train_discriminator(discriminator, dis_opt, real_data_samples, generator, or
 
 # MAIN
 if __name__ == '__main__':
-<<<<<<< HEAD
     real, vocabulary, sentence_lengths = read_sampleFile(file = "kmer.pkl",k = 6)
     fake, vocabulary_ref, sentence_lengths_ref = read_sampleFile(file = "reference.pkl", k = 6)
     oracle = Generator.Generator(GEN_EMBEDDING_DIM, GEN_HIDDEN_DIM, VOCAB_SIZE, SEQ_LENGTH, gpu=CUDA)
-    orcale_optimizer = optim.Adam(oracle.parameters(), lr=1e-4)
-=======
-    real, vocabulary, sentence_lengths = read_sampleFile(file = "kmer.pkl",k = 3)
-    fake, vocabulary_ref, sentence_lengths_ref = read_sampleFile(file = "reference.pkl", k = 3)
-    oracle = Generator.Generator(GEN_EMBEDDING_DIM, GEN_HIDDEN_DIM, VOCAB_SIZE, SEQ_LENGTH, gpu=CUDA)
-    orcale_optimizer = optim.Adam(oracle.parameters(), lr=1e-2)
->>>>>>> 87e3b5fcfa6bec1dfa7d1132ca0f91035da96161
+    orcale_optimizer = optim.Adam(oracle.parameters(), lr=4e-3)
     print("Real Sample num = ",len(real))
     print("Fake Sample num = ",len(fake))
     # print(vocabulary)
@@ -322,11 +262,7 @@ if __name__ == '__main__':
     # GENERATOR MLE TRAINING use reference to train generator
     print('Starting Generator MLE Training...')
     # gen_optimizer = optim.Adam(gen.parameters(), lr=1e-2)
-<<<<<<< HEAD
-    gen_optimizer = optim.Adam(gen.parameters(), lr=1e-4)
-=======
-    gen_optimizer = optim.Adam(gen.parameters(), lr=1e-2)
->>>>>>> 87e3b5fcfa6bec1dfa7d1132ca0f91035da96161
+    gen_optimizer = optim.Adam(gen.parameters(), lr=4e-3)
     train_generator_MLE(gen, gen_optimizer, oracle, fake, MLE_TRAIN_EPOCHS)
     # 8888888888888
     # torch.save(gen, pretrained_gen_path)
@@ -350,19 +286,11 @@ if __name__ == '__main__':
     # print('\nInitial Oracle Sample Loss : %.4f' % oracle_loss)
 
     for epoch in range(ADV_TRAIN_EPOCHS):
-<<<<<<< HEAD
         print('\n--------\nEPOCH %d\n--------' % (epoch+1))
         # TRAIN GENERATOR
         print('\nAdversarial Training Generator : ', end='')
         sys.stdout.flush()
-        train_generator_PG(gen, gen_optimizer, oracle, dis, 6)
-=======
-        # print('\n--------\nEPOCH %d\n--------' % (epoch+1))
-        # TRAIN GENERATOR
-        print('\nAdversarial Training Generator : ', end='')
-        sys.stdout.flush()
-        train_generator_PG(gen, gen_optimizer, oracle, dis, 1)
->>>>>>> 87e3b5fcfa6bec1dfa7d1132ca0f91035da96161
+        train_generator_PG(gen, gen_optimizer, oracle, dis, 3)
 
         # TRAIN DISCRIMINATOR
         print('\nAdversarial Training Discriminator : ')
