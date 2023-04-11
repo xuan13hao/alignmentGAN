@@ -35,37 +35,37 @@ for c in chunks:
     max_list.append(max_[2])
 print(max_list)
 print("Average Accuracy = ",sum(max_list)/len(max_list))
-# plot distribution
-
-import matplotlib.pyplot as plt
-import numpy as np
-
-bins = np.linspace(0, 1, 11)
-
-plt.hist(max_list, bins=bins, edgecolor='black', density=True)
-plt.xlabel('Percentage Ranges')
-plt.ylabel('Frequency')
-plt.title('Histogram of Data with Percentage Ranges')
-
-plt.legend(['Data'])
-plt.show()
-plt.savefig("distribution.png")
-
-
-# dic = {}
-# for pair in sorted_list:
-#     # check if the key already exists in the dictionary
-#     if pair[0] in dic:
-#         # check if the existing value is already a tuple
-#         if isinstance(dic[pair[0]], tuple):
-#             # concatenate the new elements to the existing tuple
-#             dic[pair[0]] = dic[pair[0]] + (pair[1], pair[2])
-#         else:
-#             # if the existing value is not a tuple, convert it to a tuple and concatenate
-#             dic[pair[0]] = tuple([dic[pair[0]]]) + (pair[1], pair[2])
-#     else:
-#         # if the key does not exist in the dictionary, create a new tuple with the new elements
-#         dic[pair[0]] = (pair[1], pair[2])
-
-# for id, tp in dic.items():
-#     print(id,":",tp)
+three_ = []
+four_ = []
+five_ = []
+six_ = []
+seve_ = []
+eight_ = []
+nine_ = []
+one_hun = []
+for i in max_list:
+    i = int(i)
+    if 30 <= i < 40:
+        three_.append(i)
+    elif 40 <= i < 50:
+        four_.append(i)
+    elif 50 <= i < 60:
+        five_.append(i)
+    elif 60 <= i < 70:
+        six_.append(i)
+    elif 70 <= i < 80:
+        seve_.append(i)
+    elif 80 <= i < 90:
+        eight_.append(i)
+    elif 90 <= i < 100:
+        nine_.append(i)
+    elif 99 < i <= 101:
+        one_hun.append(i)
+print("100% = ",len(one_hun))
+print("90-100% = ",len(nine_))
+print("80-90% = ",len(eight_))
+print("70-80% = ",len(seve_))
+print("60-70% = ",len(six_))
+print("50-60% = ",len(five_))
+print("40-50% = ",len(four_))
+print("30-40% = ",len(three_))

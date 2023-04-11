@@ -6,10 +6,10 @@ Created on Thu March 10 11:14:08 2023
 
 from itertools import chain
 import pandas as pd
-SEQ_LENGTH = 96 
+SEQ_LENGTH = 99 
 import fasta
 # ,mask_token = 'MASK'
-# L - K + 1    101 - 6 + 1 = 96 50- 6 + 1
+# L - K + 1    101 - 3 + 1 = 99 
 def DNAToWord(dna, K ,pad_token='PAD',mask_token = 'MASK'):
     kmers = []
     length = len(dna)
@@ -50,8 +50,8 @@ def load_seqs(inputFilename,kmer,outputFilename='kmer.pkl'):
 #%%
 if __name__ == '__main__':
 
-    kmer_list = load_seqs('real.fa',6,outputFilename = "kmer.pkl")
-    ref_list = load_seqs('ref.fa',6,outputFilename = "reference.pkl")
+    kmer_list = load_seqs('real.fa',3,outputFilename = "kmer.pkl")
+    ref_list = load_seqs('ref.fa',3,outputFilename = "reference.pkl")
     # kmer_list = load_seqs('real_reads.fa',6,outputFilename = "kmer.pkl")
     # ref_list = load_seqs('real_ref.fa',6,outputFilename = "reference.pkl")
     # test = load_seqs('../data/test.fa',1,outputFilename = "test.pkl")

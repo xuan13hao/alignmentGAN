@@ -18,17 +18,17 @@ Created on Thu March 1 11:14:08 2023
 """
 
 CUDA = True
-VOCAB_SIZE = 4097 # 4097 16,384
+VOCAB_SIZE = 65 # 4097 16,384
 START_LETTER = 0
-BATCH_SIZE = 32
+BATCH_SIZE = 16
 MLE_TRAIN_EPOCHS = 100
 ADV_TRAIN_EPOCHS = 100
-POS_NEG_SAMPLES = 1000
-SEQ_LENGTH = 96
-GEN_EMBEDDING_DIM = 256 #32
-GEN_HIDDEN_DIM = 256 # 32
-DIS_EMBEDDING_DIM = 64
-DIS_HIDDEN_DIM = 64
+POS_NEG_SAMPLES = 369
+SEQ_LENGTH = 99
+GEN_EMBEDDING_DIM = 1024 # 512
+GEN_HIDDEN_DIM = 768 # 768
+DIS_EMBEDDING_DIM = 512 # 512
+DIS_HIDDEN_DIM = 768 # 768
 
 # oracle_samples_path = './oracle_samples.trc'
 # oracle_state_dict_path = './oracle_EMBDIM32_HIDDENDIM32_VOCAB5000_MAXSEQLEN20.trc'
@@ -227,10 +227,10 @@ def train_discriminator(discriminator, dis_opt, real_data_samples, generator, or
 
 # MAIN
 if __name__ == '__main__':
-    real, vocabulary, sentence_lengths = read_sampleFile(file = "kmer.pkl",k = 6)
-    fake, vocabulary_ref, sentence_lengths_ref = read_sampleFile(file = "reference.pkl", k = 6)
+    real, vocabulary, sentence_lengths = read_sampleFile(file = "kmer.pkl",k = 3)
+    fake, vocabulary_ref, sentence_lengths_ref = read_sampleFile(file = "reference.pkl", k = 3)
     oracle = Generator.Generator(GEN_EMBEDDING_DIM, GEN_HIDDEN_DIM, VOCAB_SIZE, SEQ_LENGTH, gpu=CUDA)
-    orcale_optimizer = optim.Adam(oracle.parameters(), lr=4e-3)
+    orcale_optimizer = optim.Adam(oracle.parameters(), lr=1e-4)
     print("Real Sample num = ",len(real))
     print("Fake Sample num = ",len(fake))
     # print(vocabulary)
@@ -262,14 +262,14 @@ if __name__ == '__main__':
     # GENERATOR MLE TRAINING use reference to train generator
     print('Starting Generator MLE Training...')
     # gen_optimizer = optim.Adam(gen.parameters(), lr=1e-2)
-    gen_optimizer = optim.Adam(gen.parameters(), lr=4e-3)
+    gen_optimizer = optim.Adam(gen.parameters(), lr=1e-4)
     train_generator_MLE(gen, gen_optimizer, oracle, fake, MLE_TRAIN_EPOCHS)
     # 8888888888888
     # torch.save(gen, pretrained_gen_path)
     # torch.save(gen_optimizer, "opt_pretrained_gen_MLE.pkl")
     # # torch.save(gen.state_dict(), pretrained_gen_path)
     # # gen.load_state_dict(torch.load(pretrained_gen_path))
-    # gen = torch.load(pretrained_gen_path)
+    # gen = torch.load(pretrained_gen_path)4rf
     # gen_optimizer = optim.Adam(gen.parameters(), lr=1e-2)
     # # PRETRAIN DISCRIMINATOR
     print('\nStarting Discriminator Training...')
@@ -290,8 +290,10 @@ if __name__ == '__main__':
         # TRAIN GENERATOR
         print('\nAdversarial Training Generator : ', end='')
         sys.stdout.flush()
-        train_generator_PG(gen, gen_optimizer, oracle, dis, 3)
-
+        train_generator_MLE(gen, gen_optimizer, oracle, fake, 1)
+        
+        train_generator_PG(gen, gen_optimizer, oracle, dis, 8)
+        
         # TRAIN DISCRIMINATOR
         print('\nAdversarial Training Discriminator : ')
         train_discriminator(dis, dis_optimizer, real, gen, oracle, 5, 3)

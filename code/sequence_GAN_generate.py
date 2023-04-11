@@ -58,6 +58,6 @@ if __name__ == '__main__':
     except IndexError:
         batch_size = 1
     
-    decode(6, batch_size)
+    decode(3, batch_size)
     # print(result[0])
     

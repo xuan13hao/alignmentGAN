@@ -23,9 +23,10 @@ class Generator(nn.Module):
         self.max_seq_len = max_seq_len
         self.vocab_size = vocab_size
         self.gpu = gpu
-
+        self.num_layers = 2
         self.embeddings = nn.Embedding(vocab_size, embedding_dim)
-        self.gru = nn.GRU(embedding_dim, hidden_dim)
+        self.gru = nn.GRU(embedding_dim, hidden_dim, num_layers=2)
+        # self.gru = nn.GRU(embedding_dim, hidden_dim)
         self.gru2out = nn.Linear(hidden_dim, vocab_size)
 
         # initialise oracle network with N(0,1)
@@ -35,8 +36,8 @@ class Generator(nn.Module):
                 init.normal(p, 0, 1)
 
     def init_hidden(self, batch_size=1):
-        h = autograd.Variable(torch.zeros(1, batch_size, self.hidden_dim))
-
+        #h = autograd.Variable(torch.zeros(1, batch_size, self.hidden_dim))
+        h = autograd.Variable(torch.zeros(self.num_layers, batch_size, self.hidden_dim))
         if self.gpu:
             return h.cuda()
         else:
@@ -145,6 +146,82 @@ class Generator(nn.Module):
         # print("pgloss = ",loss/batch_size)
         return loss/batch_size
 
+'''
+def batchPGLoss(self, inp, target, reward):
+    """
+    Returns a pseudo-loss that gives corresponding policy gradients (on calling .backward()).
+    Uses sequence similarity as a reward.
+
+    Inputs: inp, target
+        - inp: batch_size x seq_len
+        - target: batch_size x seq_len
+        - reward: batch_size x seq_len (similarity score for each token of each sentence in the batch)
+
+        inp should be target with <s> (start letter) prepended
+    """
+    batch_size, seq_len = inp.size()
+    inp = inp.permute(1, 0)          # seq_len x batch_size
+    target = target.permute(1, 0)    # seq_len x batch_size
+    h = self.init_hidden(batch_size)
+
+    loss = 0
+    for i in range(seq_len):
+        out, h = self.forward(inp[i], h)
+        # TODO: should h be detached from graph (.detach())?
+        for j in range(batch_size):
+            # Use negative similarity score as reward (higher similarity = lower loss)
+            similarity_reward = -reward[j][i]
+            # Compute log softmax probabilities of the model output
+            log_probs = F.log_softmax(out[j], dim=-1)
+            # Use the target token as the index to select the corresponding log probability
+            target_index = target.data[i][j]
+            log_prob = log_probs[target_index]
+            # Compute the weighted loss (log probability * similarity reward)
+            weighted_loss = log_prob * similarity_reward
+            loss += weighted_loss
+    # Average the loss over the batch size and sequence length
+    return loss / (batch_size * seq_len)
+
+'''
 
 
+'''
+    def batchNLLLoss(self, inp, target, alpha, beta):
+        """
+        Returns the NLL Loss for predicting target sequence.
+The batchNLLLoss() method now takes two additional hyperparameters alpha and beta, which control the relative importance of the negative log-likelihood loss and the similarity-based loss, respectively. The function first initializes the two loss functions: nll_loss_fn for the negative log-likelihood loss and cos_similarity_fn for the cosine similarity-based loss.
 
+Then, the function iterates over the sequence length and computes the two loss terms for each sequence. The negative log-likelihood loss is computed as before using nll_loss_fn, while the similarity-based loss is computed using cos_similarity_fn as in the previous example.
+        Inputs: inp, target
+            - inp: batch_size x seq_len
+            - target: batch_size x seq_len
+
+            inp should be target with <s> (start letter) prepended
+        """
+
+        batch_size, seq_len = inp.size()
+        inp = inp.permute(1, 0)           # seq_len x batch_size
+        target = target.permute(1, 0)     # seq_len x batch_size
+        hidden = self.init_hidden(batch_size)
+
+        nll_loss_fn = nn.NLLLoss()
+        cos_similarity_fn = cosine_similarity
+
+        nll_loss = 0
+        sim_loss = 0
+
+        for i in range(seq_len):
+            out, hidden = self.forward(inp[i], hidden)
+            nll_loss += nll_loss_fn(out.view(-1, out.size(-1)), target[i].view(-1))
+
+            # Compute similarity-based loss
+            pred_seq = out.argmax(dim=-1).cpu().numpy()   # convert to numpy array for cosine_similarity
+            target_seq = target[i].cpu().numpy()
+            sim_loss -= torch.tensor(cos_similarity_fn(pred_seq, target_seq)).mean()
+
+        # Combine losses with weights
+        loss = alpha * nll_loss + beta * sim_loss
+
+        return loss / seq_len  # per sequence
+
+'''
