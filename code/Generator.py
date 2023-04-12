@@ -23,9 +23,9 @@ class Generator(nn.Module):
         self.max_seq_len = max_seq_len
         self.vocab_size = vocab_size
         self.gpu = gpu
-        self.num_layers = 2
+        self.num_layers = 12
         self.embeddings = nn.Embedding(vocab_size, embedding_dim)
-        self.gru = nn.GRU(embedding_dim, hidden_dim, num_layers=2)
+        self.gru = nn.GRU(embedding_dim, hidden_dim, num_layers=self.num_layers)
         # self.gru = nn.GRU(embedding_dim, hidden_dim)
         self.gru2out = nn.Linear(hidden_dim, vocab_size)
 
