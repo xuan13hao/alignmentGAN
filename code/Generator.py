@@ -17,16 +17,16 @@ class Generator(nn.Module):
 
     def __init__(self, embedding_dim, hidden_dim, vocab_size, max_seq_len, gpu=False, oracle_init=False):
         super(Generator, self).__init__()
-        # x, _, reverse_vocab, _ = read_sampleFile(file = "reference.pkl")
         self.hidden_dim = hidden_dim
         self.embedding_dim = embedding_dim
         self.max_seq_len = max_seq_len
         self.vocab_size = vocab_size
+        num_layers=4
+        self.num_layers = num_layers
         self.gpu = gpu
-        self.num_layers = 12
+
         self.embeddings = nn.Embedding(vocab_size, embedding_dim)
-        self.gru = nn.GRU(embedding_dim, hidden_dim, num_layers=self.num_layers)
-        # self.gru = nn.GRU(embedding_dim, hidden_dim)
+        self.gru = nn.GRU(embedding_dim, hidden_dim, num_layers=num_layers)
         self.gru2out = nn.Linear(hidden_dim, vocab_size)
 
         # initialise oracle network with N(0,1)
@@ -36,8 +36,8 @@ class Generator(nn.Module):
                 init.normal(p, 0, 1)
 
     def init_hidden(self, batch_size=1):
-        #h = autograd.Variable(torch.zeros(1, batch_size, self.hidden_dim))
         h = autograd.Variable(torch.zeros(self.num_layers, batch_size, self.hidden_dim))
+
         if self.gpu:
             return h.cuda()
         else:
@@ -58,7 +58,6 @@ class Generator(nn.Module):
     def sample(self, num_samples, start_letter=0):
         """
         Samples the network and returns num_samples samples of length max_seq_len.
-
         Outputs: samples, hidden
             - samples: num_samples x max_seq_length (a sampled sequence in each row)
         """
@@ -84,11 +83,9 @@ class Generator(nn.Module):
     def batchNLLLoss(self, inp, target):
         """
         Returns the NLL Loss for predicting target sequence.
-
         Inputs: inp, target
             - inp: batch_size x seq_len
             - target: batch_size x seq_len
-
             inp should be target with <s> (start letter) prepended
         """
 
@@ -104,34 +101,19 @@ class Generator(nn.Module):
             loss += loss_fn(out, target[i])
 
         return loss     # per batch
-    # def batchPGLoss(self, inp, target, reward):
-    #     batch_size, seq_len = inp.size()
-    #     inp = inp.permute(1, 0)
-    #     target = target.permute(1, 0)
-    #     h = self.init_hidden(batch_size)
-        
-    #     loss = 0
-    #     for i in range(seq_len):
-    #         out, h = self.forward(inp[i], h)
-    #         log_probs = F.log_softmax(out, dim=-1)  # 计算对数概率
-    #         loss += -(log_probs[range(batch_size), target.data[i]] * reward).mean()  # Compute KL loss
-    #     return loss
-
 
     def batchPGLoss(self, inp, target, reward):
         """
         Returns a pseudo-loss that gives corresponding policy gradients (on calling .backward()).
         Inspired by the example in http://karpathy.github.io/2016/05/31/rl/
-
         Inputs: inp, target
             - inp: batch_size x seq_len
             - target: batch_size x seq_len
             - reward: batch_size (discriminator reward for each sentence, applied to each token of the corresponding
                       sentence)
-
             inp should be target with <s> (start letter) prepended
         """
-        # print("reward = ",reward)
+
         batch_size, seq_len = inp.size()
         inp = inp.permute(1, 0)          # seq_len x batch_size
         target = target.permute(1, 0)    # seq_len x batch_size
@@ -142,10 +124,9 @@ class Generator(nn.Module):
             out, h = self.forward(inp[i], h)
             # TODO: should h be detached from graph (.detach())?
             for j in range(batch_size):
-                loss += -out[j][target.data[i][j]]*reward[j]     # log(P(y_t|Y_1:Y_{t-1})) * Q 
-        # print("pgloss = ",loss/batch_size)
-        return loss/batch_size
+                loss += -out[j][target.data[i][j]]*reward[j]     # log(P(y_t|Y_1:Y_{t-1})) * Q
 
+        return loss/batch_size
 '''
 def batchPGLoss(self, inp, target, reward):
     """

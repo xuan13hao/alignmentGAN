@@ -1,13 +1,9 @@
-"""
-Created on Thu Feb 20 11:14:08 2023
-"""
 import torch
 import torch.autograd as autograd
 import torch.nn as nn
 import pdb
 
 class Discriminator(nn.Module):
-
     def __init__(self, embedding_dim, hidden_dim, vocab_size, max_seq_len, gpu=False, dropout=0.2):
         super(Discriminator, self).__init__()
         self.hidden_dim = hidden_dim
@@ -33,9 +29,9 @@ class Discriminator(nn.Module):
         # input dim                                                # batch_size x seq_len
         emb = self.embeddings(input)                               # batch_size x seq_len x embedding_dim
         emb = emb.permute(1, 0, 2)                                 # seq_len x batch_size x embedding_dim
-        _, hidden = self.gru(emb, hidden)                          # 4 x batch_size x hidden_dim
-        hidden = hidden.permute(1, 0, 2).contiguous()              # batch_size x 4 x hidden_dim
-        out = self.gru2hidden(hidden.view(-1, 4*self.hidden_dim))  # batch_size x 4*hidden_dim
+        _, hidden = self.gru(emb, hidden)                          # 24 x batch_size x hidden_dim
+        hidden = hidden.permute(1, 0, 2).contiguous()              # batch_size x 24 x hidden_dim
+        out = self.gru2hidden(hidden.view(-1, 2*2*self.hidden_dim)) # batch_size x 24*hidden_dim
         out = torch.tanh(out)
         out = self.dropout_linear(out)
         out = self.hidden2out(out)                                 # batch_size x 1
@@ -45,14 +41,12 @@ class Discriminator(nn.Module):
     def batchClassify(self, inp):
         """
         Classifies a batch of sequences.
-
         Inputs: inp
             - inp: batch_size x seq_len
-
         Returns: out
             - out: batch_size ([0,1] score)
         """
-        # print("inp = ",inp)
+
         h = self.init_hidden(inp.size()[0])
         out = self.forward(inp, h)
         return out.view(-1)
@@ -60,7 +54,6 @@ class Discriminator(nn.Module):
     def batchBCELoss(self, inp, target):
         """
         Returns Binary Cross Entropy Loss for discriminator.
-
          Inputs: inp, target
             - inp: batch_size x seq_len
             - target: batch_size (binary 1/0)
@@ -69,7 +62,6 @@ class Discriminator(nn.Module):
         loss_fn = nn.BCELoss()
         h = self.init_hidden(inp.size()[0])
         out = self.forward(inp, h)
-        # print("batchBCELoss = ",loss_fn(out, target))
         return loss_fn(out, target)
 
 '''

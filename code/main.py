@@ -20,15 +20,15 @@ Created on Thu March 1 11:14:08 2023
 CUDA = True
 VOCAB_SIZE = 65 # 4097 16,384
 START_LETTER = 0
-BATCH_SIZE = 16
+BATCH_SIZE = 32
 MLE_TRAIN_EPOCHS = 100
-ADV_TRAIN_EPOCHS = 100
+ADV_TRAIN_EPOCHS = 30
 POS_NEG_SAMPLES = 369
 SEQ_LENGTH = 99
-GEN_EMBEDDING_DIM = 512 # 512
+GEN_EMBEDDING_DIM = 128 # 512
 GEN_HIDDEN_DIM = 768 # 768
-DIS_EMBEDDING_DIM = 256 # 512
-DIS_HIDDEN_DIM = 256 # 768
+DIS_EMBEDDING_DIM = 128 # 512
+DIS_HIDDEN_DIM = 128 # 768
 
 # oracle_samples_path = './oracle_samples.trc'
 # oracle_state_dict_path = './oracle_EMBDIM32_HIDDENDIM32_VOCAB5000_MAXSEQLEN20.trc'
@@ -230,7 +230,7 @@ if __name__ == '__main__':
     real, vocabulary, sentence_lengths = read_sampleFile(file = "kmer.pkl",k = 3)
     fake, vocabulary_ref, sentence_lengths_ref = read_sampleFile(file = "reference.pkl", k = 3)
     oracle = Generator.Generator(GEN_EMBEDDING_DIM, GEN_HIDDEN_DIM, VOCAB_SIZE, SEQ_LENGTH, gpu=CUDA)
-    orcale_optimizer = optim.Adam(oracle.parameters(), lr=5e-4)
+    orcale_optimizer = optim.Adam(oracle.parameters(), lr=1e-3)
     print("Real Sample num = ",len(real))
     print("Fake Sample num = ",len(fake))
     # print(vocabulary)
@@ -262,7 +262,7 @@ if __name__ == '__main__':
     # GENERATOR MLE TRAINING use reference to train generator
     print('Starting Generator MLE Training...')
     # gen_optimizer = optim.Adam(gen.parameters(), lr=1e-2)
-    gen_optimizer = optim.Adam(gen.parameters(), lr=5e-4)
+    gen_optimizer = optim.Adam(gen.parameters(), lr=1e-3)
     train_generator_MLE(gen, gen_optimizer, oracle, fake, MLE_TRAIN_EPOCHS)
     # 8888888888888
     # torch.save(gen, pretrained_gen_path)
@@ -273,7 +273,7 @@ if __name__ == '__main__':
     # gen_optimizer = optim.Adam(gen.parameters(), lr=1e-2)
     # # PRETRAIN DISCRIMINATOR
     print('\nStarting Discriminator Training...')
-    dis_optimizer = optim.Adagrad(dis.parameters())
+    dis_optimizer = optim.Adagrad(dis.parameters(),lr=1e-3)
     train_discriminator(dis, dis_optimizer, real, gen, oracle, 50, 3)
     # torch.save(dis, pretrained_dis_path)
     # torch.save(dis_optimizer, "opt_pretrained_dis.pkl")
