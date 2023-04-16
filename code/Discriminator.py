@@ -1,8 +1,6 @@
 import torch
 import torch.autograd as autograd
 import torch.nn as nn
-import pdb
-
 class Discriminator(nn.Module):
     def __init__(self, embedding_dim, hidden_dim, vocab_size, max_seq_len, gpu=False, dropout=0.2):
         super(Discriminator, self).__init__()

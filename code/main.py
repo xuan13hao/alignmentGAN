@@ -273,7 +273,7 @@ if __name__ == '__main__':
     # gen_optimizer = optim.Adam(gen.parameters(), lr=1e-2)
     # # PRETRAIN DISCRIMINATOR
     print('\nStarting Discriminator Training...')
-    dis_optimizer = optim.Adagrad(dis.parameters(),lr=1e-3)
+    dis_optimizer = optim.Adagrad(dis.parameters())
     train_discriminator(dis, dis_optimizer, real, gen, oracle, 50, 3)
     # torch.save(dis, pretrained_dis_path)
     # torch.save(dis_optimizer, "opt_pretrained_dis.pkl")
