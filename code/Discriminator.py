@@ -34,6 +34,11 @@ class Discriminator(nn.Module):
         out = self.dropout_linear(out)
         out = self.hidden2out(out)                                 # batch_size x 1
         out = torch.sigmoid(out)
+        # print(out)
+        # threshold = 0.7
+        # # out = torch.sigmoid(out)
+        # out = torch.where(out >= threshold, torch.tensor([1.0]).cuda(), torch.tensor([0.0]).cuda())
+        # out = out.cuda()
         return out
 
     def batchClassify(self, inp):

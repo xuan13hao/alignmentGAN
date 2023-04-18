@@ -55,3 +55,11 @@ plt.ylabel('Frequency')
 plt.title('K-mer Real distribution (k={})'.format(k))
 # plt.show()
 plt.savefig('real_kmer_dis.png')
+
+diff = {k: kmer_counts_gen[k] - kmer_counts_real[k] for k in kmer_counts_gen}
+plt.bar(diff.keys(), diff.values())
+plt.xlabel('K-mer sequence')
+plt.ylabel('Diff Frequency')
+plt.title('K-mer Real distribution (k={})'.format(k))
+# plt.show()
+plt.savefig('diff.png')
