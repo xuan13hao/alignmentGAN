@@ -5,7 +5,7 @@ from Bio.pairwise2 import format_alignment
 
 # read the sequences from the two FASTA files
 sequences2 = SeqIO.index("gen.fa", "fasta")
-sequences1 = SeqIO.index("real.fa", "fasta")
+sequences1 = SeqIO.index("real_1000.fa", "fasta")
 
 # create a list to store the similarity percentages for each sequence pair
 similarity_list = []

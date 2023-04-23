@@ -6,7 +6,7 @@ Created on Thu March 10 11:14:08 2023
 
 from itertools import chain
 import pandas as pd
-SEQ_LENGTH = 99 
+SEQ_LENGTH = 96 
 import fasta
 # ,mask_token = 'MASK'
 # L - K + 1    101 - 3 + 1 = 99 
@@ -43,18 +43,28 @@ def load_seqs(inputFilename,kmer,outputFilename='kmer.pkl'):
     #     DNA = str(DNA).upper()
     #     list1.append(DNAToWord(DNA,kmer).split(" "))
     return seqs
-
+def read_file(data_file):
+    with open(data_file, 'r') as f:
+        lines = f.readlines()
+    lis = []
+    for line in lines:
+        l = [int(s) for s in list(line.strip().split())]
+        lis.append(l)
+    return lis
 
 
 
 #%%
 if __name__ == '__main__':
 
-    kmer_list = load_seqs('real.fa',3,outputFilename = "kmer.pkl")
-    ref_list = load_seqs('ref.fa',3,outputFilename = "reference.pkl")
+    # kmer_list = load_seqs('real_1000.fa',3,outputFilename = "kmer.pkl")
+    # ref_list = load_seqs('ref_1000.fa',3,outputFilename = "reference.pkl")
+    kmer_list = load_seqs('mt_10.fa',6,outputFilename = "kmer.pkl")
+    ref_list = load_seqs('mt_kmers.fa',6,outputFilename = "reference.pkl")
     # kmer_list = load_seqs('real_reads.fa',3,outputFilename = "kmer.pkl")
     # ref_list = load_seqs('real_ref.fa',3,outputFilename = "reference.pkl")
     # test = load_seqs('../data/test.fa',1,outputFilename = "test.pkl")
-    print(kmer_list)
+    # print(kmer_list)
+    print(ref_list)
     # dic = generate_all_kmers(1)
     # print(dic)

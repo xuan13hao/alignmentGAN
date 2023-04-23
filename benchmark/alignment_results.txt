@@ -1,0 +1,61 @@
+# BLASTN 2.12.0+
+# Query: 1
+# Database: User specified sequence set (Input: mt.fa)
+# Fields: query acc.ver, subject acc.ver, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+1	MT_human	100.000	101	0	0	1	101	1184	1284	4.64e-52	187
+# BLASTN 2.12.0+
+# Query: 2
+# Database: User specified sequence set (Input: mt.fa)
+# Fields: query acc.ver, subject acc.ver, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+2	MT_human	100.000	101	0	0	1	101	1203	1303	4.64e-52	187
+# BLASTN 2.12.0+
+# Query: 3
+# Database: User specified sequence set (Input: mt.fa)
+# Fields: query acc.ver, subject acc.ver, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+3	MT_human	100.000	101	0	0	1	101	1283	1383	4.64e-52	187
+# BLASTN 2.12.0+
+# Query: 4
+# Database: User specified sequence set (Input: mt.fa)
+# Fields: query acc.ver, subject acc.ver, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+4	MT_human	100.000	101	0	0	1	101	620	720	4.64e-52	187
+# BLASTN 2.12.0+
+# Query: 5
+# Database: User specified sequence set (Input: mt.fa)
+# Fields: query acc.ver, subject acc.ver, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+5	MT_human	100.000	101	0	0	1	101	740	840	4.64e-52	187
+# BLASTN 2.12.0+
+# Query: 6
+# Database: User specified sequence set (Input: mt.fa)
+# Fields: query acc.ver, subject acc.ver, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+6	MT_human	100.000	101	0	0	1	101	1128	1228	4.64e-52	187
+# BLASTN 2.12.0+
+# Query: 7
+# Database: User specified sequence set (Input: mt.fa)
+# Fields: query acc.ver, subject acc.ver, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+7	MT_human	100.000	101	0	0	1	101	906	1006	4.64e-52	187
+# BLASTN 2.12.0+
+# Query: 8
+# Database: User specified sequence set (Input: mt.fa)
+# Fields: query acc.ver, subject acc.ver, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+8	MT_human	99.010	101	1	0	1	101	541	641	2.16e-50	182
+# BLASTN 2.12.0+
+# Query: 9
+# Database: User specified sequence set (Input: mt.fa)
+# Fields: query acc.ver, subject acc.ver, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+9	MT_human	100.000	101	0	0	1	101	1423	1523	4.64e-52	187
+# BLASTN 2.12.0+
+# Query: 10
+# Database: User specified sequence set (Input: mt.fa)
+# Fields: query acc.ver, subject acc.ver, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+10	MT_human	100.000	101	0	0	1	101	1342	1442	4.64e-52	187
+# BLAST processed 10 queries

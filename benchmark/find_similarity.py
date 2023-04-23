@@ -28,5 +28,5 @@ for i, j in indices:
         seq_records1.append(seq_record1)
         seq_records2.append(seq_record2)
 
-SeqIO.write(seq_records1, "gen_over90.fa", "fasta")
-SeqIO.write(seq_records2, "real_over90.fa", "fasta")
+SeqIO.write(seq_records1, "gen.fa", "fasta")
+SeqIO.write(seq_records2, "real_1000.fa", "fasta")

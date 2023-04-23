@@ -34,7 +34,6 @@ class Generator(nn.Module):
         if oracle_init:
             for p in self.parameters():
                 init.normal(p, 0, 1)
-
     def init_hidden(self, batch_size=1):
         h = autograd.Variable(torch.zeros(self.num_layers, batch_size, self.hidden_dim))
 
