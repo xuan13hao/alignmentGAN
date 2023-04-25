@@ -68,6 +68,7 @@ def read_file(data_file,outputFilename='edits.pkl'):
 if __name__ == '__main__':
 
     edits_list = read_file('edits_test.txt',outputFilename='edits.pkl')
+    edits_list = read_file('edits_Match.txt',outputFilename='edits_ref.pkl')
     print(edits_list)
 
 

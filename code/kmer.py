@@ -59,8 +59,8 @@ if __name__ == '__main__':
 
     # kmer_list = load_seqs('real_1000.fa',3,outputFilename = "kmer.pkl")
     # ref_list = load_seqs('ref_1000.fa',3,outputFilename = "reference.pkl")
-    kmer_list = load_seqs('mt_10.fa',6,outputFilename = "kmer.pkl")
-    ref_list = load_seqs('mt_kmers.fa',6,outputFilename = "reference.pkl")
+    kmer_list = load_seqs('mt_10.fa',3,outputFilename = "kmer.pkl")
+    ref_list = load_seqs('mt_kmers.fa',3,outputFilename = "reference.pkl")
     # kmer_list = load_seqs('real_reads.fa',3,outputFilename = "kmer.pkl")
     # ref_list = load_seqs('real_ref.fa',3,outputFilename = "reference.pkl")
     # test = load_seqs('../data/test.fa',1,outputFilename = "test.pkl")

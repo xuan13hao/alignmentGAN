@@ -16,7 +16,7 @@ def decode_edits_dic():
     return kmer_dict
 
 def decode_edit(batch_size=1):
-    model = torch.load('edit_generator.pkl')
+    model = torch.load('pretrained_gen_edits.pkl')#pretrained_gen_edits edit_generator
     out = model.sample(batch_size)
     dict = decode_edits_dic()
     reads_file = open("../benchmark/edit.fa", 'w')
