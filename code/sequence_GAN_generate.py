@@ -56,7 +56,7 @@ def decode_edit(batch_size=1):
             seqs.append(seq)
     print("gen edits num = ", len(seqs))
 def decode(k,batch_size=1):
-    model = torch.load('pretrained_gen_3mer.pkl')
+    model = torch.load('pretrained_gen_6mer.pkl')
     out = model.sample(batch_size)
     dict = decode_all_kmers(k)
     reads_file = open("../benchmark/gen.fa", 'w')
@@ -85,7 +85,7 @@ if __name__ == '__main__':
     except IndexError:
         batch_size = 1
     
-    decode(3, batch_size)
+    decode(6, batch_size)
     # decode_edit(batch_size)
     # print(result[0])
     

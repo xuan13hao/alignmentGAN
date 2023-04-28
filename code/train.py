@@ -91,10 +91,10 @@ def read_edits(file='edits.pkl', pad_token='PAD',num=None):
     x_lengths = [x for x,y in tmp]
     lineList_all = [y for x,y in tmp]
     generated_data = [int(vocabulary[x]) for y in lineList_all for i,x in enumerate(y) if i<SEQ_LENGTH]
-    # print(generated_data)
+    print(generated_data)
     # to tensor
     x = torch.tensor(generated_data).view(-1,SEQ_LENGTH)
-    # print(x)
+    print(x)
     #x.int(), vocabulary, reverse_vocab, x_lengths
     return x.int(), vocabulary, x_lengths
 
@@ -204,6 +204,7 @@ if __name__ == '__main__':
 
     real, vocabulary, sentence_lengths = read_edits()
     ref, ref_vocabulary, ref_sentence_lengths = read_edits(file='edits_ref.pkl')
+    print(real)
     # fake = real
     oracle = Generator.Generator(GEN_EMBEDDING_DIM, GEN_HIDDEN_DIM, VOCAB_SIZE, SEQ_LENGTH, gpu=CUDA)
     orcale_optimizer = optim.Adam(oracle.parameters(), lr=1e-5)

@@ -25,6 +25,8 @@ for seq1 in sequences1:
             print(format_alignment(str(seq1.seq), str(seq2.seq), None, 0, len(seq1.seq)))
 
 '''
+
+blastn -query gen.fa -subject mt.fa -out output.txt -outfmt 7
             ACTTGGTTTGTGTTCTTCTTCATATTCTAAAACCATTCCATTTCCAAGCACTTTCAGTCCAATAGTTGTAGGAAATAGCGCTGTTTTTGTTGTGTGCGCAG
          |     |  ||  | ||||    |   | |     | |   | ||       |   |      ||   | |  |    |   |        |
 CAACCCACAGCTACTTGGTTTGTGTTCTTCTTCATATTCTAAAACCATTCCATTTCCAAGCACTTTCAGTCCAATAGGTGTAGGAAATAGCGCTGTTTTTG

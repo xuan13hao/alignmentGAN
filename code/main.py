@@ -22,10 +22,10 @@ Created on Thu March 1 11:14:08 2023
 CUDA = True
 VOCAB_SIZE = 4097 # 4097 16,384
 START_LETTER = 0
-BATCH_SIZE = 64
-MLE_TRAIN_EPOCHS = 50
+BATCH_SIZE = 32
+MLE_TRAIN_EPOCHS = 100
 ADV_TRAIN_EPOCHS = 30
-POS_NEG_SAMPLES = 8
+POS_NEG_SAMPLES = 12
 REF_NEG_SAMPLES = 1460
 SEQ_LENGTH = 96
 GEN_EMBEDDING_DIM = 128 # 512
@@ -47,6 +47,7 @@ def extract_kmers(filename):
     return kmers
 def kmer2tensor(kmers,k = 6):
     dic = generate_all_kmers(k)
+    # print(dic)
     generated_data = []
     for k in kmers:
         for k1 in k:
@@ -54,7 +55,7 @@ def kmer2tensor(kmers,k = 6):
     tensor_kmer = []
     for kmer in generated_data:
         tensor_kmer.append(dic[kmer])
-    print(tensor_kmer)
+    # print(tensor_kmer)
     x = torch.tensor(tensor_kmer).view(-1,SEQ_LENGTH)
     return x
 def generate_all_kmers(k):
@@ -180,9 +181,10 @@ def train_discriminator(discriminator, dis_opt, real_data_samples, generator, or
 # MAIN
 if __name__ == '__main__':
     real_kmer = extract_kmers(filename = "kmer.pkl")
-    real = kmer2tensor(real_kmer)
+    real = kmer2tensor(real_kmer, k =6)
     ref_kmer = extract_kmers(filename = "reference.pkl")
-    ref = kmer2tensor(ref_kmer)
+    ref = kmer2tensor(ref_kmer, k =6)
+    # print(real)
 
     oracle = Generator.Generator(GEN_EMBEDDING_DIM, GEN_HIDDEN_DIM, VOCAB_SIZE, SEQ_LENGTH, gpu=CUDA)
     orcale_optimizer = optim.Adam(oracle.parameters(), lr=1e-3)
@@ -216,7 +218,7 @@ if __name__ == '__main__':
         print("File does not exist")
         train_generator_MLE(gen, gen_optimizer, oracle, ref, MLE_TRAIN_EPOCHS)
     # 8888888888888
-        torch.save(gen, "pretrained_gen_3mer.pkl")
+        torch.save(gen, "pretrained_gen_6mer_new.pkl")
 
     # # PRETRAIN DISCRIMINATOR
     print('\nStarting Discriminator Training...')
@@ -250,8 +252,8 @@ if __name__ == '__main__':
         print('successfully saved generator model.')
     except:
         print('error: model saving failed!!!!!!')
-
 '''
+
 def read_sampleFile(k, file='kmer.pkl', pad_token='PAD',num=None):
     if file[-3:]=='pkl' or file[-3:]=='csv':
         if file[-3:] == 'pkl':
