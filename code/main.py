@@ -9,6 +9,7 @@ import torch
 import torch.optim as optim
 import torch.nn as nn
 import pandas as pd
+import pickle
 from itertools import chain
 from collections import Counter
 import Generator
@@ -19,14 +20,14 @@ Created on Thu March 1 11:14:08 2023
 """
 
 CUDA = True
-VOCAB_SIZE = 65 # 4097 16,384
+VOCAB_SIZE = 4097 # 4097 16,384
 START_LETTER = 0
 BATCH_SIZE = 64
 MLE_TRAIN_EPOCHS = 50
 ADV_TRAIN_EPOCHS = 30
 POS_NEG_SAMPLES = 8
 REF_NEG_SAMPLES = 1460
-SEQ_LENGTH = 99
+SEQ_LENGTH = 96
 GEN_EMBEDDING_DIM = 128 # 512
 GEN_HIDDEN_DIM = 768 # 768
 DIS_EMBEDDING_DIM = 128 # 512
@@ -34,6 +35,28 @@ DIS_HIDDEN_DIM = 128 # 768
 
 PATH = ""
 
+def extract_kmers(filename):
+    with open(filename, 'rb') as input_file:
+        kmers = []
+        while True:
+            try:
+                kmer = pickle.load(input_file)
+                kmers.append(kmer)
+            except EOFError:
+                break
+    return kmers
+def kmer2tensor(kmers,k = 6):
+    dic = generate_all_kmers(k)
+    generated_data = []
+    for k in kmers:
+        for k1 in k:
+            generated_data.append(k1)
+    tensor_kmer = []
+    for kmer in generated_data:
+        tensor_kmer.append(dic[kmer])
+    print(tensor_kmer)
+    x = torch.tensor(tensor_kmer).view(-1,SEQ_LENGTH)
+    return x
 def generate_all_kmers(k):
     alphabet = "ACGT"
     kmers = [''.join(p) for p in product(alphabet, repeat=k)]
@@ -45,76 +68,7 @@ def generate_all_kmers(k):
         kmer_dict[kmer] = idx
     return kmer_dict
 
-def read_sampleFile(k, file='kmer.pkl', pad_token='PAD',num=None):
-    if file[-3:]=='pkl' or file[-3:]=='csv':
-        if file[-3:] == 'pkl':
-            data = pd.read_pickle(file)
-        else:
-            data = pd.read_csv(file)
-        # print(data)
-        if num is not None:
-            num = min(num,len(data))
-            data = data[0:num]
-        lineList_all = data.values.tolist()
-        # print(lineList_all)
-        characters = set(chain.from_iterable(lineList_all))
-        # print(characters)
-        lineList_all = [w for w in lineList_all]
-        # print(lineList_all)
-        x_lengths = [len(x) - Counter(x)[pad_token] for x in lineList_all]
-        # print(x_lengths)
-    else:
-        lineList_all = list()
-        characters = list()
-        x_lengths = list()
-        count = 0
-        with open(file, 'r', encoding='utf-8-sig') as f:
-            for line in f:
-                line.strip()
-                lineList = list(line)
-                try:
-                    lineList.remove('\n')
-                except ValueError:
-                    pass
-                x_lengths.append(len(lineList) + 1)
-                
-                characters.extend(lineList)
-                # print(characters)
-                # print(len(characters))
-                if len(lineList)<SEQ_LENGTH:
-                    lineList.extend([pad_token] * (SEQ_LENGTH - len(lineList)))
-                lineList_all.append(lineList)
-                count += 1
-                if num is not None and count >= num:
-                    break
-    vocabulary = generate_all_kmers(k)
-    tmp = sorted(zip(x_lengths,lineList_all), reverse=True)
-    x_lengths = [x for x,y in tmp]
-    lineList_all = [y for x,y in tmp]
-    generated_data = [int(vocabulary[x]) for y in lineList_all for i,x in enumerate(y) if i<SEQ_LENGTH]
-    # to tensor
-    x = torch.tensor(generated_data).view(-1,SEQ_LENGTH)
-    # print(x)
-    #x.int(), vocabulary, reverse_vocab, x_lengths
-    return x.int(), vocabulary, x_lengths
 
-
-def train_baseline(oracle,oracle_opt,train_data,epochs):
-# Define your loss function
-    for epoch in range(epochs):
-        print('epoch %d : ' % (epoch + 1), end='')
-        sys.stdout.flush()
-        total_loss = 0
-        for i in range(BATCH_SIZE):
-            inp, target = helpers.prepare_generator_batch(train_data[i:i + BATCH_SIZE], start_letter=START_LETTER,
-                                                          gpu=CUDA)
-            oracle_opt.zero_grad()
-            loss = oracle.batchNLLLoss(inp, target)
-            loss.backward()
-            oracle_opt.step()
-            total_loss += loss.data.item()
-        # total_loss = total_loss / ceil(POS_NEG_SAMPLES / float(BATCH_SIZE)) / MAX_SEQ_LEN
-        # print(' average_train_NLL = %.4f' % (total_loss))
 
 def train_generator_MLE(gen, gen_opt, oracle, real_data_samples, epochs):
     """
@@ -225,27 +179,20 @@ def train_discriminator(discriminator, dis_opt, real_data_samples, generator, or
 
 # MAIN
 if __name__ == '__main__':
-    real, vocabulary, sentence_lengths = read_sampleFile(file = "kmer.pkl",k = 3)
-    fake, vocabulary_ref, sentence_lengths_ref = read_sampleFile(file = "reference.pkl", k = 3)
+    real_kmer = extract_kmers(filename = "kmer.pkl")
+    real = kmer2tensor(real_kmer)
+    ref_kmer = extract_kmers(filename = "reference.pkl")
+    ref = kmer2tensor(ref_kmer)
+
     oracle = Generator.Generator(GEN_EMBEDDING_DIM, GEN_HIDDEN_DIM, VOCAB_SIZE, SEQ_LENGTH, gpu=CUDA)
     orcale_optimizer = optim.Adam(oracle.parameters(), lr=1e-3)
     print("Real Sample num = ",len(real))
-    print("Fake Sample num = ",len(fake))
-    # print(vocabulary)
-    
-    # train_baseline(oracle,orcale_optimizer,x,MLE_TRAIN_EPOCHS)
-    # torch.save(oracle, 'oracle.pkl')
-    # oracle.torch.load("oracle_state_dict_path")
-    # print(oracle)
-    # oracle_samples = torch.load(oracle_samples_path).type(torch.LongTensor)
+    print("Fake Sample num = ",len(ref))
 
-    x_ref = fake
-    # train_baseline(oracle,x,MAX_SEQ_LEN)
+    x_ref = ref
     oracle_samples = real
-    # a new oracle can be generated by passing oracle_init=True in the generator constructor
-    # samples for the new oracle can be generated using helpers.batchwise_sample()
-    # print(oracle_samples)
-    # print(x)
+
+
     gen = Generator.Generator(GEN_EMBEDDING_DIM, GEN_HIDDEN_DIM, VOCAB_SIZE, SEQ_LENGTH, gpu=CUDA)
     dis = Discriminator.Discriminator(DIS_EMBEDDING_DIM, DIS_HIDDEN_DIM, VOCAB_SIZE, SEQ_LENGTH, gpu=CUDA)
 
@@ -255,30 +202,22 @@ if __name__ == '__main__':
         gen = gen.cuda()
         dis = dis.cuda()
         real = real.cuda()
-        fake = fake.cuda()
+        ref = ref.cuda()
 
     # GENERATOR MLE TRAINING use reference to train generator
     print('Starting Generator MLE Training...')
     # gen_optimizer = optim.Adam(gen.parameters(), lr=1e-2)
     gen_optimizer = optim.Adam(gen.parameters(), lr=1e-3)
-    file_path = ""
+    file_path = "pretrained_gen"
     if os.path.isfile(file_path):
         print("File exists")
         gen = torch.load('pretrained_gen.pkl')
     else:
         print("File does not exist")
-        train_generator_MLE(gen, gen_optimizer, oracle, fake, MLE_TRAIN_EPOCHS)
+        train_generator_MLE(gen, gen_optimizer, oracle, ref, MLE_TRAIN_EPOCHS)
     # 8888888888888
         torch.save(gen, "pretrained_gen_3mer.pkl")
 
-    # train_generator_MLE(gen, gen_optimizer, oracle, fake, MLE_TRAIN_EPOCHS)
-    # # 8888888888888
-    # torch.save(gen, "pretrained_gen.pkl")
-    # torch.save(gen_optimizer, "opt_pretrained_gen_MLE.pkl")
-    # # torch.save(gen.state_dict(), pretrained_gen_path)
-    # # gen.load_state_dict(torch.load(pretrained_gen_path))
-    # gen = torch.load(pretrained_gen_path)4rf
-    # gen_optimizer = optim.Adam(gen.parameters(), lr=1e-2)
     # # PRETRAIN DISCRIMINATOR
     print('\nStarting Discriminator Training...')
     dis_optimizer = optim.Adagrad(dis.parameters())
@@ -311,3 +250,77 @@ if __name__ == '__main__':
         print('successfully saved generator model.')
     except:
         print('error: model saving failed!!!!!!')
+
+'''
+def read_sampleFile(k, file='kmer.pkl', pad_token='PAD',num=None):
+    if file[-3:]=='pkl' or file[-3:]=='csv':
+        if file[-3:] == 'pkl':
+            data = pd.read_pickle(file)
+        else:
+            data = pd.read_csv(file)
+        # print(data)
+        if num is not None:
+            num = min(num,len(data))
+            data = data[0:num]
+        lineList_all = data.values.tolist()
+        # print(lineList_all)
+        characters = set(chain.from_iterable(lineList_all))
+        # print(characters)
+        lineList_all = [w for w in lineList_all]
+        # print(lineList_all)
+        x_lengths = [len(x) - Counter(x)[pad_token] for x in lineList_all]
+        # print(x_lengths)
+    else:
+        lineList_all = list()
+        characters = list()
+        x_lengths = list()
+        count = 0
+        with open(file, 'r', encoding='utf-8-sig') as f:
+            for line in f:
+                line.strip()
+                lineList = list(line)
+                try:
+                    lineList.remove('\n')
+                except ValueError:
+                    pass
+                x_lengths.append(len(lineList) + 1)
+                
+                characters.extend(lineList)
+                # print(characters)
+                # print(len(characters))
+                if len(lineList)<SEQ_LENGTH:
+                    lineList.extend([pad_token] * (SEQ_LENGTH - len(lineList)))
+                lineList_all.append(lineList)
+                count += 1
+                if num is not None and count >= num:
+                    break
+    vocabulary = generate_all_kmers(k)
+    tmp = sorted(zip(x_lengths,lineList_all), reverse=True)
+    x_lengths = [x for x,y in tmp]
+    lineList_all = [y for x,y in tmp]
+    generated_data = [int(vocabulary[x]) for y in lineList_all for i,x in enumerate(y) if i<SEQ_LENGTH]
+    # to tensor
+    x = torch.tensor(generated_data).view(-1,SEQ_LENGTH)
+    # print(x)
+    #x.int(), vocabulary, reverse_vocab, x_lengths
+    return x.int(), vocabulary, x_lengths
+
+
+def train_baseline(oracle,oracle_opt,train_data,epochs):
+# Define your loss function
+    for epoch in range(epochs):
+        print('epoch %d : ' % (epoch + 1), end='')
+        sys.stdout.flush()
+        total_loss = 0
+        for i in range(BATCH_SIZE):
+            inp, target = helpers.prepare_generator_batch(train_data[i:i + BATCH_SIZE], start_letter=START_LETTER,
+                                                          gpu=CUDA)
+            oracle_opt.zero_grad()
+            loss = oracle.batchNLLLoss(inp, target)
+            loss.backward()
+            oracle_opt.step()
+            total_loss += loss.data.item()
+        # total_loss = total_loss / ceil(POS_NEG_SAMPLES / float(BATCH_SIZE)) / MAX_SEQ_LEN
+        # print(' average_train_NLL = %.4f' % (total_loss))
+
+'''        
