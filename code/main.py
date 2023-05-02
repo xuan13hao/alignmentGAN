@@ -28,7 +28,7 @@ ADV_TRAIN_EPOCHS = 30
 POS_NEG_SAMPLES = 12
 REF_NEG_SAMPLES = 1460
 SEQ_LENGTH = 96
-GEN_EMBEDDING_DIM = 128 # 512
+GEN_EMBEDDING_DIM = 512 # 512
 GEN_HIDDEN_DIM = 768 # 768
 DIS_EMBEDDING_DIM = 128 # 512
 DIS_HIDDEN_DIM = 128 # 768
@@ -57,7 +57,7 @@ def kmer2tensor(kmers,k = 6):
         tensor_kmer.append(dic[kmer])
     # print(tensor_kmer)
     x = torch.tensor(tensor_kmer).view(-1,SEQ_LENGTH)
-    return x
+    return x.int()
 def generate_all_kmers(k):
     alphabet = "ACGT"
     kmers = [''.join(p) for p in product(alphabet, repeat=k)]

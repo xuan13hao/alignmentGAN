@@ -6,9 +6,10 @@ outputfile = open("cigar_match_output.txt", "w")
 # Iterate over each read in the SAM file
 for read in samfile:
     # Get the CIGAR string for the read
-    cigar = read
-    # cigar = read.cigarstring
-    # if "M" in cigar and "I" not in cigar and "D" not in cigar:
+    # cigar = read
+    cigar = read.cigarstring
+    if "I" in cigar or "D" in cigar:
+        cigar = cigar
     #     ops = []
     #     current_op = ""
     #     for char in cigar:
@@ -30,7 +31,7 @@ for read in samfile:
 
         # print(expanded_ops)
         # Write the CIGAR string to the output file
-    outputfile.write(str(cigar) + "\n")
+        outputfile.write(str(cigar) + "\n")
 
 # Close output file and SAM file
 outputfile.close()
