@@ -21,7 +21,7 @@ class Generator(nn.Module):
         self.embedding_dim = embedding_dim
         self.max_seq_len = max_seq_len
         self.vocab_size = vocab_size
-        num_layers=6
+        num_layers=3
         self.num_layers = num_layers
         self.gpu = gpu
 
@@ -78,7 +78,7 @@ class Generator(nn.Module):
             inp = out.view(-1)
 
         return samples
-
+    
     def batchNLLLoss(self, inp, target):
         """
         Returns the NLL Loss for predicting target sequence.
@@ -87,19 +87,31 @@ class Generator(nn.Module):
             - target: batch_size x seq_len
             inp should be target with <s> (start letter) prepended
         """
-
-        loss_fn = nn.NLLLoss()
         batch_size, seq_len = inp.size()
+
+
         inp = inp.permute(1, 0)           # seq_len x batch_size
         target = target.permute(1, 0)     # seq_len x batch_size
         h = self.init_hidden(batch_size)
-
+        count_match = 0
+        count_insert = 0
+        coutn_deletion = 0
+        total_tokens = batch_size * seq_len 
+        for i in range(seq_len):
+            count_match += torch.sum(target[i] == 1)
+            count_insert += torch.sum(target[i] == 3)
+            coutn_deletion += torch.sum(target[i] == 2)
+        ratio_match = count_match / total_tokens
+        ratio_insert = count_insert / total_tokens
+        ratio_deletion = coutn_deletion / total_tokens
+        weights = torch.tensor([1, 1/ratio_match,1/ratio_deletion, 1/ratio_insert ]).cuda()
+        loss_fn = nn.NLLLoss(weight=weights)
         loss = 0
         for i in range(seq_len):
             out, h = self.forward(inp[i], h)
             loss += loss_fn(out, target[i])
-
         return loss     # per batch
+
 
     def batchPGLoss(self, inp, target, reward):
         """
@@ -161,6 +173,33 @@ def batchPGLoss(self, inp, target, reward):
             loss += weighted_loss
     # Average the loss over the batch size and sequence length
     return loss / (batch_size * seq_len)
+
+    '''
+'''
+    def batchNLLLoss(self, inp, target):
+        """
+        Returns the NLL Loss for predicting target sequence.
+        Inputs: inp, target
+            - inp: batch_size x seq_len
+            - target: batch_size x seq_len
+            inp should be target with <s> (start letter) prepended
+        """
+
+        loss_fn = nn.NLLLoss()
+        batch_size, seq_len = inp.size()
+        inp = inp.permute(1, 0)           # seq_len x batch_size
+        target = target.permute(1, 0)     # seq_len x batch_size
+        h = self.init_hidden(batch_size)
+
+        loss = 0
+        # count_ones = 0
+        # total_tokens = batch_size * seq_len 
+        for i in range(seq_len):
+            out, h = self.forward(inp[i], h)
+            loss += loss_fn(out, target[i])
+            # count_ones += torch.sum(target[i] == 1) 
+        # ratio_ones = count_ones / total_tokens
+        return loss     # per batch
 
 '''
 

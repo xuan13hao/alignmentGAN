@@ -60,6 +60,7 @@ if __name__ == '__main__':
     filename = "test.txt"
     cigar = parse_cigar.cigar_lists(filename,101,10,10)
     gen = Generator.Generator(GEN_EMBEDDING_DIM, GEN_HIDDEN_DIM, VOCAB_SIZE, SEQ_LENGTH, gpu=CUDA)
+    print(cigar)
 
     if CUDA:
         gen = gen.cuda()
