@@ -11,7 +11,6 @@ def decode_edits_dic():
     kmer_dict[1] = "M"
     kmer_dict[2] = "D"
     kmer_dict[3] = "I"
-    kmer_dict[4] = ""
     kmer_dict[0] = "<s>"
     return kmer_dict
 

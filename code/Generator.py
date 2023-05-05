@@ -21,7 +21,7 @@ class Generator(nn.Module):
         self.embedding_dim = embedding_dim
         self.max_seq_len = max_seq_len
         self.vocab_size = vocab_size
-        num_layers=3
+        num_layers=4
         self.num_layers = num_layers
         self.gpu = gpu
 

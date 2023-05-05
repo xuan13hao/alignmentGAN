@@ -25,7 +25,7 @@ BATCH_SIZE = 16
 MLE_TRAIN_EPOCHS = 100
 REF_NEG_SAMPLES = 200
 SEQ_LENGTH = 109
-GEN_EMBEDDING_DIM = 128 # 512
+GEN_EMBEDDING_DIM = 150 # 512
 GEN_HIDDEN_DIM = 768 # 768
 
 PATH = ""
@@ -60,7 +60,6 @@ if __name__ == '__main__':
     gen = Generator.Generator(GEN_EMBEDDING_DIM, GEN_HIDDEN_DIM, VOCAB_SIZE, SEQ_LENGTH, gpu=CUDA)
     # print(cigar)
     if CUDA:
-        torch.cuda.empty_cache()
         gen = gen.cuda()
         cigar = cigar.cuda()
         
@@ -68,13 +67,12 @@ if __name__ == '__main__':
     
     print('Starting Generator MLE Training...')
     gen_optimizer = optim.Adam(gen.parameters(), lr=1e-3)
-    train_generator_MLE(gen, gen_optimizer, cigar, MLE_TRAIN_EPOCHS)
-    # file_path = "pretrained_gen_cigar.pkl"
-    # if os.path.isfile(file_path):
-    #     print("File exists")
-    #     gen = torch.load('pretrained_gen_edits.pkl')
-    # else:
-    #     print("File does not exist")
-    #     train_generator_MLE(gen, gen_optimizer, cigar, MLE_TRAIN_EPOCHS)
-    # # 8888888888888
-    #     torch.save(gen, "pretrained_gen_cigar.pkl")
+    file_path = "pretrained_gen_edits.pkl"
+    if os.path.isfile(file_path):
+        print("File exists")
+        gen = torch.load('pretrained_gen_edits.pkl')
+    else:
+        print("File does not exist")
+        train_generator_MLE(gen, gen_optimizer, cigar, MLE_TRAIN_EPOCHS)
+    # 8888888888888
+        torch.save(gen, "pretrained_gen_edits.pkl")
