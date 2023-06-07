@@ -103,6 +103,7 @@ def generate_edits():
     kmer_dict["M"] = 1
     kmer_dict["D"] = 2
     kmer_dict["I"] = 3
+    kmer_dict["X"] = 4
     return kmer_dict
 
 

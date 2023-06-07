@@ -7,32 +7,32 @@ import torch
 from itertools import product
 MAXINT = 10000
 
+def decode_edits():
+    kmer_dict = {}
+    kmer_dict[1] = "M"
+    kmer_dict[2] = "D"
+    kmer_dict[3] = "I"
+    kmer_dict[4] = "X"
+    return kmer_dict
 def decode_edit(batch_size=1):
-    model = torch.load("pretrained_gen_cigar.pkl")#pretrained_gen_edits edit_generator
+    model = torch.load("pretrained_gen_edits.pkl")#pretrained_gen_edits edit_generator
     out = model.sample(batch_size)
-    # dict = decode_edits_dic()
+    dict = decode_edits()
     reads_file = open("../benchmark/cigar.fa", 'w')
     # print(out)
     seqs = []
     idx = 0
     for i in out:
-        print(i)
-        # idx = idx + 1
-        # l = []
-        # for n in i:
-        #     # print(n)
-        #     l.append(str(n))
-        # print(l)
-        # seq = ""
-        # for i in l:
-        #     seq = seq + i
-        # # seq = generate_sequence(l)
-        # # seqs.append(">"+idx+"\n"+seq+"\n")
-        # reads_file.write(">"+str(idx)+"\n"+seq+"\n")
-        # print(">",idx)
-        # print(seq)
-        # seqs.append(l)
-    # print("gen edits num = ", len(seqs))
+        l = []
+        for n in i:
+            l.append(dict[int(n)])
+        print(l)
+        seq = ""
+        for i in l:
+            seq = seq + i
+        idx = idx + 1
+        seqs.append(">"+str(idx)+"\n"+seq+"\n")
+        reads_file.write(">"+str(idx)+"\n"+seq+"\n")
         
 
 

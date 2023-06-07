@@ -78,7 +78,128 @@ class Generator(nn.Module):
             inp = out.view(-1)
 
         return samples
+    # def batchNLLLoss(self, inp, target, smoothing=0.1):
+    #     """
+    #     Returns the NLL Loss with Label Smoothing for predicting target sequence.
+    #     Inputs: inp, target, smoothing
+    #         - inp: batch_size x seq_len
+    #         - target: batch_size x seq_len
+    #         - smoothing: label smoothing factor (default: 0.0, no smoothing)
+    #         inp should be target with <s> (start letter) prepended
+    #     """
+
+    #     loss_fn = nn.NLLLoss(reduction='sum')
+    #     batch_size, seq_len = inp.size()
+    #     inp = inp.permute(1, 0)           # seq_len x batch_size
+    #     target = target.permute(1, 0)     # seq_len x batch_size
+    #     h = self.init_hidden(batch_size)
+
+    #     total_loss = 0
+    #     num_elements = 0
+
+    #     for i in range(seq_len):
+    #         out, h = self.forward(inp[i], h)
+
+    #         if smoothing > 0.0:
+    #             target_one_hot = torch.zeros_like(out)
+    #             target_one_hot.scatter_(1, target[i].unsqueeze(1), 1.0)
+    #             smooth_label = target_one_hot * (1 - smoothing) + smoothing / out.size(1)
+    #             loss = loss_fn(out, smooth_label.argmax(dim=1))
+    #         else:
+    #             loss = loss_fn(out, target[i])
+
+    #         total_loss += loss
+    #         num_elements += target[i].size(0)
+
+    #     return total_loss
     
+    # def batchNLLLoss(self, inp, target):
+    #     """
+    #     Returns the NLL Loss for predicting target sequence.
+    #     Inputs: inp, target
+    #         - inp: batch_size x seq_len
+    #         - target: batch_size x seq_len
+    #         inp should be target with <s> (start letter) prepended
+    #     """
+    #     batch_size, seq_len = inp.size()
+
+
+    #     inp = inp.permute(1, 0)           # seq_len x batch_size
+    #     target = target.permute(1, 0)     # seq_len x batch_size
+    #     h = self.init_hidden(batch_size)
+    #     count_match = 0
+    #     count_insert = 0
+    #     coutn_deletion = 0
+    #     total_tokens = batch_size * seq_len 
+    #     for i in range(seq_len):
+    #         count_match += torch.sum(target[i] == 1)
+    #         count_insert += torch.sum(target[i] == 3)
+    #         coutn_deletion += torch.sum(target[i] == 2)
+    #     ratio_match = count_match / total_tokens
+    #     ratio_insert = count_insert / total_tokens
+    #     ratio_deletion = coutn_deletion / total_tokens
+    #     # weights = torch.tensor([0, 1/ratio_match,1/ratio_deletion, 1/ratio_insert]).cuda()
+    #     loss_fn = nn.NLLLoss()
+    #     loss = 0
+    #     for i in range(seq_len):
+    #         out, h = self.forward(inp[i], h)
+    #         loss += loss_fn(out, target[i])
+        
+    #     loss *= (ratio_match) # Multiply the loss by the proportion of token 1
+    #     loss *= (ratio_deletion) # Multiply the loss by the proportion of token 2
+    #     loss *= (ratio_insert)   # Multiply the loss by the proportion of token 3        
+    #     return loss     # per batch
+    # def batchNLLLoss(self, inp, target):
+    #     """
+    #     Returns the NLL Loss for predicting target sequence.
+    #     Inputs: inp, target
+    #         - inp: batch_size x seq_len
+    #         - target: batch_size x seq_len
+    #         inp should be target with <s> (start letter) prepended
+    #     """
+    #     batch_size, seq_len = inp.size()
+
+
+    #     inp = inp.permute(1, 0)           # seq_len x batch_size
+    #     target = target.permute(1, 0)     # seq_len x batch_size
+    #     h = self.init_hidden(batch_size)
+    #     count_match = 0
+    #     count_insert = 0
+    #     coutn_deletion = 0
+    #     total_tokens = batch_size * seq_len 
+    #     for i in range(seq_len):
+    #         count_match += torch.sum(target[i] == 1)
+    #         count_insert += torch.sum(target[i] == 3)
+    #         coutn_deletion += torch.sum(target[i] == 2)
+    #     ratio_match = count_match / total_tokens
+    #     ratio_insert = count_insert / total_tokens
+    #     ratio_deletion = coutn_deletion / total_tokens
+    #     weights = torch.tensor([0, ratio_match,count_insert, coutn_deletion]).cuda()
+    #     loss_fn = nn.NLLLoss(weight=weights)
+    #     loss = 0
+    #     for i in range(seq_len):
+    #         out, h = self.forward(inp[i], h)
+    #         loss += loss_fn(out, target[i])
+    #     return loss     # per batch
+    def compute_weights(self,target):
+        """
+        Computes the weights based on the ratio of occurrences of each class in the target sequence.
+        Inputs: target
+            - target: seq_len x batch_size
+        Returns: weights
+            - weights: seq_len x num_classes
+        """
+
+        seq_len, batch_size = target.size()
+        num_classes = torch.max(target) + 1
+
+        weights = torch.zeros(seq_len, num_classes)
+        for i in range(seq_len):
+            counts = torch.bincount(target[i], minlength=num_classes)
+            total_counts = torch.sum(counts)
+            weights[i] = total_counts / (counts + 1)  # Apply smoothing and compute ratios
+
+        return weights
     def batchNLLLoss(self, inp, target):
         """
         Returns the NLL Loss for predicting target sequence.
@@ -87,29 +208,20 @@ class Generator(nn.Module):
             - target: batch_size x seq_len
             inp should be target with <s> (start letter) prepended
         """
+
+        loss_fn = nn.NLLLoss()
         batch_size, seq_len = inp.size()
-
-
         inp = inp.permute(1, 0)           # seq_len x batch_size
         target = target.permute(1, 0)     # seq_len x batch_size
         h = self.init_hidden(batch_size)
-        count_match = 0
-        count_insert = 0
-        coutn_deletion = 0
-        total_tokens = batch_size * seq_len 
-        for i in range(seq_len):
-            count_match += torch.sum(target[i] == 1)
-            count_insert += torch.sum(target[i] == 3)
-            coutn_deletion += torch.sum(target[i] == 2)
-        ratio_match = count_match / total_tokens
-        ratio_insert = count_insert / total_tokens
-        ratio_deletion = coutn_deletion / total_tokens
-        weights = torch.tensor([1, 1/ratio_match,1/ratio_deletion, 1/ratio_insert ]).cuda()
-        loss_fn = nn.NLLLoss(weight=weights)
+
         loss = 0
+        weights = self.compute_weights(target).cuda()  # Compute weights based on target sequence
         for i in range(seq_len):
             out, h = self.forward(inp[i], h)
+            loss_fn.weight = weights[i]  # Set the weight for the current class
             loss += loss_fn(out, target[i])
+
         return loss     # per batch
 
 
